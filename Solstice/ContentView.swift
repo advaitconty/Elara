@@ -6,16 +6,14 @@
 //
 
 import SwiftUI
+import Forever
 
 struct ContentView: View {
+    @Forever("name") var name: String = ""
+    @DontDie("todos") var todos: [Todo] = []
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        SetupView(name: $name)
     }
 }
 

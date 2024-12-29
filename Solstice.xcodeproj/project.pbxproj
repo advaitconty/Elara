@@ -7,19 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		258A92782D203EDD00D9D84E /* StorageItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258A92772D203EDD00D9D84E /* StorageItems.swift */; };
+		258A927A2D203F8200D9D84E /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258A92792D203F8200D9D84E /* SetupView.swift */; };
 		2596A66A2D1FF9FE00B46466 /* SolsticeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2596A6692D1FF9FE00B46466 /* SolsticeApp.swift */; };
 		2596A66C2D1FF9FE00B46466 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2596A66B2D1FF9FE00B46466 /* ContentView.swift */; };
 		2596A66E2D1FFA0000B46466 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2596A66D2D1FFA0000B46466 /* Assets.xcassets */; };
 		2596A6712D1FFA0000B46466 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2596A6702D1FFA0000B46466 /* Preview Assets.xcassets */; };
+		2596A67A2D1FFCCD00B46466 /* PlayfairDisplay-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2596A6782D1FFCCC00B46466 /* PlayfairDisplay-VariableFont_wght.ttf */; };
+		2596A67B2D1FFCCD00B46466 /* PlayfairDisplay-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2596A6792D1FFCCC00B46466 /* PlayfairDisplay-Italic-VariableFont_wght.ttf */; };
+		2596A67F2D1FFE0500B46466 /* CrimsonPro-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2596A67D2D1FFE0500B46466 /* CrimsonPro-Italic-VariableFont_wght.ttf */; };
+		2596A6802D1FFE0500B46466 /* CrimsonPro-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2596A67E2D1FFE0500B46466 /* CrimsonPro-VariableFont_wght.ttf */; };
+		2596A6832D20028000B46466 /* Forever in Frameworks */ = {isa = PBXBuildFile; productRef = 2596A6822D20028000B46466 /* Forever */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		258A92772D203EDD00D9D84E /* StorageItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageItems.swift; sourceTree = "<group>"; };
+		258A92792D203F8200D9D84E /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
 		2596A6662D1FF9FE00B46466 /* Solstice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Solstice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2596A6692D1FF9FE00B46466 /* SolsticeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolsticeApp.swift; sourceTree = "<group>"; };
 		2596A66B2D1FF9FE00B46466 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2596A66D2D1FFA0000B46466 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2596A6702D1FFA0000B46466 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2596A6722D1FFA0000B46466 /* Solstice.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Solstice.entitlements; sourceTree = "<group>"; };
+		2596A6782D1FFCCC00B46466 /* PlayfairDisplay-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		2596A6792D1FFCCC00B46466 /* PlayfairDisplay-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		2596A67C2D1FFCD400B46466 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2596A67D2D1FFE0500B46466 /* CrimsonPro-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CrimsonPro-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		2596A67E2D1FFE0500B46466 /* CrimsonPro-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CrimsonPro-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2596A6832D20028000B46466 /* Forever in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,8 +67,15 @@
 		2596A6682D1FF9FE00B46466 /* Solstice */ = {
 			isa = PBXGroup;
 			children = (
+				2596A67C2D1FFCD400B46466 /* Info.plist */,
+				2596A6792D1FFCCC00B46466 /* PlayfairDisplay-Italic-VariableFont_wght.ttf */,
+				2596A6782D1FFCCC00B46466 /* PlayfairDisplay-VariableFont_wght.ttf */,
+				2596A67D2D1FFE0500B46466 /* CrimsonPro-Italic-VariableFont_wght.ttf */,
+				2596A67E2D1FFE0500B46466 /* CrimsonPro-VariableFont_wght.ttf */,
 				2596A6692D1FF9FE00B46466 /* SolsticeApp.swift */,
 				2596A66B2D1FF9FE00B46466 /* ContentView.swift */,
+				258A92792D203F8200D9D84E /* SetupView.swift */,
+				258A92772D203EDD00D9D84E /* StorageItems.swift */,
 				2596A66D2D1FFA0000B46466 /* Assets.xcassets */,
 				2596A6722D1FFA0000B46466 /* Solstice.entitlements */,
 				2596A66F2D1FFA0000B46466 /* Preview Content */,
@@ -85,6 +107,9 @@
 			dependencies = (
 			);
 			name = Solstice;
+			packageProductDependencies = (
+				2596A6822D20028000B46466 /* Forever */,
+			);
 			productName = Solstice;
 			productReference = 2596A6662D1FF9FE00B46466 /* Solstice.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +138,9 @@
 				Base,
 			);
 			mainGroup = 2596A65D2D1FF9FD00B46466;
+			packageReferences = (
+				2596A6812D20028000B46466 /* XCRemoteSwiftPackageReference "forever" */,
+			);
 			productRefGroup = 2596A6672D1FF9FE00B46466 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +155,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2596A67B2D1FFCCD00B46466 /* PlayfairDisplay-Italic-VariableFont_wght.ttf in Resources */,
 				2596A6712D1FFA0000B46466 /* Preview Assets.xcassets in Resources */,
+				2596A67A2D1FFCCD00B46466 /* PlayfairDisplay-VariableFont_wght.ttf in Resources */,
+				2596A67F2D1FFE0500B46466 /* CrimsonPro-Italic-VariableFont_wght.ttf in Resources */,
+				2596A6802D1FFE0500B46466 /* CrimsonPro-VariableFont_wght.ttf in Resources */,
 				2596A66E2D1FFA0000B46466 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,6 +173,8 @@
 			files = (
 				2596A66C2D1FF9FE00B46466 /* ContentView.swift in Sources */,
 				2596A66A2D1FF9FE00B46466 /* SolsticeApp.swift in Sources */,
+				258A927A2D203F8200D9D84E /* SetupView.swift in Sources */,
+				258A92782D203EDD00D9D84E /* StorageItems.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,11 +308,13 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Solstice/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.advaitconty.Solstice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -301,11 +337,13 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Solstice/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.advaitconty.Solstice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -336,6 +374,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2596A6812D20028000B46466 /* XCRemoteSwiftPackageReference "forever" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jiachenyee/forever";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2596A6822D20028000B46466 /* Forever */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2596A6812D20028000B46466 /* XCRemoteSwiftPackageReference "forever" */;
+			productName = Forever;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2596A65E2D1FF9FD00B46466 /* Project object */;
 }
