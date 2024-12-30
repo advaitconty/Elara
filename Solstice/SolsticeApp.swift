@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Forever
+import Cocoa
 
 @main
 struct SolsticeApp: App {
@@ -14,13 +15,30 @@ struct SolsticeApp: App {
     @DontDie("todos") var todos: [Todo] = []
     @DontLeaveMe("setupPage") var setupPage = 1
     @BePersistent("settingsData") var settingsData: SettingData = SettingData()
+    @State var aboutWindowController: AboutWindowController?
+    
     var body: some Scene {
         WindowGroup {
             ContentView(name: $name, todos: $todos, setupPage: $setupPage, settingsData: $settingsData)
+        }
+        .commands {
+            CommandGroup(replacing: .appInfo) {
+                Button("About Solstice") {
+                    showAbout()
+                }
+            }
         }
         
         Settings {
             SettingsView(data: $settingsData)
         }
+    }
+    
+    private func showAbout() {
+        if aboutWindowController == nil {
+            aboutWindowController = AboutWindowController()
+        }
+        aboutWindowController?.showWindow(nil)
+        NSApp.activate(ignoringOtherApps: true)
     }
 }

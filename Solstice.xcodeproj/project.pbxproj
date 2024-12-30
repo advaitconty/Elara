@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2528AF5F2D228B58006DCDAE /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2528AF5E2D228B58006DCDAE /* AboutView.swift */; };
+		2528AF612D228BC5006DCDAE /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2528AF602D228BC5006DCDAE /* AboutViewController.swift */; };
 		258A92782D203EDD00D9D84E /* StorageItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258A92772D203EDD00D9D84E /* StorageItems.swift */; };
 		258A927A2D203F8200D9D84E /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258A92792D203F8200D9D84E /* SetupView.swift */; };
 		259395282D213C140007C7D8 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259395272D213C140007C7D8 /* TasksView.swift */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2528AF5E2D228B58006DCDAE /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		2528AF602D228BC5006DCDAE /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		258A92772D203EDD00D9D84E /* StorageItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageItems.swift; sourceTree = "<group>"; };
 		258A92792D203F8200D9D84E /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
 		259395262D2138890007C7D8 /* Solstice App Icon.fig */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Solstice App Icon.fig"; sourceTree = "<group>"; };
@@ -83,7 +87,9 @@
 				2596A67D2D1FFE0500B46466 /* CrimsonPro-Italic-VariableFont_wght.ttf */,
 				2596A67E2D1FFE0500B46466 /* CrimsonPro-VariableFont_wght.ttf */,
 				2596A6692D1FF9FE00B46466 /* SolsticeApp.swift */,
+				2528AF602D228BC5006DCDAE /* AboutViewController.swift */,
 				2596A66B2D1FF9FE00B46466 /* ContentView.swift */,
+				2528AF5E2D228B58006DCDAE /* AboutView.swift */,
 				25AD49092D21124800C36E8A /* TimerView.swift */,
 				259395272D213C140007C7D8 /* TasksView.swift */,
 				258A92792D203F8200D9D84E /* SetupView.swift */,
@@ -184,8 +190,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2528AF5F2D228B58006DCDAE /* AboutView.swift in Sources */,
 				2593952A2D215CAF0007C7D8 /* SettingsView.swift in Sources */,
 				25AD490A2D21124800C36E8A /* TimerView.swift in Sources */,
+				2528AF612D228BC5006DCDAE /* AboutViewController.swift in Sources */,
 				259395282D213C140007C7D8 /* TasksView.swift in Sources */,
 				2596A66C2D1FF9FE00B46466 /* ContentView.swift in Sources */,
 				2596A66A2D1FF9FE00B46466 /* SolsticeApp.swift in Sources */,
