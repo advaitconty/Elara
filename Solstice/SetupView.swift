@@ -9,14 +9,17 @@ import SwiftUI
 
 struct SetupView: View {
     @Binding var name: String
+    @Binding var todos: [Todo]
     @State var height = 100
     @State var blur = true
     @State var showName = false
-    @State var page = 1
+    @Binding var page: Int
+    @State var showError = false
+    @State var task: String = ""
     
     var body: some View {
         ZStack {
-            Image("background")
+            Image("Default")
                 .resizable()
                 .scaledToFill()
                 .frame(width: 1600, height: 1000)
@@ -55,8 +58,12 @@ struct SetupView: View {
                             }
                             
                             Button {
-                                withAnimation {
-                                    page = 2
+                                if name == "" {
+                                    showError = true
+                                } else {
+                                    withAnimation {
+                                        page = 2
+                                    }
                                 }
                             } label: {
                                 HStack {
@@ -77,13 +84,30 @@ struct SetupView: View {
                             .padding()
                             .buttonStyle(.borderless)
                         }
-                        .transition(.scale)
+                        .transition(.opacity)
+                        .alert("Your name is blank. Please enter something.", isPresented: $showError) {
+                            Button("Okay", role: .cancel) {
+                                
+                            }
+                        }
+                        
                     } else if page == 2 {
                         VStack {
+                            Text("Hello, _\(name)_!")
+                                .font(.custom("Crimson Pro", size: 20))
+                            Text("What task would you like to do _today_?")
+                                .font(.custom("Crimson Pro", size: 20))
+                            HStack {
+                                Text("Task:")
+                                    .font(.custom("Crimson Pro", size: 20))
+                                TextField("Finish studying Physics: Kinematics", text: $task)
+                                    .font(.custom("Crimson Pro", size: 20))
+                            }
                             HStack {
                                 Button {
                                     withAnimation {
                                         page = 1
+                                        height = 200
                                     }
                                 } label: {
                                     HStack {
@@ -104,13 +128,20 @@ struct SetupView: View {
                                 .padding()
                                 .buttonStyle(.borderless)
                                 Button {
-                                    withAnimation {
-                                        page = 2
+                                    if task == "" {
+                                        showError = true
+                                    } else {
+                                        todos.append(Todo(task: task, priority: 1))
+                                        todos.append(Todo(task: "", priority: 1))
+                                        todos.append(Todo(task: "", priority: 1))
+                                        withAnimation {
+                                            page = 3
+                                        }
                                     }
                                 } label: {
                                     HStack {
                                         Spacer()
-                                        Text("Continue")
+                                        Text("Finish setup")
                                             .font(.custom("Crimson Pro", size: 20))
                                             .foregroundColor(.white)
                                         Spacer()
@@ -127,7 +158,17 @@ struct SetupView: View {
                                 .buttonStyle(.borderless)
                             }
                         }
-                        .transition(.scale)
+                        .transition(.opacity)
+                        .onAppear {
+                            withAnimation {
+                                height = 230
+                            }
+                        }
+                        .alert("Your task is blank. Please enter something.", isPresented: $showError) {
+                            Button("Okay", role: .cancel) {
+                                
+                            }
+                        }
                     }
                 }
             }
@@ -142,11 +183,5 @@ struct SetupView: View {
             }
         }
         .padding()
-    }
-}
-
-struct SetupView_Previews: PreviewProvider {
-    static var previews: some View {
-        SetupView(name: .constant("Advait"))
     }
 }

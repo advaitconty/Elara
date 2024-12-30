@@ -9,16 +9,19 @@ import SwiftUI
 import Forever
 
 struct ContentView: View {
-    @Forever("name") var name: String = ""
-    @DontDie("todos") var todos: [Todo] = []
+    @Binding var name: String
+    @Binding var todos: [Todo]
+    @Binding var setupPage: Int
+    @Binding var settingsData: SettingData
 
     var body: some View {
-        SetupView(name: $name)
+        if setupPage != 3 {
+            SetupView(name: $name, todos: $todos, page: $setupPage)
+                .transition(.slide)
+        } else {
+            TimerView(todos: $todos, name: $name, settings: $settingsData)
+                .transition(.slide)
+        }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}

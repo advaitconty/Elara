@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		258A92782D203EDD00D9D84E /* StorageItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258A92772D203EDD00D9D84E /* StorageItems.swift */; };
 		258A927A2D203F8200D9D84E /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258A92792D203F8200D9D84E /* SetupView.swift */; };
+		259395282D213C140007C7D8 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259395272D213C140007C7D8 /* TasksView.swift */; };
+		2593952A2D215CAF0007C7D8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259395292D215CAF0007C7D8 /* SettingsView.swift */; };
 		2596A66A2D1FF9FE00B46466 /* SolsticeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2596A6692D1FF9FE00B46466 /* SolsticeApp.swift */; };
 		2596A66C2D1FF9FE00B46466 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2596A66B2D1FF9FE00B46466 /* ContentView.swift */; };
 		2596A66E2D1FFA0000B46466 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2596A66D2D1FFA0000B46466 /* Assets.xcassets */; };
@@ -18,11 +20,16 @@
 		2596A67F2D1FFE0500B46466 /* CrimsonPro-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2596A67D2D1FFE0500B46466 /* CrimsonPro-Italic-VariableFont_wght.ttf */; };
 		2596A6802D1FFE0500B46466 /* CrimsonPro-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2596A67E2D1FFE0500B46466 /* CrimsonPro-VariableFont_wght.ttf */; };
 		2596A6832D20028000B46466 /* Forever in Frameworks */ = {isa = PBXBuildFile; productRef = 2596A6822D20028000B46466 /* Forever */; };
+		25AD490A2D21124800C36E8A /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AD49092D21124800C36E8A /* TimerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		258A92772D203EDD00D9D84E /* StorageItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageItems.swift; sourceTree = "<group>"; };
 		258A92792D203F8200D9D84E /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
+		259395262D2138890007C7D8 /* Solstice App Icon.fig */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Solstice App Icon.fig"; sourceTree = "<group>"; };
+		259395272D213C140007C7D8 /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
+		259395292D215CAF0007C7D8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		2593952B2D216FF20007C7D8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2596A6662D1FF9FE00B46466 /* Solstice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Solstice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2596A6692D1FF9FE00B46466 /* SolsticeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolsticeApp.swift; sourceTree = "<group>"; };
 		2596A66B2D1FF9FE00B46466 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +41,7 @@
 		2596A67C2D1FFCD400B46466 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2596A67D2D1FFE0500B46466 /* CrimsonPro-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CrimsonPro-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		2596A67E2D1FFE0500B46466 /* CrimsonPro-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CrimsonPro-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		25AD49092D21124800C36E8A /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +59,8 @@
 		2596A65D2D1FF9FD00B46466 = {
 			isa = PBXGroup;
 			children = (
+				2593952B2D216FF20007C7D8 /* README.md */,
+				259395262D2138890007C7D8 /* Solstice App Icon.fig */,
 				2596A6682D1FF9FE00B46466 /* Solstice */,
 				2596A6672D1FF9FE00B46466 /* Products */,
 			);
@@ -74,8 +84,11 @@
 				2596A67E2D1FFE0500B46466 /* CrimsonPro-VariableFont_wght.ttf */,
 				2596A6692D1FF9FE00B46466 /* SolsticeApp.swift */,
 				2596A66B2D1FF9FE00B46466 /* ContentView.swift */,
+				25AD49092D21124800C36E8A /* TimerView.swift */,
+				259395272D213C140007C7D8 /* TasksView.swift */,
 				258A92792D203F8200D9D84E /* SetupView.swift */,
 				258A92772D203EDD00D9D84E /* StorageItems.swift */,
+				259395292D215CAF0007C7D8 /* SettingsView.swift */,
 				2596A66D2D1FFA0000B46466 /* Assets.xcassets */,
 				2596A6722D1FFA0000B46466 /* Solstice.entitlements */,
 				2596A66F2D1FFA0000B46466 /* Preview Content */,
@@ -171,6 +184,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2593952A2D215CAF0007C7D8 /* SettingsView.swift in Sources */,
+				25AD490A2D21124800C36E8A /* TimerView.swift in Sources */,
+				259395282D213C140007C7D8 /* TasksView.swift in Sources */,
 				2596A66C2D1FF9FE00B46466 /* ContentView.swift in Sources */,
 				2596A66A2D1FF9FE00B46466 /* SolsticeApp.swift in Sources */,
 				258A927A2D203F8200D9D84E /* SetupView.swift in Sources */,
@@ -302,7 +318,7 @@
 				CODE_SIGN_ENTITLEMENTS = Solstice/Solstice.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"Solstice/Preview Content\"";
 				DEVELOPMENT_TEAM = VYG284C3Z9;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -315,7 +331,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.advaitconty.Solstice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -331,7 +347,7 @@
 				CODE_SIGN_ENTITLEMENTS = Solstice/Solstice.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"Solstice/Preview Content\"";
 				DEVELOPMENT_TEAM = VYG284C3Z9;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -344,7 +360,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.advaitconty.Solstice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
