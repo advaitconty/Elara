@@ -1,12 +1,11 @@
 #  Solstice: The Ultimate Time Tracker
-
 ![Icon](https://cloud-c05te50hj-hack-club-bot.vercel.app/0icon_1024x1024.png)
 
 Introducing Solstice, the ultimate tracker. This is literally the only aesthetic pomodoro tracker you will ever need.
 
 ## Download
 
-Click [here](https://cloud-l3oixhhaj-hack-club-bot.vercel.app/0solstice.zip) to download the app. You may recieve warnings that this app is not secure but it is (review the code yourself if you want to validate this)
+Click [here (releases tab)](https://github.com/contyadvait/Solstice/releases) to download the app. You may recieve warnings that this app is not secure but it is (review the code yourself if you want to validate this)
 
 For the iPad app, check out [Solstice for iPad](https://www.github.com/contyadvait/Solstice-iPad)
 
