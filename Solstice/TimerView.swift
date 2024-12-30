@@ -25,6 +25,10 @@ struct TimerView: View {
                     .scaledToFill()
                     .frame(width: geometry.size.width, height: geometry.size.height)
                     .edgesIgnoringSafeArea(.all)
+                    .onAppear {
+                        minutes = settings.pomodoroDuration[0]
+                        seconds = settings.pomodoroDuration[1]
+                    }
                 
                 // Centered Content
                 VStack {
@@ -136,10 +140,7 @@ struct TimerView: View {
     
     func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
-            if seconds == 0 {
-                seconds = 59
-                minutes = minutes - 1
-            } else if minutes == 0 && seconds == 0 {
+            if seconds == 0 && minutes == 0{
                 cycles = cycles + 1
                 if currentTimerMode == .normal && cycles != settings.cyclesBeforeLongBreak {
                     currentTimerMode = .shortBreak
@@ -154,6 +155,10 @@ struct TimerView: View {
                     seconds = settings.longBreakDuration[1]
                 }
                 stopTimer()
+
+            } else if minutes == 0 && seconds == 0 {
+                seconds = 59
+                minutes = minutes - 1
             } else {
                 seconds = seconds - 1
             }

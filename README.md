@@ -6,7 +6,7 @@ Introducing Solstice, the ultimate tracker. This is literally the only aesthetic
 
 ## Download
 
-Click [here](https://cloud-99fq88dxr-hack-club-bot.vercel.app/0solstice.zip) to download the app. You may recieve warnings that this app is not secure but it is (review the code yourself if you want to validate this)
+Click [here](https://cloud-l3oixhhaj-hack-club-bot.vercel.app/0solstice.zip) to download the app. You may recieve warnings that this app is not secure but it is (review the code yourself if you want to validate this)
 
 For the iPad app, check out [Solstice for iPad](https://www.github.com/contyadvait/Solstice-iPad)
 
