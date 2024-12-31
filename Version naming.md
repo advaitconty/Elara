@@ -15,7 +15,7 @@
 - Sunspot
 - Prism
 - Mirage
-- Atlas
+- AtlasS
 - Azimuth
 - Compass
 

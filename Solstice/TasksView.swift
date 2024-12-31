@@ -68,6 +68,7 @@ struct TasksView: View {
                     .font(.custom("Crimson Pro", size: 18))
                 TextField("A. Maths Topical", text: $tasks)
                     .font(.custom("Crimson Pro", size: 18))
+                    .textFieldStyle(.roundedBorder)
             }
             
             Button {
