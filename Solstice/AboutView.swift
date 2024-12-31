@@ -25,7 +25,12 @@ struct AboutView: View {
                         Spacer()
                     }
                     HStack {
-                        Text("_Nebula_ v1.0.1")
+                        Text("_Nebula_ v1.1")
+                            .font(.custom("Playfair Display", size: 20))
+                        Spacer()
+                    }
+                    HStack {
+                        Text("_Update Orion_")
                             .font(.custom("Playfair Display", size: 20))
                         Spacer()
                     }

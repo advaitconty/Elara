@@ -7,11 +7,12 @@
 
 import Foundation
 
-struct Todo: Identifiable, Codable {
+struct Todo: Identifiable, Codable, Equatable {
     var id = UUID()
     var task: String
     var priority: Int
     var completed: Bool = false
+    var showDeletePopup: Bool = false
 }
 
 struct SettingData: Codable {
