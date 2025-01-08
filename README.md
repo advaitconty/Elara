@@ -1,5 +1,3 @@
-#  Solstice: The Ultimate Time Tracker
-
 ![banner](banner.png)
 
 Introducing Solstice, the ultimate tracker. This is literally the only aesthetic pomodoro tracker you will ever need.
@@ -23,10 +21,6 @@ Customisable backgrounds (through the ones provided in settings)
 Completely customisable lengths for pomodoros and breaks
 
 ![Settings](Screenshots/Settings.png)
-
-Task tracking
-
-![Task Tracking](Screenshots/TaskTracking.png)
 
 A completely custom aesthetic theme (from the start)
 
