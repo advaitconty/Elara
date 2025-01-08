@@ -1,5 +1,6 @@
 #  Solstice: The Ultimate Time Tracker
-![Icon](https://cloud-c05te50hj-hack-club-bot.vercel.app/0icon_1024x1024.png)
+
+![banner](banner.png)
 
 Introducing Solstice, the ultimate tracker. This is literally the only aesthetic pomodoro tracker you will ever need.
 
@@ -13,22 +14,22 @@ For the iPad app, check out [Solstice for iPad](https://www.github.com/contyadva
 
 Custom about screen (not really a feature but whatever)
 
-![About me](https://cloud-25edkhtm6-hack-club-bot.vercel.app/0about.png)
+![About me](Screenshots/About.png)
 
 Customisable backgrounds (through the ones provided in settings)
 
-![Custom backgrounds](https://cloud-qhdhm4nuy-hack-club-bot.vercel.app/0backgrounds.png)
+![Custom backgrounds](Screenshots/Backgrounds.png)
 
 Completely customisable lengths for pomodoros and breaks
 
-![Settings](https://cloud-qhdhm4nuy-hack-club-bot.vercel.app/3settings.png)
+![Settings](Screenshots/Settings.png)
 
 Task tracking
 
-![Task Tracking](https://cloud-qhdhm4nuy-hack-club-bot.vercel.app/4task_tracking.png)
+![Task Tracking](Screenshots/TaskTracking.png)
 
 A completely custom aesthetic theme (from the start)
 
-![Intro](https://cloud-qhdhm4nuy-hack-club-bot.vercel.app/2intro.png)
+![Intro](Screenshots/Intro.png)
 
 (Figma file provided since App Icon was designed in Figma)
