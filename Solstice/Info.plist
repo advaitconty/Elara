@@ -21,6 +21,18 @@
 		<string>PlayfairDisplay-VariableFont_wght.ttf</string>
 		<string>CrimsonPro-Italic-VariableFont_wght.ttf</string>
 		<string>CrimsonPro-VariableFont_wght.ttf</string>
+		<string>London Underground LCD Clock.ttf</string>
+		<string>ChakraPetch-Bold.ttf</string>
+		<string>ChakraPetch-BoldItalic.ttf</string>
+		<string>ChakraPetch-Italic.ttf</string>
+		<string>ChakraPetch-Light.ttf</string>
+		<string>ChakraPetch-LightItalic.ttf</string>
+		<string>ChakraPetch-Medium.ttf</string>
+		<string>ChakraPetch-MediumItalic.ttf</string>
+		<string>ChakraPetch-Regular.ttf</string>
+		<string>ChakraPetch-SemiBold.ttf</string>
+		<string>ChakraPetch-SemiBoldItalic.ttf</string>
+		<string>ShareTechMono-Regular.ttf</string>
 	</array>
 </dict>
 </plist>

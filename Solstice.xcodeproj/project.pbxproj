@@ -7,8 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2513ACB92D2A4C3700D023D8 /* ChakraPetch-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2513ACAF2D2A4C3700D023D8 /* ChakraPetch-LightItalic.ttf */; };
+		2513ACBA2D2A4C3700D023D8 /* ChakraPetch-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2513ACB02D2A4C3700D023D8 /* ChakraPetch-Italic.ttf */; };
+		2513ACBB2D2A4C3700D023D8 /* ChakraPetch-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2513ACB12D2A4C3700D023D8 /* ChakraPetch-Bold.ttf */; };
+		2513ACBC2D2A4C3700D023D8 /* ChakraPetch-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2513ACB22D2A4C3700D023D8 /* ChakraPetch-BoldItalic.ttf */; };
+		2513ACBD2D2A4C3700D023D8 /* ChakraPetch-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2513ACB32D2A4C3700D023D8 /* ChakraPetch-MediumItalic.ttf */; };
+		2513ACBE2D2A4C3700D023D8 /* ChakraPetch-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2513ACB42D2A4C3700D023D8 /* ChakraPetch-Light.ttf */; };
+		2513ACBF2D2A4C3700D023D8 /* ChakraPetch-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2513ACB52D2A4C3700D023D8 /* ChakraPetch-Regular.ttf */; };
+		2513ACC02D2A4C3700D023D8 /* ChakraPetch-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2513ACB62D2A4C3700D023D8 /* ChakraPetch-Medium.ttf */; };
+		2513ACC12D2A4C3700D023D8 /* ChakraPetch-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2513ACB72D2A4C3700D023D8 /* ChakraPetch-SemiBold.ttf */; };
+		2513ACC22D2A4C3700D023D8 /* ChakraPetch-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2513ACB82D2A4C3700D023D8 /* ChakraPetch-SemiBoldItalic.ttf */; };
+		2513ACC42D2A5EAD00D023D8 /* ShareTechMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2513ACC32D2A5EAD00D023D8 /* ShareTechMono-Regular.ttf */; };
 		2528AF5F2D228B58006DCDAE /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2528AF5E2D228B58006DCDAE /* AboutView.swift */; };
 		2528AF612D228BC5006DCDAE /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2528AF602D228BC5006DCDAE /* AboutViewController.swift */; };
+		2572648E2D2A46530073D2B2 /* London Underground LCD Clock.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2572648D2D2A46530073D2B2 /* London Underground LCD Clock.ttf */; };
 		258A92782D203EDD00D9D84E /* StorageItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258A92772D203EDD00D9D84E /* StorageItems.swift */; };
 		258A927A2D203F8200D9D84E /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258A92792D203F8200D9D84E /* SetupView.swift */; };
 		259395282D213C140007C7D8 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259395272D213C140007C7D8 /* TasksView.swift */; };
@@ -26,8 +38,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2513ACAF2D2A4C3700D023D8 /* ChakraPetch-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-LightItalic.ttf"; sourceTree = "<group>"; };
+		2513ACB02D2A4C3700D023D8 /* ChakraPetch-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-Italic.ttf"; sourceTree = "<group>"; };
+		2513ACB12D2A4C3700D023D8 /* ChakraPetch-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-Bold.ttf"; sourceTree = "<group>"; };
+		2513ACB22D2A4C3700D023D8 /* ChakraPetch-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-BoldItalic.ttf"; sourceTree = "<group>"; };
+		2513ACB32D2A4C3700D023D8 /* ChakraPetch-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-MediumItalic.ttf"; sourceTree = "<group>"; };
+		2513ACB42D2A4C3700D023D8 /* ChakraPetch-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-Light.ttf"; sourceTree = "<group>"; };
+		2513ACB52D2A4C3700D023D8 /* ChakraPetch-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-Regular.ttf"; sourceTree = "<group>"; };
+		2513ACB62D2A4C3700D023D8 /* ChakraPetch-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-Medium.ttf"; sourceTree = "<group>"; };
+		2513ACB72D2A4C3700D023D8 /* ChakraPetch-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-SemiBold.ttf"; sourceTree = "<group>"; };
+		2513ACB82D2A4C3700D023D8 /* ChakraPetch-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		2513ACC32D2A5EAD00D023D8 /* ShareTechMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ShareTechMono-Regular.ttf"; sourceTree = "<group>"; };
 		2528AF5E2D228B58006DCDAE /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		2528AF602D228BC5006DCDAE /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		2572648D2D2A46530073D2B2 /* London Underground LCD Clock.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "London Underground LCD Clock.ttf"; sourceTree = "<group>"; };
 		258A92772D203EDD00D9D84E /* StorageItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageItems.swift; sourceTree = "<group>"; };
 		258A92792D203F8200D9D84E /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
 		259395262D2138890007C7D8 /* Solstice App Icon.fig */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Solstice App Icon.fig"; sourceTree = "<group>"; };
@@ -84,8 +108,20 @@
 				2596A67C2D1FFCD400B46466 /* Info.plist */,
 				2596A6792D1FFCCC00B46466 /* PlayfairDisplay-Italic-VariableFont_wght.ttf */,
 				2596A6782D1FFCCC00B46466 /* PlayfairDisplay-VariableFont_wght.ttf */,
+				2572648D2D2A46530073D2B2 /* London Underground LCD Clock.ttf */,
 				2596A67D2D1FFE0500B46466 /* CrimsonPro-Italic-VariableFont_wght.ttf */,
 				2596A67E2D1FFE0500B46466 /* CrimsonPro-VariableFont_wght.ttf */,
+				2513ACB12D2A4C3700D023D8 /* ChakraPetch-Bold.ttf */,
+				2513ACB22D2A4C3700D023D8 /* ChakraPetch-BoldItalic.ttf */,
+				2513ACB02D2A4C3700D023D8 /* ChakraPetch-Italic.ttf */,
+				2513ACB42D2A4C3700D023D8 /* ChakraPetch-Light.ttf */,
+				2513ACAF2D2A4C3700D023D8 /* ChakraPetch-LightItalic.ttf */,
+				2513ACB62D2A4C3700D023D8 /* ChakraPetch-Medium.ttf */,
+				2513ACB32D2A4C3700D023D8 /* ChakraPetch-MediumItalic.ttf */,
+				2513ACC32D2A5EAD00D023D8 /* ShareTechMono-Regular.ttf */,
+				2513ACB52D2A4C3700D023D8 /* ChakraPetch-Regular.ttf */,
+				2513ACB72D2A4C3700D023D8 /* ChakraPetch-SemiBold.ttf */,
+				2513ACB82D2A4C3700D023D8 /* ChakraPetch-SemiBoldItalic.ttf */,
 				2596A6692D1FF9FE00B46466 /* SolsticeApp.swift */,
 				2528AF602D228BC5006DCDAE /* AboutViewController.swift */,
 				2596A66B2D1FF9FE00B46466 /* ContentView.swift */,
@@ -174,11 +210,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2513ACB92D2A4C3700D023D8 /* ChakraPetch-LightItalic.ttf in Resources */,
+				2513ACBC2D2A4C3700D023D8 /* ChakraPetch-BoldItalic.ttf in Resources */,
+				2513ACC42D2A5EAD00D023D8 /* ShareTechMono-Regular.ttf in Resources */,
+				2513ACC02D2A4C3700D023D8 /* ChakraPetch-Medium.ttf in Resources */,
+				2572648E2D2A46530073D2B2 /* London Underground LCD Clock.ttf in Resources */,
+				2513ACC22D2A4C3700D023D8 /* ChakraPetch-SemiBoldItalic.ttf in Resources */,
 				2596A67B2D1FFCCD00B46466 /* PlayfairDisplay-Italic-VariableFont_wght.ttf in Resources */,
+				2513ACBF2D2A4C3700D023D8 /* ChakraPetch-Regular.ttf in Resources */,
+				2513ACBA2D2A4C3700D023D8 /* ChakraPetch-Italic.ttf in Resources */,
 				2596A6712D1FFA0000B46466 /* Preview Assets.xcassets in Resources */,
+				2513ACBE2D2A4C3700D023D8 /* ChakraPetch-Light.ttf in Resources */,
 				2596A67A2D1FFCCD00B46466 /* PlayfairDisplay-VariableFont_wght.ttf in Resources */,
+				2513ACBB2D2A4C3700D023D8 /* ChakraPetch-Bold.ttf in Resources */,
 				2596A67F2D1FFE0500B46466 /* CrimsonPro-Italic-VariableFont_wght.ttf in Resources */,
 				2596A6802D1FFE0500B46466 /* CrimsonPro-VariableFont_wght.ttf in Resources */,
+				2513ACBD2D2A4C3700D023D8 /* ChakraPetch-MediumItalic.ttf in Resources */,
+				2513ACC12D2A4C3700D023D8 /* ChakraPetch-SemiBold.ttf in Resources */,
 				2596A66E2D1FFA0000B46466 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,9 +372,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Solstice/Solstice.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_ASSET_PATHS = "\"Solstice/Preview Content\"";
 				DEVELOPMENT_TEAM = VYG284C3Z9;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -334,13 +383,14 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Solstice/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Solstice;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.advaitconty.Solstice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -354,9 +404,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Solstice/Solstice.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_ASSET_PATHS = "\"Solstice/Preview Content\"";
 				DEVELOPMENT_TEAM = VYG284C3Z9;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -364,13 +415,14 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Solstice/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Solstice;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.advaitconty.Solstice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

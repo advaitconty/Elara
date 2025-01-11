@@ -11,17 +11,18 @@ struct DeleteTaskView: View {
     @Environment(\.dismiss) var dismiss
     @Binding var todoToDelete: Todo
     @Binding var todos: [Todo]
+    @Binding var settings: SettingData
     
     var body: some View {
         VStack {
             HStack {
                 Text("Are you _sure_?")
-                    .font(.custom("Playfair Display", size: 30))
+                    .font(.custom(settings.font.titleFont, size: 30))
                 Spacer()
             }
             HStack {
                 Text("Are you sure you want to delete \(todoToDelete.task)?")
-                    .font(.custom("Crimson Pro", size: 18))
+                    .font(.custom(settings.font.bodyFont, size: 18))
                 Spacer()
             }
             HStack {
@@ -31,7 +32,7 @@ struct DeleteTaskView: View {
                 } label: {
                     Spacer()
                     Text("Yes")
-                        .font(.custom("Crimson Pro", size: 18))
+                        .font(.custom(settings.font.bodyFont, size: 18))
                     Spacer()
                 }
                 Button {
@@ -39,7 +40,7 @@ struct DeleteTaskView: View {
                 } label: {
                     Spacer()
                     Text("No")
-                        .font(.custom("Crimson Pro", size: 18))
+                        .font(.custom(settings.font.bodyFont, size: 18))
                     Spacer()
                 }
             }
@@ -54,20 +55,21 @@ struct TasksView: View {
     @Binding var todos: [Todo]
     @State var addTask: Bool = false
     @State var tasks: String = ""
+    @Binding var settings: SettingData
     
     var task: some View {
         VStack {
             HStack {
                 Text("_Add Task_")
-                    .font(.custom("Playfair Display", size: 30))
+                    .font(.custom(settings.font.titleFont, size: 30))
                 Spacer()
             }
             
             HStack {
                 Text("Task:")
-                    .font(.custom("Crimson Pro", size: 18))
+                    .font(.custom(settings.font.bodyFont, size: 18))
                 TextField("A. Maths Topical", text: $tasks)
-                    .font(.custom("Crimson Pro", size: 18))
+                    .font(.custom(settings.font.bodyFont, size: 18))
                     .textFieldStyle(.roundedBorder)
             }
             
@@ -80,7 +82,7 @@ struct TasksView: View {
                     Spacer()
                     Image(systemName: "plus")
                     Text("Add task")
-                        .font(.custom("Crimson Pro", size: 18))
+                        .font(.custom(settings.font.bodyFont, size: 18))
                     Spacer()
                 }
             }
@@ -93,7 +95,7 @@ struct TasksView: View {
         VStack {
             HStack {
                 Text("_Tasks_")
-                    .font(.custom("Playfair Display", size: 36))
+                    .font(.custom(settings.font.titleFont, size: 36))
                 Spacer()
             }
             VStack {
@@ -105,7 +107,7 @@ struct TasksView: View {
                             Image(systemName: todo.completed ? "checkmark.circle" : "circle")
                         }
                         TextField("Task", text: $todo.task)
-                            .font(.custom("Crimson Pro", size: 18))
+                            .font(.custom(settings.font.bodyFont, size: 18))
                             .textFieldStyle(.roundedBorder)
                         
                         if todos.count != 1 {
@@ -115,7 +117,7 @@ struct TasksView: View {
                                 Image(systemName: "trash")
                             }
                             .popover(isPresented: $todo.showDeletePopup) {
-                                DeleteTaskView(todoToDelete: $todo, todos: $todos)
+                                DeleteTaskView(todoToDelete: $todo, todos: $todos, settings: $settings)
                             }
                         }
                     }
@@ -129,7 +131,7 @@ struct TasksView: View {
                             Spacer()
                             Image(systemName: "plus")
                             Text("Add task")
-                                .font(.custom("Crimson Pro", size: 18))
+                                .font(.custom(settings.font.bodyFont, size: 18))
                             Spacer()
                         }
                         .frame(height: 40)
@@ -147,6 +149,6 @@ struct TasksView: View {
 
 struct TasksView_Previews: PreviewProvider {
     static var previews: some View {
-        TasksView(todos: .constant([Todo(task: "physics", priority: 1, completed: true), Todo(task: "physics", priority: 1, completed: true), Todo(task: "physics", priority: 1, completed: true)]))
+        TasksView(todos: .constant([Todo(task: "physics", priority: 1, completed: true), Todo(task: "physics", priority: 1, completed: true), Todo(task: "physics", priority: 1, completed: true)]), settings: .constant(SettingData()))
     }
 }

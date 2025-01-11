@@ -15,9 +15,18 @@
 - Sunspot
 - Prism
 - Mirage
-- AtlasS
+- Atlas
 - Azimuth
 - Compass
+- Helios
+- Beacon
+- Meridian
+- Radiance
+- Luminary
+- Aurora
+- Nimbus
+- Heliosphere
+- Photon
 
 ## macOS
 
@@ -28,12 +37,22 @@
 - Solstice Cosmos (v4.0)
 
 ### Minor
-- Orion
+- Orion (v1.1)
+- Eclipse (v1.2)
 - Lunar
 - Stellar
 - Nova
 - Astral
-- Eclipse
 - Lyra
 - Perseus
 - Hydra
+- Carina
+- Centaurus
+- Polaris
+- Arcturus
+- Rigel
+- Antares
+- Sirius
+- Altair
+- Bellatrix
+- Callisto

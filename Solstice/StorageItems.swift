@@ -15,12 +15,19 @@ struct Todo: Identifiable, Codable, Equatable {
     var showDeletePopup: Bool = false
 }
 
+struct ClockFont: Codable {
+    var titleFont: String = "Playfair Display"
+    var bodyFont: String = "Crimson Pro"
+    var clockFont: String = "Crimson Pro"
+}
+
 struct SettingData: Codable {
     var background: String = "Default"
     var pomodoroDuration: [Int] = [25, 0]
     var shortBreakDuration: [Int] = [5, 0]
     var longBreakDuration: [Int] = [10, 0]
     var cyclesBeforeLongBreak: Int = 4
+    var font: ClockFont = ClockFont()
 }
 
 enum TimerMode {
