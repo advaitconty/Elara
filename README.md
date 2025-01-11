@@ -1,4 +1,4 @@
-![banner](banner.png)
+![banner](https://cloud-mwkenbgpu-hack-club-bot.vercel.app/0banner.png)
 
 Introducing Solstice, the ultimate tracker. This is literally the only aesthetic pomodoro tracker you will ever need.
 
