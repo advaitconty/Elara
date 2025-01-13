@@ -1,4 +1,4 @@
-![banner](https://cloud-mwkenbgpu-hack-club-bot.vercel.app/0banner.png)
+![banner](https://github.com/user-attachments/assets/d871c527-cbad-461d-854a-785375940892)
 
 Introducing Solstice, the ultimate tracker. This is literally the only aesthetic pomodoro tracker you will ever need.
 
@@ -12,18 +12,18 @@ For the iPad app, check out [Solstice for iPad](https://www.github.com/contyadva
 
 Custom about screen (not really a feature but whatever)
 
-![About me](Screenshots/About.png)
+<img width="902" alt="About" src="https://github.com/user-attachments/assets/1bb28797-4ce8-4f07-82cd-4e02005cbbed" />
 
 Customisable backgrounds (through the ones provided in settings)
 
-![Custom backgrounds](Screenshots/Backgrounds.png)
+<img width="1636" alt="Backgrounds" src="https://github.com/user-attachments/assets/ab1f70dc-3068-4004-bd52-729ce23903dd" />
 
 Completely customisable lengths for pomodoros and breaks
 
-![Settings](Screenshots/Settings.png)
+<img width="1634" alt="Settings" src="https://github.com/user-attachments/assets/3fec8668-23df-4830-981f-ebee857b4d50" />
 
 A completely custom aesthetic theme (from the start)
 
-![Intro](Screenshots/Intro.png)
+<img width="1633" alt="Intro" src="https://github.com/user-attachments/assets/69dcf435-b2b4-4a4f-8dcf-de248f1014c7" />
 
 (Figma file provided since App Icon was designed in Figma)
