@@ -1,0 +1,88 @@
+h1, h2, h3 {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: white !important;
+    text-align: left !important;
+}
+  
+.app-icon {
+    width: 150px;
+    height: 150px;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("Images/alena-aenami-horizon-1k.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.intro {
+    font-family: "Crimson Pro", serif;
+    font-optical-sizing: auto;
+    font-size: large;
+    font-weight: 400;
+    font-style: normal;
+    color: white !important;
+}
+
+.container {
+    padding: 50px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow: auto; /* Ensures content is scrollable */
+}
+
+.features {
+    color: white !important;
+    text-align: left !important;
+}
+
+p {
+    font-family: "Crimson Pro", sans-serif;
+    font-size: large;
+    color: white !important;
+}
+
+.card {
+    max-width: 75%;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.7) !important; 
+    border-color: white;
+    border-width: 3px;
+    border-style: solid;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+    border-radius: 15px !important;
+    color: white;
+}
+
+.screenshot {
+    width: 500px;
+}
+
+.span {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin-top: 10px; /* Smaller margin for smaller screens */
+    }
+}
+
+@media (min-width: 769px) {
+    .container {
+        margin-top: 20px;
+    }
+}
