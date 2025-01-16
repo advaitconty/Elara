@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "forever",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jiachenyee/forever",
+      "state" : {
+        "branch" : "main",
+        "revision" : "fc08a96f42c473fa6d5ded5b485de68c542650be"
+      }
+    }
+  ],
+  "version" : 2
+}

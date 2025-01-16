@@ -6,7 +6,7 @@ Introducing Solstice, the ultimate tracker. This is literally the only aesthetic
 
 Click [here (releases tab)](https://github.com/contyadvait/Solstice/releases) to download the app. You may recieve warnings that this app is not secure but it is (review the code yourself if you want to validate this)
 
-For the iPad app, check out [Solstice for iPad](https://www.github.com/contyadvait/Solstice-iPad)
+For the iPad app, refer to the Solstice for iPad folder and run the Swift Playground file from there
 
 ## Features
 
