@@ -1,27 +1,32 @@
-![banner](banner.png)
+![banner](https://cloud-1ic9hmr97-hack-club-bot.vercel.app/5banner.png)
 
 Introducing Solstice, the ultimate tracker. This is literally the only aesthetic pomodoro tracker you will ever need.
 
 ## Download
 
 Since this is the iPad app, please use the Swift Playground file to run it
+I will publish it on the App Store soon, through my Cider grant.
+
+For the macOS app, please check the root directory
 
 ## Features
 
-Custom about screen (not really a feature but whatever)
+An aesthetic time tracker for your pomodoros
 
-![About me](Screenshots/About.png)
+![Pomodoro](https://cloud-h5biayn6r-hack-club-bot.vercel.app/0img_1816.png)
 
-Customisable backgrounds (through the ones provided in settings)
+Completely aesthetic start screen from the start
 
-![Custom backgrounds](Screenshots/Backgrounds.png)
+![Start](https://cloud-fk1b1f6vq-hack-club-bot.vercel.app/4img_1811.png)
 
-Completely customisable lengths for pomodoros and breaks
+Infinite task lists
 
-![Settings](Screenshots/Settings.png)
+![Tasks](https://cloud-fk1b1f6vq-hack-club-bot.vercel.app/3img_1812.png)
 
-A completely custom aesthetic theme (from the start)
+Customisable pomodoro durations in settings
 
-![Intro](Screenshots/Intro.png)
+![PomodoroTime](https://cloud-fk1b1f6vq-hack-club-bot.vercel.app/2img_1813.png)
 
-(Figma file provided since App Icon was designed in Figma)
+Custom clock mode for the times you just wanna relax
+
+![Clock](https://cloud-fk1b1f6vq-hack-club-bot.vercel.app/0img_1815.png)
