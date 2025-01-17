@@ -1,4 +1,4 @@
-<a href="https://ibb.co/grxJBhW"><img src="https://i.ibb.co/6ykFfLt/banner.png" alt="banner" border="0"></a>
+![banner](https://cloud-1ic9hmr97-hack-club-bot.vercel.app/5banner.png)
 
 Introducing Solstice, the ultimate tracker. This is literally the only aesthetic pomodoro tracker you will ever need.
 
@@ -12,20 +12,23 @@ For the iPad app, refer to the Solstice for iPad folder and run the Swift Playgr
 
 Custom about screen (not really a feature but whatever)
 
-<a href="https://ibb.co/M1hCmjs"><img src="https://i.ibb.co/FYWDFfK/About.png" alt="About" border="0"></a>
+![About](https://cloud-1ic9hmr97-hack-club-bot.vercel.app/4screenshot_2025-01-17_at_4.50.19_pm.png)
 
+Customisable backgrounds, pomodoro lengths and breaks
 
+![Settings](https://cloud-1ic9hmr97-hack-club-bot.vercel.app/3screenshot_2025-01-17_at_4.49.53_pm.png)
 
-Customisable backgrounds (through the ones provided in settings)
+An aesthetic pomodoro theme (from the start of the app)
 
-<a href="https://ibb.co/x5P6CP5"><img src="https://i.ibb.co/mz14D1z/Backgrounds.png" alt="Backgrounds" border="0"></a>
+![Pomodoro](https://cloud-1ic9hmr97-hack-club-bot.vercel.app/0screenshot_2025-01-17_at_4.49.00_pm.png)
 
-Completely customisable lengths for pomodoros and breaks
+Clock mode for when you just wanna relax
 
-<a href="https://ibb.co/52HZJqF"><img src="https://i.ibb.co/b79tGpJ/Settings.png" alt="Settings" border="0"></a>
+![Clock](https://cloud-1ic9hmr97-hack-club-bot.vercel.app/2screenshot_2025-01-17_at_4.49.32_pm.png)
 
-A completely custom aesthetic theme (from the start)
+Task tracking to remind the task to focus on
 
-<a href="https://ibb.co/XFwF8bD"><img src="https://i.ibb.co/5s7sF6k/Intro.png" alt="Intro" border="0"></a>
+![Tasks](https://cloud-1ic9hmr97-hack-club-bot.vercel.app/1screenshot_2025-01-17_at_4.49.12_pm.png)
+
 
 (Figma file provided since App Icon was designed in Figma)
