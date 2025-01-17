@@ -1,4 +1,4 @@
-![banner](https://github.com/user-attachments/assets/d871c527-cbad-461d-854a-785375940892)
+<a href="https://ibb.co/grxJBhW"><img src="https://i.ibb.co/6ykFfLt/banner.png" alt="banner" border="0"></a>
 
 Introducing Solstice, the ultimate tracker. This is literally the only aesthetic pomodoro tracker you will ever need.
 
@@ -12,18 +12,20 @@ For the iPad app, refer to the Solstice for iPad folder and run the Swift Playgr
 
 Custom about screen (not really a feature but whatever)
 
-<img width="902" alt="About" src="https://github.com/user-attachments/assets/1bb28797-4ce8-4f07-82cd-4e02005cbbed" />
+<a href="https://ibb.co/M1hCmjs"><img src="https://i.ibb.co/FYWDFfK/About.png" alt="About" border="0"></a>
+
+
 
 Customisable backgrounds (through the ones provided in settings)
 
-<img width="1636" alt="Backgrounds" src="https://github.com/user-attachments/assets/ab1f70dc-3068-4004-bd52-729ce23903dd" />
+<a href="https://ibb.co/x5P6CP5"><img src="https://i.ibb.co/mz14D1z/Backgrounds.png" alt="Backgrounds" border="0"></a>
 
 Completely customisable lengths for pomodoros and breaks
 
-<img width="1634" alt="Settings" src="https://github.com/user-attachments/assets/3fec8668-23df-4830-981f-ebee857b4d50" />
+<a href="https://ibb.co/52HZJqF"><img src="https://i.ibb.co/b79tGpJ/Settings.png" alt="Settings" border="0"></a>
 
 A completely custom aesthetic theme (from the start)
 
-<img width="1633" alt="Intro" src="https://github.com/user-attachments/assets/69dcf435-b2b4-4a4f-8dcf-de248f1014c7" />
+<a href="https://ibb.co/XFwF8bD"><img src="https://i.ibb.co/5s7sF6k/Intro.png" alt="Intro" border="0"></a>
 
 (Figma file provided since App Icon was designed in Figma)
