@@ -8,6 +8,7 @@ struct SettingsView: View {
     @Binding var data: SettingData
     @Environment(\.dismiss) var dismiss
     @State var description: String = "Loading..."
+    @State var showAbout = false
     
     var body: some View {
         VStack {
@@ -229,6 +230,32 @@ struct SettingsView: View {
                         }
                         .buttonStyle(.bordered)
                     }
+                    
+                    VStack {
+                        HStack {
+                            Text("_About_")
+                                .font(.custom(data.font.titleFont, size: 20))
+                            Spacer()
+                        }
+                        VStack {
+                            Button {
+                                showAbout = true
+                            } label: {
+                                HStack {
+                                    Spacer()
+                                    Image(systemName: "info.circle")
+                                    Text("About _Solstice_")
+                                        .font(.custom(data.font.bodyFont, size: 18))
+                                    Spacer()
+                                }
+                                .padding()
+                            }
+                        }
+                        .sheet(isPresented: $showAbout) {
+                            AboutView()
+                        }
+                    }
+
                 }
             }
         }

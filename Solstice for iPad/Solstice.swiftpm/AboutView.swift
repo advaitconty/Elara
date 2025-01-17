@@ -57,12 +57,12 @@ struct AboutView: View {
                         Spacer()
                     }
                     HStack {
-                        Text("_Nebula_ v1.2")
+                        Text("_Phoenix_ v1.1")
                             .font(.custom("Playfair Display", size: 20))
                         Spacer()
                     }
                     HStack {
-                        Text("_Update Eclipse_")
+                        Text("_Update Sundial_")
                             .font(.custom("Playfair Display", size: 20))
                         Spacer()
                     }
@@ -90,11 +90,9 @@ struct AboutView: View {
                         }
                         Divider()
                         VStack(spacing: 10) {
-                            updateNotesGenerator(updateName: "Solstice Nebula v1.2 _Update Eclipse_", updateCodename: "Update Eclipse", features: ["NEW: Clock mode", "NEW: Custom fonts (available in settings)", "NEW: Reset switch"], bugFix: false)
+                            updateNotesGenerator(updateName: "Solstice Phoenix v1.1 _Update Sundial_", updateCodename: "Update Sundial", features: ["UPDATE: Parity with the macOS Version", "NEW: Clock mode", "NEW: Custom fonts (available in settings)", "NEW: Reset switch"], bugFix: false)
                                                         
-                            updateNotesGenerator(updateName: "Solstice Nebula v1.1.1 _Update Orion_", updateCodename: "Update Orion", features: [], bugFix: true)
-                                                        
-                            updateNotesGenerator(updateName: "Solstice Nebula v1.1 _Update Orion_", updateCodename: "Update Orion", features: ["UPGRADE: Infinite task lists"], bugFix: false)
+                            updateNotesGenerator(updateName: "Solstice Phoenix v1.0", updateCodename: "Initial Release", features: ["NEW: The start of Solstice"], bugFix: false)
                         }
                     }
                     .padding()
