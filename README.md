@@ -1,4 +1,4 @@
->[!info] Update
+>## Update
 >This project has been renamed Elara for publishing on the App Store. Not everything has undergone this change yet, but it will happen soon
 
 ![banner](https://cloud-1ic9hmr97-hack-club-bot.vercel.app/5banner.png)
