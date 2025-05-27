@@ -9,7 +9,7 @@
 - Solstice Corona (v4.0)
 
 ### Minor
-- Sundial
+- Sundial (v1.1)
 - Horizon
 - Daybreak
 - Sunspot
@@ -38,7 +38,7 @@
 
 ### Minor
 - Orion (v1.1)
-- Eclipse (v1.2)
+- Eclipse
 - Lunar
 - Stellar
 - Nova

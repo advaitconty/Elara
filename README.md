@@ -3,6 +3,8 @@
 
 Introducing Elara, the ultimate pomodoro tracker for iPadOS and MacOS.
 
+> _This app may still have references to Solstice, due to the previous name being Solstice before being published on the App Store as Elara_
+
 ## Download
 [Download it on the app store!](https://apps.apple.com/us/app/elara/id6745421296)
 
