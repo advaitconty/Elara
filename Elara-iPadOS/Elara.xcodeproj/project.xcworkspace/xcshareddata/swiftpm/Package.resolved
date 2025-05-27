@@ -1,0 +1,15 @@
+{
+  "originHash" : "70bd0f4f702239698207a9e8ee017e42ef4cb49daaf574d348b72ac63e3ef3cd",
+  "pins" : [
+    {
+      "identity" : "forever",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jiachenyee/Forever.git",
+      "state" : {
+        "revision" : "90274e87842722d9b79e61431cbbef1c418944b6",
+        "version" : "1.1.0"
+      }
+    }
+  ],
+  "version" : 3
+}

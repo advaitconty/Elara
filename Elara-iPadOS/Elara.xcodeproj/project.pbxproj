@@ -1,0 +1,501 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F15DFE2E2DC64F9900D88BBB /* Forever in Frameworks */ = {isa = PBXBuildFile; productRef = F15DFE2D2DC64F9900D88BBB /* Forever */; };
+		F15DFE522DC6576300D88BBB /* FontLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DFE4B2DC6576300D88BBB /* FontLoader.swift */; };
+		F15DFE532DC6576300D88BBB /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DFE4F2DC6576300D88BBB /* TasksView.swift */; };
+		F15DFE542DC6576300D88BBB /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DFE4D2DC6576300D88BBB /* SetupView.swift */; };
+		F15DFE552DC6576300D88BBB /* ElaraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DFE4A2DC6576300D88BBB /* ElaraApp.swift */; };
+		F15DFE562DC6576300D88BBB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DFE492DC6576300D88BBB /* ContentView.swift */; };
+		F15DFE572DC6576300D88BBB /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DFE502DC6576300D88BBB /* TimerView.swift */; };
+		F15DFE582DC6576300D88BBB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DFE4C2DC6576300D88BBB /* SettingsView.swift */; };
+		F15DFE592DC6576300D88BBB /* StorageItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DFE4E2DC6576300D88BBB /* StorageItems.swift */; };
+		F15DFE5A2DC6576300D88BBB /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DFE472DC6576300D88BBB /* AboutView.swift */; };
+		F15DFE5B2DC6576300D88BBB /* London Underground LCD Clock.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F15DFE3E2DC6576300D88BBB /* London Underground LCD Clock.ttf */; };
+		F15DFE5C2DC6576300D88BBB /* ChakraPetch-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F15DFE372DC6576300D88BBB /* ChakraPetch-MediumItalic.ttf */; };
+		F15DFE5D2DC6576300D88BBB /* ChakraPetch-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F15DFE352DC6576300D88BBB /* ChakraPetch-LightItalic.ttf */; };
+		F15DFE5E2DC6576300D88BBB /* PlayfairDisplay-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F15DFE402DC6576300D88BBB /* PlayfairDisplay-VariableFont_wght.ttf */; };
+		F15DFE5F2DC6576300D88BBB /* PlaywriteAUSA-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F15DFE412DC6576300D88BBB /* PlaywriteAUSA-VariableFont_wght.ttf */; };
+		F15DFE602DC6576300D88BBB /* ChakraPetch-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F15DFE362DC6576300D88BBB /* ChakraPetch-Medium.ttf */; };
+		F15DFE612DC6576300D88BBB /* Doto-VariableFont_ROND,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F15DFE3D2DC6576300D88BBB /* Doto-VariableFont_ROND,wght.ttf */; };
+		F15DFE622DC6576300D88BBB /* CrimsonPro-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F15DFE3B2DC6576300D88BBB /* CrimsonPro-Italic-VariableFont_wght.ttf */; };
+		F15DFE632DC6576300D88BBB /* ChakraPetch-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F15DFE342DC6576300D88BBB /* ChakraPetch-Light.ttf */; };
+		F15DFE642DC6576300D88BBB /* ChakraPetch-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F15DFE332DC6576300D88BBB /* ChakraPetch-Italic.ttf */; };
+		F15DFE652DC6576300D88BBB /* ShareTechMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F15DFE442DC6576300D88BBB /* ShareTechMono-Regular.ttf */; };
+		F15DFE662DC6576300D88BBB /* ChakraPetch-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F15DFE392DC6576300D88BBB /* ChakraPetch-SemiBold.ttf */; };
+		F15DFE672DC6576300D88BBB /* SpaceGrotesk-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F15DFE452DC6576300D88BBB /* SpaceGrotesk-VariableFont_wght.ttf */; };
+		F15DFE682DC6576300D88BBB /* ChakraPetch-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F15DFE382DC6576300D88BBB /* ChakraPetch-Regular.ttf */; };
+		F15DFE692DC6576300D88BBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F15DFE482DC6576300D88BBB /* Assets.xcassets */; };
+		F15DFE6A2DC6576300D88BBB /* PublicSans-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F15DFE432DC6576300D88BBB /* PublicSans-VariableFont_wght.ttf */; };
+		F15DFE6B2DC6576300D88BBB /* CrimsonPro-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F15DFE3C2DC6576300D88BBB /* CrimsonPro-VariableFont_wght.ttf */; };
+		F15DFE6C2DC6576300D88BBB /* ChakraPetch-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F15DFE322DC6576300D88BBB /* ChakraPetch-BoldItalic.ttf */; };
+		F15DFE6D2DC6576300D88BBB /* ChakraPetch-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F15DFE312DC6576300D88BBB /* ChakraPetch-Bold.ttf */; };
+		F15DFE6E2DC6576300D88BBB /* PlayfairDisplay-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F15DFE3F2DC6576300D88BBB /* PlayfairDisplay-Italic-VariableFont_wght.ttf */; };
+		F15DFE6F2DC6576300D88BBB /* PublicSans-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F15DFE422DC6576300D88BBB /* PublicSans-Italic-VariableFont_wght.ttf */; };
+		F15DFE702DC6576300D88BBB /* ChakraPetch-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F15DFE3A2DC6576300D88BBB /* ChakraPetch-SemiBoldItalic.ttf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F15DFDDF2DC64F3300D88BBB /* Elara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elara.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F15DFE312DC6576300D88BBB /* ChakraPetch-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-Bold.ttf"; sourceTree = "<group>"; };
+		F15DFE322DC6576300D88BBB /* ChakraPetch-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-BoldItalic.ttf"; sourceTree = "<group>"; };
+		F15DFE332DC6576300D88BBB /* ChakraPetch-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-Italic.ttf"; sourceTree = "<group>"; };
+		F15DFE342DC6576300D88BBB /* ChakraPetch-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-Light.ttf"; sourceTree = "<group>"; };
+		F15DFE352DC6576300D88BBB /* ChakraPetch-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-LightItalic.ttf"; sourceTree = "<group>"; };
+		F15DFE362DC6576300D88BBB /* ChakraPetch-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-Medium.ttf"; sourceTree = "<group>"; };
+		F15DFE372DC6576300D88BBB /* ChakraPetch-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-MediumItalic.ttf"; sourceTree = "<group>"; };
+		F15DFE382DC6576300D88BBB /* ChakraPetch-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-Regular.ttf"; sourceTree = "<group>"; };
+		F15DFE392DC6576300D88BBB /* ChakraPetch-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-SemiBold.ttf"; sourceTree = "<group>"; };
+		F15DFE3A2DC6576300D88BBB /* ChakraPetch-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		F15DFE3B2DC6576300D88BBB /* CrimsonPro-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CrimsonPro-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		F15DFE3C2DC6576300D88BBB /* CrimsonPro-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CrimsonPro-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		F15DFE3D2DC6576300D88BBB /* Doto-VariableFont_ROND,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Doto-VariableFont_ROND,wght.ttf"; sourceTree = "<group>"; };
+		F15DFE3E2DC6576300D88BBB /* London Underground LCD Clock.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "London Underground LCD Clock.ttf"; sourceTree = "<group>"; };
+		F15DFE3F2DC6576300D88BBB /* PlayfairDisplay-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		F15DFE402DC6576300D88BBB /* PlayfairDisplay-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		F15DFE412DC6576300D88BBB /* PlaywriteAUSA-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlaywriteAUSA-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		F15DFE422DC6576300D88BBB /* PublicSans-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PublicSans-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		F15DFE432DC6576300D88BBB /* PublicSans-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PublicSans-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		F15DFE442DC6576300D88BBB /* ShareTechMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ShareTechMono-Regular.ttf"; sourceTree = "<group>"; };
+		F15DFE452DC6576300D88BBB /* SpaceGrotesk-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceGrotesk-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		F15DFE472DC6576300D88BBB /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		F15DFE482DC6576300D88BBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F15DFE492DC6576300D88BBB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F15DFE4A2DC6576300D88BBB /* ElaraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElaraApp.swift; sourceTree = "<group>"; };
+		F15DFE4B2DC6576300D88BBB /* FontLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontLoader.swift; sourceTree = "<group>"; };
+		F15DFE4C2DC6576300D88BBB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F15DFE4D2DC6576300D88BBB /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
+		F15DFE4E2DC6576300D88BBB /* StorageItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageItems.swift; sourceTree = "<group>"; };
+		F15DFE4F2DC6576300D88BBB /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
+		F15DFE502DC6576300D88BBB /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F15DFDDC2DC64F3300D88BBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F15DFE2E2DC64F9900D88BBB /* Forever in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F15DFDD62DC64F3300D88BBB = {
+			isa = PBXGroup;
+			children = (
+				F15DFE512DC6576300D88BBB /* Elara */,
+				F15DFDE02DC64F3300D88BBB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F15DFDE02DC64F3300D88BBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F15DFDDF2DC64F3300D88BBB /* Elara.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F15DFE462DC6576300D88BBB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F15DFE312DC6576300D88BBB /* ChakraPetch-Bold.ttf */,
+				F15DFE322DC6576300D88BBB /* ChakraPetch-BoldItalic.ttf */,
+				F15DFE332DC6576300D88BBB /* ChakraPetch-Italic.ttf */,
+				F15DFE342DC6576300D88BBB /* ChakraPetch-Light.ttf */,
+				F15DFE352DC6576300D88BBB /* ChakraPetch-LightItalic.ttf */,
+				F15DFE362DC6576300D88BBB /* ChakraPetch-Medium.ttf */,
+				F15DFE372DC6576300D88BBB /* ChakraPetch-MediumItalic.ttf */,
+				F15DFE382DC6576300D88BBB /* ChakraPetch-Regular.ttf */,
+				F15DFE392DC6576300D88BBB /* ChakraPetch-SemiBold.ttf */,
+				F15DFE3A2DC6576300D88BBB /* ChakraPetch-SemiBoldItalic.ttf */,
+				F15DFE3B2DC6576300D88BBB /* CrimsonPro-Italic-VariableFont_wght.ttf */,
+				F15DFE3C2DC6576300D88BBB /* CrimsonPro-VariableFont_wght.ttf */,
+				F15DFE3D2DC6576300D88BBB /* Doto-VariableFont_ROND,wght.ttf */,
+				F15DFE3E2DC6576300D88BBB /* London Underground LCD Clock.ttf */,
+				F15DFE3F2DC6576300D88BBB /* PlayfairDisplay-Italic-VariableFont_wght.ttf */,
+				F15DFE402DC6576300D88BBB /* PlayfairDisplay-VariableFont_wght.ttf */,
+				F15DFE412DC6576300D88BBB /* PlaywriteAUSA-VariableFont_wght.ttf */,
+				F15DFE422DC6576300D88BBB /* PublicSans-Italic-VariableFont_wght.ttf */,
+				F15DFE432DC6576300D88BBB /* PublicSans-VariableFont_wght.ttf */,
+				F15DFE442DC6576300D88BBB /* ShareTechMono-Regular.ttf */,
+				F15DFE452DC6576300D88BBB /* SpaceGrotesk-VariableFont_wght.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F15DFE512DC6576300D88BBB /* Elara */ = {
+			isa = PBXGroup;
+			children = (
+				F15DFE462DC6576300D88BBB /* Resources */,
+				F15DFE472DC6576300D88BBB /* AboutView.swift */,
+				F15DFE482DC6576300D88BBB /* Assets.xcassets */,
+				F15DFE492DC6576300D88BBB /* ContentView.swift */,
+				F15DFE4A2DC6576300D88BBB /* ElaraApp.swift */,
+				F15DFE4B2DC6576300D88BBB /* FontLoader.swift */,
+				F15DFE4C2DC6576300D88BBB /* SettingsView.swift */,
+				F15DFE4D2DC6576300D88BBB /* SetupView.swift */,
+				F15DFE4E2DC6576300D88BBB /* StorageItems.swift */,
+				F15DFE4F2DC6576300D88BBB /* TasksView.swift */,
+				F15DFE502DC6576300D88BBB /* TimerView.swift */,
+			);
+			path = Elara;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F15DFDDE2DC64F3300D88BBB /* Elara */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F15DFDEA2DC64F3500D88BBB /* Build configuration list for PBXNativeTarget "Elara" */;
+			buildPhases = (
+				F15DFDDB2DC64F3300D88BBB /* Sources */,
+				F15DFDDC2DC64F3300D88BBB /* Frameworks */,
+				F15DFDDD2DC64F3300D88BBB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Elara;
+			packageProductDependencies = (
+				F15DFE2D2DC64F9900D88BBB /* Forever */,
+			);
+			productName = "Elara for iPadOS";
+			productReference = F15DFDDF2DC64F3300D88BBB /* Elara.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F15DFDD72DC64F3300D88BBB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1630;
+				LastUpgradeCheck = 1630;
+				TargetAttributes = {
+					F15DFDDE2DC64F3300D88BBB = {
+						CreatedOnToolsVersion = 16.3;
+						LastSwiftMigration = 1630;
+					};
+				};
+			};
+			buildConfigurationList = F15DFDDA2DC64F3300D88BBB /* Build configuration list for PBXProject "Elara" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F15DFDD62DC64F3300D88BBB;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				F15DFE2C2DC64F9900D88BBB /* XCRemoteSwiftPackageReference "Forever" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = F15DFDE02DC64F3300D88BBB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F15DFDDE2DC64F3300D88BBB /* Elara */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F15DFDDD2DC64F3300D88BBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F15DFE5B2DC6576300D88BBB /* London Underground LCD Clock.ttf in Resources */,
+				F15DFE5C2DC6576300D88BBB /* ChakraPetch-MediumItalic.ttf in Resources */,
+				F15DFE5D2DC6576300D88BBB /* ChakraPetch-LightItalic.ttf in Resources */,
+				F15DFE5E2DC6576300D88BBB /* PlayfairDisplay-VariableFont_wght.ttf in Resources */,
+				F15DFE5F2DC6576300D88BBB /* PlaywriteAUSA-VariableFont_wght.ttf in Resources */,
+				F15DFE602DC6576300D88BBB /* ChakraPetch-Medium.ttf in Resources */,
+				F15DFE612DC6576300D88BBB /* Doto-VariableFont_ROND,wght.ttf in Resources */,
+				F15DFE622DC6576300D88BBB /* CrimsonPro-Italic-VariableFont_wght.ttf in Resources */,
+				F15DFE632DC6576300D88BBB /* ChakraPetch-Light.ttf in Resources */,
+				F15DFE642DC6576300D88BBB /* ChakraPetch-Italic.ttf in Resources */,
+				F15DFE652DC6576300D88BBB /* ShareTechMono-Regular.ttf in Resources */,
+				F15DFE662DC6576300D88BBB /* ChakraPetch-SemiBold.ttf in Resources */,
+				F15DFE672DC6576300D88BBB /* SpaceGrotesk-VariableFont_wght.ttf in Resources */,
+				F15DFE682DC6576300D88BBB /* ChakraPetch-Regular.ttf in Resources */,
+				F15DFE692DC6576300D88BBB /* Assets.xcassets in Resources */,
+				F15DFE6A2DC6576300D88BBB /* PublicSans-VariableFont_wght.ttf in Resources */,
+				F15DFE6B2DC6576300D88BBB /* CrimsonPro-VariableFont_wght.ttf in Resources */,
+				F15DFE6C2DC6576300D88BBB /* ChakraPetch-BoldItalic.ttf in Resources */,
+				F15DFE6D2DC6576300D88BBB /* ChakraPetch-Bold.ttf in Resources */,
+				F15DFE6E2DC6576300D88BBB /* PlayfairDisplay-Italic-VariableFont_wght.ttf in Resources */,
+				F15DFE6F2DC6576300D88BBB /* PublicSans-Italic-VariableFont_wght.ttf in Resources */,
+				F15DFE702DC6576300D88BBB /* ChakraPetch-SemiBoldItalic.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F15DFDDB2DC64F3300D88BBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F15DFE522DC6576300D88BBB /* FontLoader.swift in Sources */,
+				F15DFE532DC6576300D88BBB /* TasksView.swift in Sources */,
+				F15DFE542DC6576300D88BBB /* SetupView.swift in Sources */,
+				F15DFE552DC6576300D88BBB /* ElaraApp.swift in Sources */,
+				F15DFE562DC6576300D88BBB /* ContentView.swift in Sources */,
+				F15DFE572DC6576300D88BBB /* TimerView.swift in Sources */,
+				F15DFE582DC6576300D88BBB /* SettingsView.swift in Sources */,
+				F15DFE592DC6576300D88BBB /* StorageItems.swift in Sources */,
+				F15DFE5A2DC6576300D88BBB /* AboutView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F15DFDE82DC64F3500D88BBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = MK2VQ82S9T;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F15DFDE92DC64F3500D88BBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = MK2VQ82S9T;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F15DFDEB2DC64F3500D88BBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 17;
+				DEVELOPMENT_TEAM = MK2VQ82S9T;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Elara;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.advaitconty.elara;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		F15DFDEC2DC64F3500D88BBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 17;
+				DEVELOPMENT_TEAM = MK2VQ82S9T;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Elara;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.advaitconty.elara;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F15DFDDA2DC64F3300D88BBB /* Build configuration list for PBXProject "Elara" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F15DFDE82DC64F3500D88BBB /* Debug */,
+				F15DFDE92DC64F3500D88BBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F15DFDEA2DC64F3500D88BBB /* Build configuration list for PBXNativeTarget "Elara" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F15DFDEB2DC64F3500D88BBB /* Debug */,
+				F15DFDEC2DC64F3500D88BBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F15DFE2C2DC64F9900D88BBB /* XCRemoteSwiftPackageReference "Forever" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jiachenyee/Forever.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F15DFE2D2DC64F9900D88BBB /* Forever */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F15DFE2C2DC64F9900D88BBB /* XCRemoteSwiftPackageReference "Forever" */;
+			productName = Forever;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = F15DFDD72DC64F3300D88BBB /* Project object */;
+}
