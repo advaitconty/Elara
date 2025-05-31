@@ -39,7 +39,22 @@
 		F15DFE6E2DC6576300D88BBB /* PlayfairDisplay-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F15DFE3F2DC6576300D88BBB /* PlayfairDisplay-Italic-VariableFont_wght.ttf */; };
 		F15DFE6F2DC6576300D88BBB /* PublicSans-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F15DFE422DC6576300D88BBB /* PublicSans-Italic-VariableFont_wght.ttf */; };
 		F15DFE702DC6576300D88BBB /* ChakraPetch-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F15DFE3A2DC6576300D88BBB /* ChakraPetch-SemiBoldItalic.ttf */; };
+		F1678A7D2DEAF71600DD9591 /* ScreenTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1678A7C2DEAF70F00DD9591 /* ScreenTimeManager.swift */; };
+		F1786D502DED973000E331E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1786D4E2DED973000E331E8 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F1678A7B2DEAF6E000DD9591 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F15DFDDF2DC64F3300D88BBB /* Elara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elara.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +89,12 @@
 		F15DFE4E2DC6576300D88BBB /* StorageItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageItems.swift; sourceTree = "<group>"; };
 		F15DFE4F2DC6576300D88BBB /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
 		F15DFE502DC6576300D88BBB /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		F1678A642DEAF5F400DD9591 /* Elara.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Elara.entitlements; sourceTree = "<group>"; };
+		F1678A6B2DEAF6E000DD9591 /* ManagedSettings.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ManagedSettings.framework; path = System/Library/Frameworks/ManagedSettings.framework; sourceTree = SDKROOT; };
+		F1678A6D2DEAF6E000DD9591 /* ManagedSettingsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ManagedSettingsUI.framework; path = System/Library/Frameworks/ManagedSettingsUI.framework; sourceTree = SDKROOT; };
+		F1678A7C2DEAF70F00DD9591 /* ScreenTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimeManager.swift; sourceTree = "<group>"; };
+		F1678A7E2DEAF76F00DD9591 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F1786D4E2DED973000E331E8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				F15DFE512DC6576300D88BBB /* Elara */,
+				F1678A6A2DEAF6E000DD9591 /* Frameworks */,
 				F15DFDE02DC64F3300D88BBB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -135,6 +157,10 @@
 		F15DFE512DC6576300D88BBB /* Elara */ = {
 			isa = PBXGroup;
 			children = (
+				F1786D4E2DED973000E331E8 /* LaunchScreen.storyboard */,
+				F1678A7E2DEAF76F00DD9591 /* Info.plist */,
+				F1678A7C2DEAF70F00DD9591 /* ScreenTimeManager.swift */,
+				F1678A642DEAF5F400DD9591 /* Elara.entitlements */,
 				F15DFE462DC6576300D88BBB /* Resources */,
 				F15DFE472DC6576300D88BBB /* AboutView.swift */,
 				F15DFE482DC6576300D88BBB /* Assets.xcassets */,
@@ -150,6 +176,15 @@
 			path = Elara;
 			sourceTree = "<group>";
 		};
+		F1678A6A2DEAF6E000DD9591 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F1678A6B2DEAF6E000DD9591 /* ManagedSettings.framework */,
+				F1678A6D2DEAF6E000DD9591 /* ManagedSettingsUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -160,6 +195,7 @@
 				F15DFDDB2DC64F3300D88BBB /* Sources */,
 				F15DFDDC2DC64F3300D88BBB /* Frameworks */,
 				F15DFDDD2DC64F3300D88BBB /* Resources */,
+				F1678A7B2DEAF6E000DD9591 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -180,7 +216,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1630;
+				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1630;
 				TargetAttributes = {
 					F15DFDDE2DC64F3300D88BBB = {
@@ -225,6 +261,7 @@
 				F15DFE612DC6576300D88BBB /* Doto-VariableFont_ROND,wght.ttf in Resources */,
 				F15DFE622DC6576300D88BBB /* CrimsonPro-Italic-VariableFont_wght.ttf in Resources */,
 				F15DFE632DC6576300D88BBB /* ChakraPetch-Light.ttf in Resources */,
+				F1786D502DED973000E331E8 /* LaunchScreen.storyboard in Resources */,
 				F15DFE642DC6576300D88BBB /* ChakraPetch-Italic.ttf in Resources */,
 				F15DFE652DC6576300D88BBB /* ShareTechMono-Regular.ttf in Resources */,
 				F15DFE662DC6576300D88BBB /* ChakraPetch-SemiBold.ttf in Resources */,
@@ -254,6 +291,7 @@
 				F15DFE552DC6576300D88BBB /* ElaraApp.swift in Sources */,
 				F15DFE562DC6576300D88BBB /* ContentView.swift in Sources */,
 				F15DFE572DC6576300D88BBB /* TimerView.swift in Sources */,
+				F1678A7D2DEAF71600DD9591 /* ScreenTimeManager.swift in Sources */,
 				F15DFE582DC6576300D88BBB /* SettingsView.swift in Sources */,
 				F15DFE592DC6576300D88BBB /* StorageItems.swift in Sources */,
 				F15DFE5A2DC6576300D88BBB /* AboutView.swift in Sources */,
@@ -391,11 +429,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Elara/Elara.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_TEAM = MK2VQ82S9T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Elara/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Elara;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -407,7 +447,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.advaitconty.elara;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -427,11 +467,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Elara/Elara.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_TEAM = MK2VQ82S9T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Elara/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Elara;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -443,7 +485,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.advaitconty.elara;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

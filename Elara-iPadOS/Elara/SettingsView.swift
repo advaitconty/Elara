@@ -1,6 +1,7 @@
 import SwiftUI
 import PhotosUI
 
+// MARK: Font Lists
 let availableClockFonts = ["Playfair Display",
                            "London Underground LCD Clock",
                            "Crimson Pro",
@@ -23,6 +24,8 @@ let availableFonts = ["Playfair Display",
                       "Playwrite Australia SA",
                       "Public Sans"]
 
+// MARK: SettingsView
+
 struct SettingsView: View {
     @Binding var data: SettingData
     @Environment(\.dismiss) var dismiss
@@ -44,6 +47,7 @@ struct SettingsView: View {
             )
     }
 
+// MARK: Photo Thumbnail Builder
     @ViewBuilder
     func customPhotoThumbnail() -> some View {
         if let imageData = data.backgroundImageData, let uiImage = UIImage(data: imageData) {

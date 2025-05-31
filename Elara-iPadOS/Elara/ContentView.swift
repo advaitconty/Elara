@@ -16,7 +16,7 @@ struct ContentView: View {
             TimerView(todos: $todos, name: $name, settings: $settingsData)
                 .transition(.slide)
                 .preferredColorScheme(.dark)
-        }    
+        }
     }
 }
 

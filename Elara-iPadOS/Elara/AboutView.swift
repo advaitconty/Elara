@@ -97,7 +97,7 @@ struct AboutView: View {
                         }
                         Divider()
                         VStack(spacing: 10) {
-                            updateNotesGenerator(updateName: "Elara Nebula v1.1 (Update Sundial)", updateCodename: "Update Eclipse", features: ["NEW: Customisable wallpapers", "IMPROVED: General optimizations to the code"], bugFix: false)
+                            updateNotesGenerator(updateName: "Elara Nebula v1.1 (Update Sundial)", updateCodename: "Update Sundial", features: ["NEW: Customisable wallpapers", "IMPROVED: General optimizations to the code"], bugFix: false)
                         }
                     }
                     .padding()
