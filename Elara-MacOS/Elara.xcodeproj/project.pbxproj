@@ -35,6 +35,7 @@
 		2596A6802D1FFE0500B46466 /* CrimsonPro-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2596A67E2D1FFE0500B46466 /* CrimsonPro-VariableFont_wght.ttf */; };
 		2596A6832D20028000B46466 /* Forever in Frameworks */ = {isa = PBXBuildFile; productRef = 2596A6822D20028000B46466 /* Forever */; };
 		25AD490A2D21124800C36E8A /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AD49092D21124800C36E8A /* TimerView.swift */; };
+		F1786D532DEDC63C00E331E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1786D522DEDC41400E331E8 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		2596A67D2D1FFE0500B46466 /* CrimsonPro-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CrimsonPro-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		2596A67E2D1FFE0500B46466 /* CrimsonPro-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CrimsonPro-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		25AD49092D21124800C36E8A /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		F1786D522DEDC41400E331E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				259395272D213C140007C7D8 /* TasksView.swift */,
 				258A92792D203F8200D9D84E /* SetupView.swift */,
 				258A92772D203EDD00D9D84E /* StorageItems.swift */,
+				F1786D522DEDC41400E331E8 /* AppDelegate.swift */,
 				259395292D215CAF0007C7D8 /* SettingsView.swift */,
 				2596A66D2D1FFA0000B46466 /* Assets.xcassets */,
 				2596A6722D1FFA0000B46466 /* Solstice.entitlements */,
@@ -242,6 +245,7 @@
 				2596A66C2D1FF9FE00B46466 /* ContentView.swift in Sources */,
 				2596A66A2D1FF9FE00B46466 /* SolsticeApp.swift in Sources */,
 				258A927A2D203F8200D9D84E /* SetupView.swift in Sources */,
+				F1786D532DEDC63C00E331E8 /* AppDelegate.swift in Sources */,
 				258A92782D203EDD00D9D84E /* StorageItems.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

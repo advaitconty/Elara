@@ -149,8 +149,7 @@ struct TimerView: View {
                             .buttonStyle(.borderless)
                             .transition(.opacity)
 
-                            if minutes != settings.pomodoroDuration[0]
-                                || seconds != settings.pomodoroDuration[1]
+                            if minutes != settings.pomodoroDuration[0]                                || seconds != settings.pomodoroDuration[1]
                             {
                                 Button {
                                     cancelPendingNotification()

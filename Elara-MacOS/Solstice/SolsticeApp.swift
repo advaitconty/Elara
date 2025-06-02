@@ -8,9 +8,11 @@
 import SwiftUI
 import Forever
 import Cocoa
+import UserNotifications
 
 @main
 struct ElaraApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     @Forever("name") var name: String = ""
     @DontDie("todos") var todos: [Todo] = []
     @DontLeaveMe("setupPage") var setupPage = 1

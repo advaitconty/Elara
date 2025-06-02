@@ -78,19 +78,22 @@ struct AboutView: View {
                             Spacer()
                         }
                         HStack {
-                            Text("This contains all the changes done in the last update")
+                            Text("This contains all the changes done in the last few updates")
                                 .font(.custom("Crimson Pro", size: 17))
                             Spacer()
                         }
                         Divider()
                         VStack(spacing: 10) {
-                            updateNotesGenerator(updateName: "Elara Orion v1.1 (Update Sundial)", updateCodename: "Update Eclipse", features: ["NEW: Customisable wallpapers", "IMPROVED: General optimizations to the code", "IMPROVED: Better window resizing"], bugFix: false)
+                            updateNotesGenerator(updateName: "Elara Nebula v1.2 (Update Eclipse)", updateCodename: "Update Eclipse", features: ["NEW: Notifications for when your work is done"], bugFix: false)
+                            Divider()
+                            updateNotesGenerator(updateName: "Elara Nebula v1.1 (Update Sundial)", updateCodename: "Update Sundial", features: ["NEW: Customisable wallpapers", "IMPROVED: General optimizations to the code", "IMPROVED: Better window resizing"], bugFix: false)
                         }
                     }
                     .padding()
                 }
                 .background(Color.gray.opacity(0.2))
                 .frame(minHeight: 100)
+                .clipShape(RoundedRectangle(cornerRadius: 10.0))
 
             }
             
