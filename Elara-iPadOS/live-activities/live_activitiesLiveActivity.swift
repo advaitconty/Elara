@@ -29,50 +29,59 @@ struct live_activitiesAttributes: ActivityAttributes {
 }
 
 struct live_activitiesLiveActivity: Widget {
+    @State var size: CGSize = .zero
     @Environment(\.colorScheme) var colorScheme
+    
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: live_activitiesAttributes.self) { context in
-            ZStack {
-                Color.black
-                
-                VStack {
-                    HStack {
-                        ProgressView(value: context.state.timeDone, total: context.state.total)
-                            .tint(.accent)
-                            .progressViewStyle(.circular)
-                            .padding()
-                        VStack {
-                            HStack {
-                                Text("\(context.state.remainingMinutes):\(context.state.remainingSeconds)")
-                                    .font(.system(size: 36, weight: .bold, design: .serif))
-                                    .tint(.white)
-                                Spacer()
-                            }
-                            HStack {
-                                Text(context.state.workStatus)
-                                    .font(.system(size: 24, weight: .light, design: .serif))
-                                    .italic()
-                                    .tint(.white)
-                                Spacer()
-                            }
-                        }
-                        Spacer()
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: context.state.isRunning ? "pause.circle": "play.circle")
-                                .font(.system(size: 48))
-                        }
-                        .buttonStyle(.borderless)
-                        .tint(.white)
-                    }
-                    .padding()
-                    
-                    ProgressView(value: context.state.timeDone, total: context.state.total)
-                        .tint(.accent)
-                }
+//            ZStack {
+//                Color.black
+//                
+//                VStack {
+//                    HStack {
+//                        VStack {
+//                            HStack {
+//                                Text("\(context.state.remainingMinutes):\(context.state.remainingSeconds)")
+//                                    .font(.system(size: 36, weight: .bold, design: .serif))
+//                                    .foregroundStyle(.white)
+//                                Spacer()
+//                            }
+//                            HStack {
+//                                Text(context.state.workStatus)
+//                                    .font(.system(size: 24, weight: .light, design: .serif))
+//                                    .italic()
+//                                    .foregroundStyle(.white)
+//                                Spacer()
+//                            }
+//                        }
+//                        Spacer()
+//                        Button {
+//                            
+//                        } label: {
+//                            Image(systemName: context.state.isRunning ? "pause.circle": "play.circle")
+//                                .font(.system(size: 48))
+//                        }
+//                        .buttonStyle(.borderless)
+//                        .foregroundStyle(.white)
+//                    }
+//                    .padding()
+//                    
+//                    ProgressView(value: context.state.timeDone, total: context.state.total)
+//                        .tint(.accent)
+//                    
+//                    GeometryReader { proxy in
+//                        HStack {} // just an empty container to triggers the onAppear
+//                            .onAppear {
+//                                size = proxy.size
+//                                print(size)
+//                            }
+//                    }
+//                }
+//            }
+            VStack {
+                Text("Test")
             }
-            .activityBackgroundTint(Color.accent)
+                .activityBackgroundTint(Color.accent)
             .activitySystemActionForegroundColor(Color.black)
             
         } dynamicIsland: { context in
@@ -119,10 +128,3 @@ extension live_activitiesAttributes.ContentState {
     }
 }
 
-#Preview("Notification", as: .content, using: live_activitiesAttributes.preview) {
-    live_activitiesLiveActivity()
-} contentStates: {
-    live_activitiesAttributes.ContentState.work
-    live_activitiesAttributes.ContentState.shortBreak
-    live_activitiesAttributes.ContentState.longBreak
-}

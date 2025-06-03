@@ -8,7 +8,7 @@
 import WidgetKit
 import SwiftUI
 
-@main
+
 struct live_activitiesBundle: WidgetBundle {
     var body: some Widget {
         live_activitiesLiveActivity()

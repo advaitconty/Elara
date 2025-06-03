@@ -44,6 +44,8 @@
 		F1786D5A2DEDCF2600E331E8 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1786D592DEDCF2600E331E8 /* WidgetKit.framework */; };
 		F1786D5C2DEDCF2600E331E8 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1786D5B2DEDCF2600E331E8 /* SwiftUI.framework */; };
 		F1786D692DEDCF2900E331E8 /* live-activitiesExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F1786D582DEDCF2600E331E8 /* live-activitiesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F17CD7DC2DEEF01100111B75 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = F17CD7DB2DEEF01100111B75 /* Property List.plist */; };
+		F17CD7DD2DEEF01100111B75 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = F17CD7DB2DEEF01100111B75 /* Property List.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +114,8 @@
 		F1786D582DEDCF2600E331E8 /* live-activitiesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "live-activitiesExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1786D592DEDCF2600E331E8 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		F1786D5B2DEDCF2600E331E8 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		F17CD7DB2DEEF01100111B75 /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
+		F17CD7DE2DEEF1BD00111B75 /* live-activitiesExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "live-activitiesExtension.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -122,12 +126,21 @@
 			);
 			target = F1786D572DEDCF2500E331E8 /* live-activitiesExtension */;
 		};
+		F17CD7E32DEEF69D00111B75 /* Exceptions for "live-activities" folder in "Elara" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				live_activitiesBundle.swift,
+				live_activitiesLiveActivity.swift,
+			);
+			target = F15DFDDE2DC64F3300D88BBB /* Elara */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		F1786D5D2DEDCF2600E331E8 /* live-activities */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				F17CD7E32DEEF69D00111B75 /* Exceptions for "live-activities" folder in "Elara" target */,
 				F1786D6A2DEDCF2900E331E8 /* Exceptions for "live-activities" folder in "live-activitiesExtension" target */,
 			);
 			path = "live-activities";
@@ -159,6 +172,8 @@
 		F15DFDD62DC64F3300D88BBB = {
 			isa = PBXGroup;
 			children = (
+				F17CD7DE2DEEF1BD00111B75 /* live-activitiesExtension.entitlements */,
+				F17CD7DB2DEEF01100111B75 /* Property List.plist */,
 				F15DFE512DC6576300D88BBB /* Elara */,
 				F1786D5D2DEDCF2600E331E8 /* live-activities */,
 				F1678A6A2DEAF6E000DD9591 /* Frameworks */,
@@ -336,6 +351,7 @@
 				F15DFE5E2DC6576300D88BBB /* PlayfairDisplay-VariableFont_wght.ttf in Resources */,
 				F15DFE5F2DC6576300D88BBB /* PlaywriteAUSA-VariableFont_wght.ttf in Resources */,
 				F15DFE602DC6576300D88BBB /* ChakraPetch-Medium.ttf in Resources */,
+				F17CD7DD2DEEF01100111B75 /* Property List.plist in Resources */,
 				F15DFE612DC6576300D88BBB /* Doto-VariableFont_ROND,wght.ttf in Resources */,
 				F15DFE622DC6576300D88BBB /* CrimsonPro-Italic-VariableFont_wght.ttf in Resources */,
 				F15DFE632DC6576300D88BBB /* ChakraPetch-Light.ttf in Resources */,
@@ -360,6 +376,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F17CD7DC2DEEF01100111B75 /* Property List.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,12 +554,13 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Elara/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Elara;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -575,12 +593,13 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Elara/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Elara;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -602,14 +621,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "live-activitiesExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MK2VQ82S9T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "live-activities/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "live-activities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -630,14 +650,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "live-activitiesExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MK2VQ82S9T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "live-activities/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "live-activities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
