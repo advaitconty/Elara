@@ -41,7 +41,20 @@
 		F15DFE702DC6576300D88BBB /* ChakraPetch-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F15DFE3A2DC6576300D88BBB /* ChakraPetch-SemiBoldItalic.ttf */; };
 		F1678A7D2DEAF71600DD9591 /* ScreenTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1678A7C2DEAF70F00DD9591 /* ScreenTimeManager.swift */; };
 		F1786D502DED973000E331E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1786D4E2DED973000E331E8 /* LaunchScreen.storyboard */; };
+		F1786D5A2DEDCF2600E331E8 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1786D592DEDCF2600E331E8 /* WidgetKit.framework */; };
+		F1786D5C2DEDCF2600E331E8 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1786D5B2DEDCF2600E331E8 /* SwiftUI.framework */; };
+		F1786D692DEDCF2900E331E8 /* live-activitiesExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F1786D582DEDCF2600E331E8 /* live-activitiesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F1786D672DEDCF2900E331E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F15DFDD72DC64F3300D88BBB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F1786D572DEDCF2500E331E8;
+			remoteInfo = "live-activitiesExtension";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		F1678A7B2DEAF6E000DD9591 /* Embed Foundation Extensions */ = {
@@ -50,6 +63,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				F1786D692DEDCF2900E331E8 /* live-activitiesExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,7 +109,31 @@
 		F1678A7C2DEAF70F00DD9591 /* ScreenTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimeManager.swift; sourceTree = "<group>"; };
 		F1678A7E2DEAF76F00DD9591 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F1786D4E2DED973000E331E8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F1786D582DEDCF2600E331E8 /* live-activitiesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "live-activitiesExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1786D592DEDCF2600E331E8 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		F1786D5B2DEDCF2600E331E8 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F1786D6A2DEDCF2900E331E8 /* Exceptions for "live-activities" folder in "live-activitiesExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = F1786D572DEDCF2500E331E8 /* live-activitiesExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		F1786D5D2DEDCF2600E331E8 /* live-activities */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F1786D6A2DEDCF2900E331E8 /* Exceptions for "live-activities" folder in "live-activitiesExtension" target */,
+			);
+			path = "live-activities";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F15DFDDC2DC64F3300D88BBB /* Frameworks */ = {
@@ -106,6 +144,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F1786D552DEDCF2500E331E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1786D5C2DEDCF2600E331E8 /* SwiftUI.framework in Frameworks */,
+				F1786D5A2DEDCF2600E331E8 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -113,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				F15DFE512DC6576300D88BBB /* Elara */,
+				F1786D5D2DEDCF2600E331E8 /* live-activities */,
 				F1678A6A2DEAF6E000DD9591 /* Frameworks */,
 				F15DFDE02DC64F3300D88BBB /* Products */,
 			);
@@ -122,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				F15DFDDF2DC64F3300D88BBB /* Elara.app */,
+				F1786D582DEDCF2600E331E8 /* live-activitiesExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -181,6 +230,8 @@
 			children = (
 				F1678A6B2DEAF6E000DD9591 /* ManagedSettings.framework */,
 				F1678A6D2DEAF6E000DD9591 /* ManagedSettingsUI.framework */,
+				F1786D592DEDCF2600E331E8 /* WidgetKit.framework */,
+				F1786D5B2DEDCF2600E331E8 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -200,6 +251,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				F1786D682DEDCF2900E331E8 /* PBXTargetDependency */,
 			);
 			name = Elara;
 			packageProductDependencies = (
@@ -208,6 +260,28 @@
 			productName = "Elara for iPadOS";
 			productReference = F15DFDDF2DC64F3300D88BBB /* Elara.app */;
 			productType = "com.apple.product-type.application";
+		};
+		F1786D572DEDCF2500E331E8 /* live-activitiesExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1786D6B2DEDCF2900E331E8 /* Build configuration list for PBXNativeTarget "live-activitiesExtension" */;
+			buildPhases = (
+				F1786D542DEDCF2500E331E8 /* Sources */,
+				F1786D552DEDCF2500E331E8 /* Frameworks */,
+				F1786D562DEDCF2500E331E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				F1786D5D2DEDCF2600E331E8 /* live-activities */,
+			);
+			name = "live-activitiesExtension";
+			packageProductDependencies = (
+			);
+			productName = "live-activitiesExtension";
+			productReference = F1786D582DEDCF2600E331E8 /* live-activitiesExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -222,6 +296,9 @@
 					F15DFDDE2DC64F3300D88BBB = {
 						CreatedOnToolsVersion = 16.3;
 						LastSwiftMigration = 1630;
+					};
+					F1786D572DEDCF2500E331E8 = {
+						CreatedOnToolsVersion = 16.4;
 					};
 				};
 			};
@@ -243,6 +320,7 @@
 			projectRoot = "";
 			targets = (
 				F15DFDDE2DC64F3300D88BBB /* Elara */,
+				F1786D572DEDCF2500E331E8 /* live-activitiesExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -278,6 +356,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F1786D562DEDCF2500E331E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -298,7 +383,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F1786D542DEDCF2500E331E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F1786D682DEDCF2900E331E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F1786D572DEDCF2500E331E8 /* live-activitiesExtension */;
+			targetProxy = F1786D672DEDCF2900E331E8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F15DFDE82DC64F3500D88BBB /* Debug */ = {
@@ -497,6 +597,62 @@
 			};
 			name = Release;
 		};
+		F1786D6C2DEDCF2900E331E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MK2VQ82S9T;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "live-activities/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "live-activities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.advaitconty.elara.live-activities";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F1786D6D2DEDCF2900E331E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MK2VQ82S9T;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "live-activities/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "live-activities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.advaitconty.elara.live-activities";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -514,6 +670,15 @@
 			buildConfigurations = (
 				F15DFDEB2DC64F3500D88BBB /* Debug */,
 				F15DFDEC2DC64F3500D88BBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1786D6B2DEDCF2900E331E8 /* Build configuration list for PBXNativeTarget "live-activitiesExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1786D6C2DEDCF2900E331E8 /* Debug */,
+				F1786D6D2DEDCF2900E331E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
