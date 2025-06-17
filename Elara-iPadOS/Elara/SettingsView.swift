@@ -210,10 +210,12 @@ struct SettingsView: View {
                                 wallpaperImage(wallpaper)
                             }
                             .buttonStyle(.borderless)
+                            .hoverEffect(.automatic)
                         }
                         PhotosPicker(selection: $selectedItem, matching: .images) {
                             customPhotoThumbnail()
                         }
+                        .hoverEffect(.automatic)
                         .onChange(of: selectedItem) { newItem in
                             if let item = newItem {
                                 Task {
@@ -305,6 +307,7 @@ struct SettingsView: View {
                             }
                         }
                         .buttonStyle(.bordered)
+                        .hoverEffect(.automatic)
                         
                         Button {
                             about = true
@@ -317,6 +320,7 @@ struct SettingsView: View {
                             }
                         }
                         .buttonStyle(.bordered)
+                        .hoverEffect(.automatic)
                     }
                 }
             }

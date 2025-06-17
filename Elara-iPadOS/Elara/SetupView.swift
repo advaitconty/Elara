@@ -66,16 +66,9 @@ struct SetupView: View {
                                         .foregroundColor(.white)
                                     Spacer()
                                 }
-                                .background {
-                                    RoundedRectangle(cornerRadius: 5.0, style: .continuous)
-                                        .fill(Color.gray)
-                                        .opacity(0.5)
-                                        .blendMode(.overlay)
-                                        .shadow(radius: 3)
-                                }
                             }
                             .padding()
-                            .buttonStyle(.borderless)
+                            .buttonStyle(.bordered)
                         }
                         .transition(.opacity)
                         .alert("Your name is blank. Please enter something.", isPresented: $showError) {
@@ -111,16 +104,10 @@ struct SetupView: View {
                                             .foregroundColor(.white)
                                         Spacer()
                                     }
-                                    .background {
-                                        RoundedRectangle(cornerRadius: 5.0, style: .continuous)
-                                            .fill(Color.gray)
-                                            .opacity(0.5)
-                                            .blendMode(.overlay)
-                                            .shadow(radius: 3)
-                                    }
                                 }
+                                .hoverEffect(.automatic)
                                 .padding()
-                                .buttonStyle(.borderless)
+                                .buttonStyle(.bordered)
                                 Button {
                                     if task == "" {
                                         showError = true
@@ -140,16 +127,10 @@ struct SetupView: View {
                                             .foregroundColor(.white)
                                         Spacer()
                                     }
-                                    .background {
-                                        RoundedRectangle(cornerRadius: 5.0, style: .continuous)
-                                            .fill(Color.gray)
-                                            .opacity(0.5)
-                                            .blendMode(.overlay)
-                                            .shadow(radius: 3)
-                                    }
                                 }
                                 .padding()
-                                .buttonStyle(.borderless)
+                                .buttonStyle(.bordered)
+                                .hoverEffect(.automatic)
                             }
                         }
                         .transition(.opacity)

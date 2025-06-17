@@ -2,127 +2,148 @@ import SwiftUI
 import UserNotifications
 
 struct TimerView: View {
-    // MARK: – AppStorage / Namespace / Bindings
     @AppStorage("clock") var clock: Bool = false
+    @Environment(\.scenePhase) var scenePhase
     @Namespace var namespace
-
     @Binding var todos: [Todo]
     @Binding var name: String
     @Binding var settings: SettingData
-
-    // MARK: – Countdown State
-    // Use a single `remainingSeconds` value rather than separate minutes & seconds
-    @State private var remainingSeconds: Int = 0
-    @State private var countdownTimer: Timer? = nil
-    @State private var isRunning: Bool = false
-    @State private var currentTimerMode: TimerMode = .normal
-    @State private var cycles: Int = 0
-
-    // Derived computed properties for display
-    private var displayMinutes: Int {
-        max(0, remainingSeconds / 60)
+    @State var displayedTodo: Todo = Todo(task: "", priority: 4)
+    @State var showWelcomeBack: Bool = true
+    @State var showButton: Bool = false
+    @State var editTasks: Bool = false
+    @State var mouseConnected: Bool = false
+    @State var showSettings: Bool = false
+    @StateObject var pomodoroTimer: PomodoroTimer = PomodoroTimer()
+    @State var refreshTrigger: Int = 0
+    @State var clockTimer: ClockMode = ClockMode()
+    @State var recalcuatingDateInPause: Bool = false
+    let timer = Timer.publish(every: 0.25, on: .main, in: .common).autoconnect()
+    @State var loading = true
+    @State var shownTime: String = "25:00"
+    
+    func pause() {
+        pomodoroTimer.isRunning = false
+        pomodoroTimer.timePassedInSeconds = pomodoroTimer.remainingMinutes * 60 + pomodoroTimer.remainingSeconds + 1
     }
-    private var displaySeconds: Int {
-        max(0, remainingSeconds % 60)
+    
+    func resume() {
+        pomodoroTimer.isRunning = true
+        pomodoroTimer.timePassedInSeconds = nil
     }
-
-    // MARK: – “Working on” & UI State
-    @State private var displayedTodo: Todo = Todo(task: "", priority: 4)
-    @State private var showWelcomeBack: Bool = true
-    @State private var showButton: Bool = false
-    @State private var editTasks: Bool = false
-
-    // MARK: – Clock Mode State
-    @State private var currentTime: [String] = ["", ""]
-    let clockUpdateTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-
-    // MARK: – Settings Sheet
-    @State private var showSettings: Bool = false
-
-    // MARK: – For resuming if backgrounded
-    @State private var endDate: Date? = nil
-
+    
+    func refreshDisplayedTodo() {
+        for todo in todos where !todo.completed {
+            displayedTodo = todo
+            break
+        }
+    }
+    
     var body: some View {
         ZStack {
-            // MARK: – Background (Image or default color)
             if let data = settings.backgroundImageData,
                let uiImage = UIImage(data: data) {
                 Image(uiImage: uiImage)
                     .resizable()
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
-                    .onAppear {
-                        self.configureOnAppear()
-                    }
                     .transition(.opacity)
             } else {
                 Image(settings.background)
                     .resizable()
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
-                    .onAppear {
-                        self.configureOnAppear()
-                    }
                     .transition(.opacity)
             }
-
-            // MARK: – Main Content: Timer Mode vs Clock Mode
+            
             if !clock {
                 // ───────────────────────────────────────────────────────────
-                //                            TIMER MODE
+                //                          TIMER MODE
                 // ───────────────────────────────────────────────────────────
                 VStack {
                     Spacer()
-
-                    // “Welcome back” or current‐mode text
+                        .onChange(of: pomodoroTimer.formattedTime) {
+                            if pomodoroTimer.formattedTime == "00:00" {
+                                pomodoroTimer.isRunning = false
+                                if pomodoroTimer.timerMode == .normal {
+                                    pomodoroTimer.cycles += 1
+                                }
+                                if pomodoroTimer.cycles == settings.cyclesBeforeLongBreak {
+                                    pomodoroTimer.timerMode = .longBreak
+                                    pomodoroTimer.cycles = 0
+                                } else if pomodoroTimer.timerMode == .normal {
+                                    pomodoroTimer.timerMode = .shortBreak
+                                } else if pomodoroTimer.timerMode == .shortBreak {
+                                    pomodoroTimer.timerMode = .normal
+                                }
+                            }
+                        }
+                        .onReceive(timer) { _ in
+                            if !pomodoroTimer.isRunning {
+                                if let timePassedInSeconds = pomodoroTimer.timePassedInSeconds {
+                                    pomodoroTimer.timerEndTime = Date().addingTimeInterval(TimeInterval(timePassedInSeconds))
+                                } else {
+                                    switch pomodoroTimer.timerMode {
+                                    case .normal:
+                                        pomodoroTimer.timerEndTime = Date().addingTimeInterval(TimeInterval(settings.pomodoroDuration[0] * 60 + settings.pomodoroDuration[1] + 1))
+                                    case .shortBreak:
+                                        pomodoroTimer.timerEndTime = Date().addingTimeInterval(TimeInterval(settings.shortBreakDuration[0] * 60 + settings.shortBreakDuration[1] + 1))
+                                    case .longBreak:
+                                        pomodoroTimer.timerEndTime = Date().addingTimeInterval(TimeInterval(settings.longBreakDuration[0] * 60 + settings.longBreakDuration[1] + 1))
+                                    }
+                                }
+                            } else if pomodoroTimer.isRunning {
+                                pomodoroTimer.invokeRefresh.toggle()
+                            }
+                            shownTime = pomodoroTimer.formattedTime
+                        }
+                        .onAppear {
+                            pomodoroTimer.cycles = settings.cyclesBeforeLongBreak
+                            pomodoroTimer.timerEndTime = Date().addingTimeInterval(TimeInterval(settings.pomodoroDuration[0] * 60 + settings.pomodoroDuration[1] + 1))
+                            refreshDisplayedTodo()
+                            shownTime = String(format: "%02d:%02d", settings.pomodoroDuration[0], settings.pomodoroDuration[1])
+                        }
+                        .onChange(of: editTasks) {
+                            refreshDisplayedTodo()
+                        }
+                    
+                    // greetings my good sir
                     if showWelcomeBack {
                         Text("Welcome _back_, \(name).")
                             .transition(.opacity)
                             .font(.custom(settings.font.bodyFont, size: 20))
                             .foregroundColor(.white)
-                            .onAppear {
-                                self.refreshDisplayedTodo()
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                                    withAnimation { self.showWelcomeBack = false }
-                                }
-                            }
                     } else {
-                        Text(currentTimerMode.displayText)
+                        Text(pomodoroTimer.timerMode.displayText)
                             .font(.custom(settings.font.bodyFont, size: 20))
                             .foregroundColor(.white)
                             .transition(.opacity)
                     }
-
-                    // Countdown Display: MM:SS
-                    HStack {
-                        Text("\(displayMinutes)")
-                            .font(.custom(settings.font.clockFont, size: 100))
-                            .foregroundColor(.white)
-                            .offset(x: settings.font.clockFont == "London Underground LCD Clock" ? 10 : 0)
-
-                        Text(":")
-                            .font(.custom(
-                                settings.font.clockFont == "London Underground LCD Clock"
-                                    ? "Share Tech Mono"
-                                    : settings.font.clockFont,
-                                size: 100
-                            ))
-                            .foregroundColor(.white)
-                            .offset(y: settings.font.clockFont == "London Underground LCD Clock" ? -10 : 0)
-
-                        Text(String(format: "%02d", displaySeconds))
-                            .font(.custom(settings.font.clockFont, size: 100))
-                            .foregroundColor(.white)
+                    
+                    if loading {
+                        VStack {
+                            Spacer()
+                            Text(shownTime)
+                                .font(.custom(settings.font.clockFont, size: 100))
+                                .foregroundColor(.white)
+                                .monospacedDigit()
+                            Spacer()
+                        }
+                        .matchedGeometryEffect(id: "timer", in: namespace)
+                    } else {
+                        VStack {
+                            Spacer()
+                            ProgressView()
+                            Spacer()
+                        }
                     }
-                    .padding(settings.font.clockFont == "London Underground LCD Clock" ? 5 : 0)
-                    .matchedGeometryEffect(id: "timer", in: namespace)
-
-                    // “Working on: <task>”
+                    
+                    // your work to lock in
                     Text("_Working on:_ \(displayedTodo.task)")
                         .font(.custom(settings.font.bodyFont, size: 20))
                         .foregroundColor(.white)
                         .onTapGesture { editTasks.toggle() }
-                        .onChange(of: editTasks) { _ in
+                        .onChange(of: editTasks) {
                             refreshDisplayedTodo()
                         }
                         .popover(isPresented: $editTasks, arrowEdge: .trailing) {
@@ -130,41 +151,40 @@ struct TimerView: View {
                         }
                         .padding(.top, 8)
                         .transition(.opacity)
-
-                    // Play/Pause / Reset / Clock / Settings buttons
-                    HStack {
-                        if showButton {
-                            // ▶︎ Resume / ❚❚ Pause
+                    
+                    // timer button + stuff
+                    if showButton {
+                        HStack {
+                        // start/stop
                             Button {
-                                if !isRunning {
-                                    startTimer()
+                                if pomodoroTimer.isRunning {
+                                    pause()
                                 } else {
-                                    stopTimer()
+                                    resume()
                                 }
                             } label: {
                                 HStack {
-                                    Image(systemName: isRunning ? "pause" : "play")
+                                    Image(systemName: pomodoroTimer.isRunning ? "pause" : "play")
                                         .foregroundColor(.white)
-                                    Text(isRunning ? "Pause" : "Resume")
+                                    Text(pomodoroTimer.isRunning ? "Pause" : "Resume")
                                         .foregroundColor(.white)
                                         .font(.custom(settings.font.bodyFont, size: 20))
                                 }
-                                .padding(5)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 5)
-                                        .fill(Color.gray.opacity(0.5))
-                                        .shadow(radius: 3)
-                                )
                             }
-                            .buttonStyle(.borderless)
+                            .buttonStyle(.bordered)
                             .transition(.opacity)
+                            .hoverEffect(.automatic)
 
-                            // ↻ Reset (only if we've moved away from the original duration)
-                            if remainingSeconds != settings.pomodoroDuration[0] * 60 + settings.pomodoroDuration[1] {
+                            
+                            // reset
+                            if pomodoroTimer.formattedTime != "\(settings.pomodoroDuration[0]):\(settings.pomodoroDuration[1])" {
                                 Button {
-                                    cancelPendingNotification()
-                                    stopTimer()
-                                    resetToPomodoro()
+                                    pomodoroTimer.isRunning = false
+                                    pomodoroTimer.timerMode = .shortBreak
+                                    pomodoroTimer.cycles = 0
+                                    shownTime = String(format: "%02d:%02d", settings.pomodoroDuration[0], settings.pomodoroDuration[1])
+                                    pomodoroTimer.timerEndTime = Date()
+                                    pomodoroTimer.timePassedInSeconds = nil
                                 } label: {
                                     HStack {
                                         Image(systemName: "arrow.clockwise")
@@ -173,18 +193,13 @@ struct TimerView: View {
                                             .foregroundColor(.white)
                                             .font(.custom(settings.font.bodyFont, size: 20))
                                     }
-                                    .padding(5)
-                                    .background(
-                                        RoundedRectangle(cornerRadius: 5)
-                                            .fill(Color.gray.opacity(0.5))
-                                            .shadow(radius: 3)
-                                    )
                                 }
-                                .buttonStyle(.borderless)
+                                .buttonStyle(.bordered)
                                 .transition(.opacity)
+                                .hoverEffect(.automatic)
                             }
-
-                            // ⏰ Toggle Clock Mode
+                            
+                            // clock mode
                             Button {
                                 withAnimation { clock.toggle() }
                             } label: {
@@ -192,18 +207,13 @@ struct TimerView: View {
                                     Image(systemName: clock ? "clock.fill" : "clock")
                                         .foregroundColor(.white)
                                 }
-                                .padding(9)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 5)
-                                        .fill(Color.gray.opacity(0.5))
-                                        .shadow(radius: 3)
-                                )
                             }
-                            .buttonStyle(.borderless)
+                            .buttonStyle(.bordered)
                             .transition(.opacity)
                             .matchedGeometryEffect(id: "clock", in: namespace)
-
-                            // ⚙︎ Open Settings
+                            .hoverEffect(.automatic)
+                            
+                            // settings
                             Button {
                                 showSettings = true
                             } label: {
@@ -211,21 +221,17 @@ struct TimerView: View {
                                     Image(systemName: "gearshape.2")
                                         .foregroundColor(.white)
                                 }
-                                .padding(9)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 5)
-                                        .fill(Color.gray.opacity(0.5))
-                                        .shadow(radius: 3)
-                                )
                             }
+                            .buttonStyle(.bordered)
                             .matchedGeometryEffect(id: "settingsBtn", in: namespace)
                             .sheet(isPresented: $showSettings) {
                                 SettingsView(data: $settings)
                             }
+                            .hoverEffect(.automatic)
                         }
+                        .padding(.top, 8)
                     }
-                    .padding(.top, 8)
-
+                    
                     Spacer()
                 }
                 .padding()
@@ -240,55 +246,54 @@ struct TimerView: View {
                         .matchedGeometryEffect(id: "rect", in: namespace)
                 )
                 .transition(.opacity)
-
+                
             } else {
                 // ───────────────────────────────────────────────────────────
-                //                           CLOCK MODE (HH:mm)
+                //                     CLOCK MODE UI (HH:mm)
                 // ───────────────────────────────────────────────────────────
                 VStack {
-                    if currentTime[0] != "" {
-                        if showWelcomeBack {
-                            Text("Welcome _back_, \(name).")
-                                .transition(.opacity)
-                                .font(.custom(settings.font.bodyFont, size: 20))
-                                .foregroundColor(.white)
-                                .onAppear {
-                                    refreshDisplayedTodo()
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                                        withAnimation { showWelcomeBack = false }
+                    if !clockTimer.formattedTimeShort.isEmpty {
+                        VStack(spacing: 20) {
+                            if showWelcomeBack {
+                                Text("Welcome *back*, \(name).")
+                                    .transition(.opacity)
+                                    .font(.custom(settings.font.bodyFont, size: 20))
+                                    .foregroundColor(.white)
+                                    .onAppear {
+                                        // refreshDisplayedTodo()
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                                            withAnimation(.easeInOut(duration: 0.5)) {
+                                                showWelcomeBack = false
+                                            }
+                                        }
                                     }
+                            }
+                            
+                            HStack {
+                                VStack {
+                                    Spacer()
+                                    Text(clockTimer.formattedTimeShort)
+                                        .font(.custom(settings.font.clockFont, size: 100))
+                                        .foregroundColor(.white)
+                                        .monospacedDigit()
+                                    Spacer()
                                 }
+                                .matchedGeometryEffect(id: "timer", in: namespace)
+                            }
+                            .padding(settings.font.clockFont == "London Underground LCD Clock" ? 5 : 0)
+                            .matchedGeometryEffect(id: "timer", in: namespace)
                         }
-
-                        HStack {
-                            Text(currentTime[0])
-                                .font(.custom(settings.font.clockFont, size: 100))
-                                .foregroundColor(.white)
-                                .offset(x: settings.font.clockFont == "London Underground LCD Clock" ? 10 : 0)
-
-                            Text(":")
-                                .font(.custom(
-                                    settings.font.clockFont == "London Underground LCD Clock"
-                                        ? "Share Tech Mono"
-                                        : settings.font.clockFont,
-                                    size: 100
-                                ))
-                                .foregroundColor(.white)
-                                .offset(y: settings.font.clockFont == "London Underground LCD Clock" ? -10 : 0)
-
-                            Text(currentTime[1])
-                                .font(.custom(settings.font.clockFont, size: 100))
-                                .foregroundColor(.white)
+                        .onReceive(Timer.publish(every: 1, on: .main, in: .common).autoconnect()) { _ in
+                            refreshTrigger += 1
                         }
-                        .padding(settings.font.clockFont == "London Underground LCD Clock" ? 5 : 0)
-                        .matchedGeometryEffect(id: "timer", in: namespace)
                     } else {
                         ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                            .scaleEffect(1.5)
                     }
-
+                    
                     HStack {
                         if showButton {
-                            // ⏱ Toggle back to timer
                             Button {
                                 withAnimation { clock.toggle() }
                             } label: {
@@ -296,16 +301,11 @@ struct TimerView: View {
                                     Image(systemName: clock ? "clock.fill" : "clock")
                                         .foregroundColor(.white)
                                 }
-                                .padding(9)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 5)
-                                        .fill(Color.gray.opacity(0.5))
-                                        .shadow(radius: 3)
-                                )
                             }
-                            .buttonStyle(.borderless)
+                            .buttonStyle(.bordered)
                             .matchedGeometryEffect(id: "clock", in: namespace)
-
+                            .hoverEffect(.automatic)
+                            
                             // ⚙︎ Open Settings
                             Button {
                                 showSettings = true
@@ -314,17 +314,13 @@ struct TimerView: View {
                                     Image(systemName: "gearshape.2")
                                         .foregroundColor(.white)
                                 }
-                                .padding(9)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 5)
-                                        .fill(Color.gray.opacity(0.5))
-                                        .shadow(radius: 3)
-                                )
                             }
+                            .buttonStyle(.bordered)
                             .matchedGeometryEffect(id: "settingsBtn", in: namespace)
                             .sheet(isPresented: $showSettings) {
                                 SettingsView(data: $settings)
                             }
+                            .hoverEffect(.automatic)
                         }
                     }
                 }
@@ -342,191 +338,6 @@ struct TimerView: View {
                 .transition(.opacity)
             }
         }
-        // ───────────────────────────────────────────────────────────────
-        //                               ON RECEIVE CLOCK TIMER
-        // ───────────────────────────────────────────────────────────────
-        .onReceive(clockUpdateTimer) { _ in
-            updateTime()
-        }
-    }
-
-    // MARK: – Helper to initialize state onAppear
-    private func configureOnAppear() {
-        requestNotificationPermission()
-        resetToPomodoro()
-        updateTime() // for clock mode
-
-        // Every minute, keep updating currentTime
-        Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { _ in
-            updateTime()
-        }
-
-        resumeIfNeeded()
-    }
-
-    // MARK: – Convert settings.pomodoroDuration ([mins, secs]) to total seconds
-    private func resetToPomodoro() {
-        let pomodoroMins = settings.pomodoroDuration[0]
-        let pomodoroSecs = settings.pomodoroDuration[1]
-        remainingSeconds = pomodoroMins * 60 + pomodoroSecs
-        currentTimerMode = .normal
-        cycles = 0
-    }
-
-    // MARK: – Update “HH:mm” for clock mode
-    private func updateTime() {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH"
-        currentTime[0] = formatter.string(from: Date())
-        formatter.dateFormat = "mm"
-        currentTime[1] = formatter.string(from: Date())
-    }
-
-    // MARK: – Pick the next unfinished todo
-    private func refreshDisplayedTodo() {
-        for todo in todos where !todo.completed {
-            displayedTodo = todo
-            break
-        }
-    }
-
-    // MARK: – Ask for Notification permission once
-    private func requestNotificationPermission() {
-        UNUserNotificationCenter.current().requestAuthorization(
-            options: [.alert, .sound, .badge]
-        ) { granted, error in
-            if let error = error {
-                print("Notification permission error:", error.localizedDescription)
-            } else {
-                print("Notification permission granted? \(granted)")
-            }
-        }
-    }
-
-    // MARK: – If user backgrounds & returns, pick up where we left off
-    private func resumeIfNeeded() {
-        guard isRunning, let end = endDate else { return }
-        let now = Date()
-        let delta = Int(end.timeIntervalSince(now))
-        if delta > 0 {
-            remainingSeconds = delta
-            startCountdownTimer()
-        } else {
-            remainingSeconds = 0
-            stopTimer()
-            handleTimerCompletion()
-        }
-    }
-
-    // MARK: – Start the countdown Timer
-    private func startTimer() {
-        // 1) Compute total seconds (already stored in remainingSeconds)
-        let total = remainingSeconds
-
-        // 2) Record the end time so we can resume if backgrounded
-        endDate = Date().addingTimeInterval(TimeInterval(total))
-
-        // 3) Kick off the 1-second Timer
-        startCountdownTimer()
-
-        isRunning = true
-
-        // 4) Schedule local notification for when the timer ends
-        scheduleTimerNotification(in: total)
-    }
-
-    private func startCountdownTimer() {
-        // If a timer already exists, invalidate it first
-        countdownTimer?.invalidate()
-
-        countdownTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-            tickCountdown()
-        }
-    }
-
-    // MARK: – Each 1-second tick
-    private func tickCountdown() {
-        guard remainingSeconds > 0 else {
-            // Time’s up
-            remainingSeconds = 0
-            stopTimer()
-            handleTimerCompletion()
-            return
-        }
-
-        remainingSeconds -= 1 // decrement exactly once per tick
-    }
-
-    // MARK: – Stop the countdown
-    private func stopTimer() {
-        countdownTimer?.invalidate()
-        countdownTimer = nil
-        isRunning = false
-        endDate = nil
-
-        cancelPendingNotification()
-    }
-
-    // MARK: – After one Pomodoro / break finishes, switch modes
-    private func handleTimerCompletion() {
-        cycles += 1
-
-        if currentTimerMode == .normal && cycles != settings.cyclesBeforeLongBreak {
-            // Switch to short break
-            currentTimerMode = .shortBreak
-            let sbM = settings.shortBreakDuration[0]
-            let sbS = settings.shortBreakDuration[1]
-            remainingSeconds = sbM * 60 + sbS
-        } else if currentTimerMode == .shortBreak || currentTimerMode == .longBreak {
-            // Switch back to normal Pomodoro
-            currentTimerMode = .normal
-            let pM = settings.pomodoroDuration[0]
-            let pS = settings.pomodoroDuration[1]
-            remainingSeconds = pM * 60 + pS
-        } else if cycles == settings.cyclesBeforeLongBreak {
-            // Time for a long break
-            cycles = 0
-            currentTimerMode = .longBreak
-            let lbM = settings.longBreakDuration[0]
-            let lbS = settings.longBreakDuration[1]
-            remainingSeconds = lbM * 60 + lbS
-        }
-
-        // Haptic feedback
-        let generator = UINotificationFeedbackGenerator()
-        generator.notificationOccurred(.success)
-
-        // Optionally: automatically start the next session by calling startTimer() here
-    }
-
-    // MARK: – Local Notification scheduling
-    private func scheduleTimerNotification(in seconds: Int) {
-        let content = UNMutableNotificationContent()
-        content.title = "Times up!"
-        content.body = "\(currentTimerMode.displayText) is over!"
-        content.sound = UNNotificationSound.default
-
-        let trigger = UNTimeIntervalNotificationTrigger(
-            timeInterval: TimeInterval(seconds),
-            repeats: false
-        )
-
-        let request = UNNotificationRequest(
-            identifier: "TimerComplete",
-            content: content,
-            trigger: trigger
-        )
-
-        UNUserNotificationCenter.current().add(request) { error in
-            if let error = error {
-                print("Error scheduling notification:", error.localizedDescription)
-            }
-        }
-    }
-
-    private func cancelPendingNotification() {
-        UNUserNotificationCenter.current()
-            .removePendingNotificationRequests(withIdentifiers: ["TimerComplete"])
     }
 }
 

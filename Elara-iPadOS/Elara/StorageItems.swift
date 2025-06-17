@@ -24,7 +24,7 @@ struct SettingData: Codable {
     var font: ClockFont = ClockFont()
 }
 
-enum TimerMode {
+enum TimerMode: Codable {
     case normal, shortBreak, longBreak
     
     var displayText: String {
@@ -38,6 +38,47 @@ enum TimerMode {
         }
     }
 }
+
+class PomodoroTimer: ObservableObject {
+    @Published var timerMode: TimerMode = .normal
+    @Published var isRunning: Bool = false
+    @Published var timerEndTime: Date = Date()
+    var remainingMinutes: Int {
+        let timeInterval = self.timerEndTime.timeIntervalSinceNow
+        return Int(timeInterval / 60)
+    }
+    var remainingSeconds: Int {
+        let timeInterval = self.timerEndTime.timeIntervalSinceNow
+        return Int(timeInterval.truncatingRemainder(dividingBy: 60))
+    }
+    @Published var timePassedInSeconds: Int?
+    @Published var cycles: Int = 4
+    @Published var invokeRefresh: Bool = false
+    var formattedTime: String {
+        return String(format: "%02d:%02d", remainingMinutes, remainingSeconds)
+    }
+    
+    
+    
+//    mutating func recalculate() {
+//        let timeInterval = self.timerEndTime.timeIntervalSinceNow
+//        self.remainingMinutes = Int(timeInterval / 60)
+//        self.remainingSeconds = Int(timeInterval.truncatingRemainder(dividingBy: 60))
+//        self.formattedTime = String(format: "%02d:%02d", remainingMinutes, remainingSeconds)
+//    }
+}
+
+
+// clock mode formatter
+struct ClockMode: Codable, Equatable {
+    var formattedTimeShort: String {
+        let now = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        return formatter.string(from: now)
+    }
+}
+
 
 struct Wallpaper: Identifiable {
     var id = UUID()
