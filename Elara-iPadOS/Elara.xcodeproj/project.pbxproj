@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 90;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F10FDDC42E0048A20029060A /* Elara.icon in Resources */ = {isa = PBXBuildFile; fileRef = F10FDDC32E0048A10029060A /* Elara.icon */; };
 		F15DFE2E2DC64F9900D88BBB /* Forever in Frameworks */ = {isa = PBXBuildFile; productRef = F15DFE2D2DC64F9900D88BBB /* Forever */; };
 		F15DFE522DC6576300D88BBB /* FontLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DFE4B2DC6576300D88BBB /* FontLoader.swift */; };
 		F15DFE532DC6576300D88BBB /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DFE4F2DC6576300D88BBB /* TasksView.swift */; };
@@ -41,38 +42,22 @@
 		F15DFE702DC6576300D88BBB /* ChakraPetch-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F15DFE3A2DC6576300D88BBB /* ChakraPetch-SemiBoldItalic.ttf */; };
 		F1678A7D2DEAF71600DD9591 /* ScreenTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1678A7C2DEAF70F00DD9591 /* ScreenTimeManager.swift */; };
 		F1786D502DED973000E331E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1786D4E2DED973000E331E8 /* LaunchScreen.storyboard */; };
-		F1786D5A2DEDCF2600E331E8 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1786D592DEDCF2600E331E8 /* WidgetKit.framework */; };
-		F1786D5C2DEDCF2600E331E8 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1786D5B2DEDCF2600E331E8 /* SwiftUI.framework */; };
-		F1786D692DEDCF2900E331E8 /* live-activitiesExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F1786D582DEDCF2600E331E8 /* live-activitiesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		F17CD7DC2DEEF01100111B75 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = F17CD7DB2DEEF01100111B75 /* Property List.plist */; };
 		F17CD7DD2DEEF01100111B75 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = F17CD7DB2DEEF01100111B75 /* Property List.plist */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		F1786D672DEDCF2900E331E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F15DFDD72DC64F3300D88BBB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F1786D572DEDCF2500E331E8;
-			remoteInfo = "live-activitiesExtension";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		F1678A7B2DEAF6E000DD9591 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
 			dstPath = "";
-			dstSubfolderSpec = 13;
+			dstSubfolder = PlugIns;
 			files = (
-				F1786D692DEDCF2900E331E8 /* live-activitiesExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F10FDDC32E0048A10029060A /* Elara.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = Elara.icon; sourceTree = "<group>"; };
 		F15DFDDF2DC64F3300D88BBB /* Elara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elara.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F15DFE312DC6576300D88BBB /* ChakraPetch-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-Bold.ttf"; sourceTree = "<group>"; };
 		F15DFE322DC6576300D88BBB /* ChakraPetch-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -111,60 +96,17 @@
 		F1678A7C2DEAF70F00DD9591 /* ScreenTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimeManager.swift; sourceTree = "<group>"; };
 		F1678A7E2DEAF76F00DD9591 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F1786D4E2DED973000E331E8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F1786D582DEDCF2600E331E8 /* live-activitiesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "live-activitiesExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1786D592DEDCF2600E331E8 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		F1786D5B2DEDCF2600E331E8 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		F17CD7DB2DEEF01100111B75 /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
-		F17CD7DE2DEEF1BD00111B75 /* live-activitiesExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "live-activitiesExtension.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		F1786D6A2DEDCF2900E331E8 /* Exceptions for "live-activities" folder in "live-activitiesExtension" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = F1786D572DEDCF2500E331E8 /* live-activitiesExtension */;
-		};
-		F17CD7E32DEEF69D00111B75 /* Exceptions for "live-activities" folder in "Elara" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				live_activitiesBundle.swift,
-				live_activitiesLiveActivity.swift,
-			);
-			target = F15DFDDE2DC64F3300D88BBB /* Elara */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		F1786D5D2DEDCF2600E331E8 /* live-activities */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				F17CD7E32DEEF69D00111B75 /* Exceptions for "live-activities" folder in "Elara" target */,
-				F1786D6A2DEDCF2900E331E8 /* Exceptions for "live-activities" folder in "live-activitiesExtension" target */,
-			);
-			path = "live-activities";
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F15DFDDC2DC64F3300D88BBB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				F15DFE2E2DC64F9900D88BBB /* Forever in Frameworks */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F1786D552DEDCF2500E331E8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F1786D5C2DEDCF2600E331E8 /* SwiftUI.framework in Frameworks */,
-				F1786D5A2DEDCF2600E331E8 /* WidgetKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
@@ -172,10 +114,9 @@
 		F15DFDD62DC64F3300D88BBB = {
 			isa = PBXGroup;
 			children = (
-				F17CD7DE2DEEF1BD00111B75 /* live-activitiesExtension.entitlements */,
 				F17CD7DB2DEEF01100111B75 /* Property List.plist */,
+				F1786D4E2DED973000E331E8 /* LaunchScreen.storyboard */,
 				F15DFE512DC6576300D88BBB /* Elara */,
-				F1786D5D2DEDCF2600E331E8 /* live-activities */,
 				F1678A6A2DEAF6E000DD9591 /* Frameworks */,
 				F15DFDE02DC64F3300D88BBB /* Products */,
 			);
@@ -185,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				F15DFDDF2DC64F3300D88BBB /* Elara.app */,
-				F1786D582DEDCF2600E331E8 /* live-activitiesExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -221,7 +161,6 @@
 		F15DFE512DC6576300D88BBB /* Elara */ = {
 			isa = PBXGroup;
 			children = (
-				F1786D4E2DED973000E331E8 /* LaunchScreen.storyboard */,
 				F1678A7E2DEAF76F00DD9591 /* Info.plist */,
 				F1678A7C2DEAF70F00DD9591 /* ScreenTimeManager.swift */,
 				F1678A642DEAF5F400DD9591 /* Elara.entitlements */,
@@ -236,6 +175,7 @@
 				F15DFE4E2DC6576300D88BBB /* StorageItems.swift */,
 				F15DFE4F2DC6576300D88BBB /* TasksView.swift */,
 				F15DFE502DC6576300D88BBB /* TimerView.swift */,
+				F10FDDC32E0048A10029060A /* Elara.icon */,
 			);
 			path = Elara;
 			sourceTree = "<group>";
@@ -265,9 +205,6 @@
 			);
 			buildRules = (
 			);
-			dependencies = (
-				F1786D682DEDCF2900E331E8 /* PBXTargetDependency */,
-			);
 			name = Elara;
 			packageProductDependencies = (
 				F15DFE2D2DC64F9900D88BBB /* Forever */,
@@ -275,28 +212,6 @@
 			productName = "Elara for iPadOS";
 			productReference = F15DFDDF2DC64F3300D88BBB /* Elara.app */;
 			productType = "com.apple.product-type.application";
-		};
-		F1786D572DEDCF2500E331E8 /* live-activitiesExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F1786D6B2DEDCF2900E331E8 /* Build configuration list for PBXNativeTarget "live-activitiesExtension" */;
-			buildPhases = (
-				F1786D542DEDCF2500E331E8 /* Sources */,
-				F1786D552DEDCF2500E331E8 /* Frameworks */,
-				F1786D562DEDCF2500E331E8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				F1786D5D2DEDCF2600E331E8 /* live-activities */,
-			);
-			name = "live-activitiesExtension";
-			packageProductDependencies = (
-			);
-			productName = "live-activitiesExtension";
-			productReference = F1786D582DEDCF2600E331E8 /* live-activitiesExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -312,9 +227,6 @@
 						CreatedOnToolsVersion = 16.3;
 						LastSwiftMigration = 1630;
 					};
-					F1786D572DEDCF2500E331E8 = {
-						CreatedOnToolsVersion = 16.4;
-					};
 				};
 			};
 			buildConfigurationList = F15DFDDA2DC64F3300D88BBB /* Build configuration list for PBXProject "Elara" */;
@@ -322,20 +234,18 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
 			mainGroup = F15DFDD62DC64F3300D88BBB;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				F15DFE2C2DC64F9900D88BBB /* XCRemoteSwiftPackageReference "Forever" */,
 			);
-			preferredProjectObjectVersion = 77;
+			preferredProjectObjectVersion = 90;
 			productRefGroup = F15DFDE02DC64F3300D88BBB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				F15DFDDE2DC64F3300D88BBB /* Elara */,
-				F1786D572DEDCF2500E331E8 /* live-activitiesExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -343,7 +253,6 @@
 /* Begin PBXResourcesBuildPhase section */
 		F15DFDDD2DC64F3300D88BBB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				F15DFE5B2DC6576300D88BBB /* London Underground LCD Clock.ttf in Resources */,
 				F15DFE5C2DC6576300D88BBB /* ChakraPetch-MediumItalic.ttf in Resources */,
@@ -357,6 +266,7 @@
 				F15DFE632DC6576300D88BBB /* ChakraPetch-Light.ttf in Resources */,
 				F1786D502DED973000E331E8 /* LaunchScreen.storyboard in Resources */,
 				F15DFE642DC6576300D88BBB /* ChakraPetch-Italic.ttf in Resources */,
+				F10FDDC42E0048A20029060A /* Elara.icon in Resources */,
 				F15DFE652DC6576300D88BBB /* ShareTechMono-Regular.ttf in Resources */,
 				F15DFE662DC6576300D88BBB /* ChakraPetch-SemiBold.ttf in Resources */,
 				F15DFE672DC6576300D88BBB /* SpaceGrotesk-VariableFont_wght.ttf in Resources */,
@@ -370,22 +280,12 @@
 				F15DFE6F2DC6576300D88BBB /* PublicSans-Italic-VariableFont_wght.ttf in Resources */,
 				F15DFE702DC6576300D88BBB /* ChakraPetch-SemiBoldItalic.ttf in Resources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F1786D562DEDCF2500E331E8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F17CD7DC2DEEF01100111B75 /* Property List.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F15DFDDB2DC64F3300D88BBB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				F15DFE522DC6576300D88BBB /* FontLoader.swift in Sources */,
 				F15DFE532DC6576300D88BBB /* TasksView.swift in Sources */,
@@ -398,27 +298,11 @@
 				F15DFE592DC6576300D88BBB /* StorageItems.swift in Sources */,
 				F15DFE5A2DC6576300D88BBB /* AboutView.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F1786D542DEDCF2500E331E8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		F1786D682DEDCF2900E331E8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F1786D572DEDCF2500E331E8 /* live-activitiesExtension */;
-			targetProxy = F1786D672DEDCF2900E331E8 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		F15DFDE82DC64F3500D88BBB /* Debug */ = {
+		F15DFDE82DC64F3500D88BBB /* Debug configuration for PBXProject "Elara" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -482,7 +366,7 @@
 			};
 			name = Debug;
 		};
-		F15DFDE92DC64F3500D88BBB /* Release */ = {
+		F15DFDE92DC64F3500D88BBB /* Release configuration for PBXProject "Elara" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -539,138 +423,84 @@
 			};
 			name = Release;
 		};
-		F15DFDEB2DC64F3500D88BBB /* Debug */ = {
+		F15DFDEB2DC64F3500D88BBB /* Debug configuration for PBXNativeTarget "Elara" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Elara;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Elara/Elara.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = MK2VQ82S9T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Elara/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Elara;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.advaitconty.elara;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "2,6";
 			};
 			name = Debug;
 		};
-		F15DFDEC2DC64F3500D88BBB /* Release */ = {
+		F15DFDEC2DC64F3500D88BBB /* Release configuration for PBXNativeTarget "Elara" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Elara;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Elara/Elara.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = MK2VQ82S9T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Elara/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Elara;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.advaitconty.elara;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
-			};
-			name = Release;
-		};
-		F1786D6C2DEDCF2900E331E8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = "live-activitiesExtension.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MK2VQ82S9T;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "live-activities/Info.plist";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.advaitconty.elara.live-activities";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		F1786D6D2DEDCF2900E331E8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = "live-activitiesExtension.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MK2VQ82S9T;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "live-activities/Info.plist";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.advaitconty.elara.live-activities";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "2,6";
 			};
 			name = Release;
 		};
@@ -680,28 +510,17 @@
 		F15DFDDA2DC64F3300D88BBB /* Build configuration list for PBXProject "Elara" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F15DFDE82DC64F3500D88BBB /* Debug */,
-				F15DFDE92DC64F3500D88BBB /* Release */,
+				F15DFDE82DC64F3500D88BBB /* Debug configuration for PBXProject "Elara" */,
+				F15DFDE92DC64F3500D88BBB /* Release configuration for PBXProject "Elara" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		F15DFDEA2DC64F3500D88BBB /* Build configuration list for PBXNativeTarget "Elara" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F15DFDEB2DC64F3500D88BBB /* Debug */,
-				F15DFDEC2DC64F3500D88BBB /* Release */,
+				F15DFDEB2DC64F3500D88BBB /* Debug configuration for PBXNativeTarget "Elara" */,
+				F15DFDEC2DC64F3500D88BBB /* Release configuration for PBXNativeTarget "Elara" */,
 			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F1786D6B2DEDCF2900E331E8 /* Build configuration list for PBXNativeTarget "live-activitiesExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F1786D6C2DEDCF2900E331E8 /* Debug */,
-				F1786D6D2DEDCF2900E331E8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
