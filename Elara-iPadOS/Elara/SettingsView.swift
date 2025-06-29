@@ -33,6 +33,7 @@ struct SettingsView: View {
     @State private var selectedItem: PhotosPickerItem?
     @State private var customImageData: Data? = nil
     @State var about: Bool = false
+    @Environment(\.openURL) var openURL
     
     func wallpaperImage(_ wallpaper: Wallpaper) -> some View {
         Image(wallpaper.wallpaperName)
@@ -258,6 +259,24 @@ struct SettingsView: View {
             .transition(.opacity)
         }
     }
+    
+    var notificationNotifier: some View {
+        HStack {
+            Text("Elara does not have access to send notifications")
+                .font(.custom(data.font.bodyFont, size: 18))
+            Spacer()
+            Button {
+                if let url = URL(string: UIApplication.openSettingsURLString) {
+                    openURL(url)
+                }
+            } label: {
+                Text("Give permissions in Settings")
+                    .font(.custom(data.font.bodyFont, size: 14))
+                    .italic()
+            }
+            .buttonStyle(.bordered)
+        }
+    }
 
     var body: some View {
         VStack {
@@ -280,6 +299,11 @@ struct SettingsView: View {
                 Divider()
                 timerDurations
                 Divider()
+                if !data.notificationsPermissionsGiven {
+                    notificationNotifier
+                    Divider()
+                }
+                
                 
                 VStack {
                     HStack {

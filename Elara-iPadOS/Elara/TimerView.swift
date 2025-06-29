@@ -1,5 +1,4 @@
 import SwiftUI
-import UserNotifications
 
 struct TimerView: View {
     @AppStorage("clock") var clock: Bool = false
@@ -20,16 +19,51 @@ struct TimerView: View {
     @State var recalcuatingDateInPause: Bool = false
     let timer = Timer.publish(every: 0.25, on: .main, in: .common).autoconnect()
     @State var loading = true
+    @State var showStatistics = false
     @State var shownTime: String = "25:00"
-    
+    @Binding var statisticsData: [Cycle]
+
+    func scheduleNotification(at endDate: Date, title: String, body: String) {
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body
+        content.sound = .default
+
+        let triggerDate = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: endDate)
+
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
+
+        let request = UNNotificationRequest(
+            identifier: UUID().uuidString,
+            content: content,
+            trigger: trigger
+        )
+
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print(error)
+            }
+        }
+    }
+
     func pause() {
         pomodoroTimer.isRunning = false
         pomodoroTimer.timePassedInSeconds = pomodoroTimer.remainingMinutes * 60 + pomodoroTimer.remainingSeconds + 1
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
     
     func resume() {
         pomodoroTimer.isRunning = true
         pomodoroTimer.timePassedInSeconds = nil
+        if pomodoroTimer.timerMode == .normal {
+            scheduleNotification(at: pomodoroTimer.timerEndTime, title: "It's time for your break!", body: "Your work time has completed")
+        } else if pomodoroTimer.timerMode == .shortBreak {
+            scheduleNotification(at: pomodoroTimer.timerEndTime, title: "Time to get back to work!", body: "Your short break time has completed")
+        } else if pomodoroTimer.timerMode == .longBreak {
+            scheduleNotification(at: pomodoroTimer.timerEndTime, title: "Relaxation time's up!", body: "Your long break is over, time to get back to completing those tasks!")
+        }
     }
     
     func refreshDisplayedTodo() {
@@ -63,7 +97,7 @@ struct TimerView: View {
                 VStack {
                     Spacer()
                         .onChange(of: pomodoroTimer.formattedTime) {
-                            if pomodoroTimer.formattedTime == "00:00" {
+                            if pomodoroTimer.timerEndTime <= Date() {
                                 pomodoroTimer.isRunning = false
                                 if pomodoroTimer.timerMode == .normal {
                                     pomodoroTimer.cycles += 1
@@ -154,42 +188,20 @@ struct TimerView: View {
                     
                     // timer button + stuff
                     if showButton {
-                        HStack {
-                        // start/stop
-                            Button {
-                                if pomodoroTimer.isRunning {
-                                    pause()
-                                } else {
-                                    resume()
-                                }
-                            } label: {
-                                HStack {
-                                    Image(systemName: pomodoroTimer.isRunning ? "pause" : "play")
-                                        .foregroundColor(.white)
-                                    Text(pomodoroTimer.isRunning ? "Pause" : "Resume")
-                                        .foregroundColor(.white)
-                                        .font(.custom(settings.font.bodyFont, size: 20))
-                                }
-                            }
-                            .buttonStyle(.bordered)
-                            .transition(.opacity)
-                            .hoverEffect(.automatic)
-
-                            
-                            // reset
-                            if pomodoroTimer.formattedTime != "\(settings.pomodoroDuration[0]):\(settings.pomodoroDuration[1])" {
+                        ScrollView(.horizontal) {
+                            HStack {
+                                // start/stop
                                 Button {
-                                    pomodoroTimer.isRunning = false
-                                    pomodoroTimer.timerMode = .shortBreak
-                                    pomodoroTimer.cycles = 0
-                                    shownTime = String(format: "%02d:%02d", settings.pomodoroDuration[0], settings.pomodoroDuration[1])
-                                    pomodoroTimer.timerEndTime = Date()
-                                    pomodoroTimer.timePassedInSeconds = nil
+                                    if pomodoroTimer.isRunning {
+                                        pause()
+                                    } else {
+                                        resume()
+                                    }
                                 } label: {
                                     HStack {
-                                        Image(systemName: "arrow.clockwise")
+                                        Image(systemName: pomodoroTimer.isRunning ? "pause" : "play")
                                             .foregroundColor(.white)
-                                        Text("Reset")
+                                        Text(pomodoroTimer.isRunning ? "Pause" : "Resume")
                                             .foregroundColor(.white)
                                             .font(.custom(settings.font.bodyFont, size: 20))
                                     }
@@ -197,39 +209,78 @@ struct TimerView: View {
                                 .buttonStyle(.bordered)
                                 .transition(.opacity)
                                 .hoverEffect(.automatic)
-                            }
-                            
-                            // clock mode
-                            Button {
-                                withAnimation { clock.toggle() }
-                            } label: {
-                                HStack {
-                                    Image(systemName: clock ? "clock.fill" : "clock")
-                                        .foregroundColor(.white)
+                                
+                                
+                                // reset
+                                if pomodoroTimer.formattedTime != "\(settings.pomodoroDuration[0]):\(settings.pomodoroDuration[1])" {
+                                    Button {
+                                        pomodoroTimer.isRunning = false
+                                        pomodoroTimer.timerMode = .shortBreak
+                                        pomodoroTimer.cycles = 0
+                                        shownTime = String(format: "%02d:%02d", settings.pomodoroDuration[0], settings.pomodoroDuration[1])
+                                        pomodoroTimer.timerEndTime = Date()
+                                        pomodoroTimer.timePassedInSeconds = nil
+                                    } label: {
+                                        HStack {
+                                            Image(systemName: "arrow.clockwise")
+                                                .foregroundColor(.white)
+                                            Text("Reset")
+                                                .foregroundColor(.white)
+                                                .font(.custom(settings.font.bodyFont, size: 20))
+                                        }
+                                    }
+                                    .buttonStyle(.bordered)
+                                    .transition(.opacity)
+                                    .hoverEffect(.automatic)
                                 }
-                            }
-                            .buttonStyle(.bordered)
-                            .transition(.opacity)
-                            .matchedGeometryEffect(id: "clock", in: namespace)
-                            .hoverEffect(.automatic)
-                            
-                            // settings
-                            Button {
-                                showSettings = true
-                            } label: {
-                                HStack {
-                                    Image(systemName: "gearshape.2")
-                                        .foregroundColor(.white)
+                                
+                                // clock mode
+                                Button {
+                                    withAnimation { clock.toggle() }
+                                } label: {
+                                    HStack {
+                                        Image(systemName: clock ? "clock.fill" : "clock")
+                                            .foregroundColor(.white)
+                                    }
                                 }
+                                .buttonStyle(.bordered)
+                                .transition(.opacity)
+                                .matchedGeometryEffect(id: "clock", in: namespace)
+                                .hoverEffect(.automatic)
+                                
+                                // settings
+                                Button {
+                                    showSettings = true
+                                } label: {
+                                    HStack {
+                                        Image(systemName: "gearshape.2")
+                                            .foregroundColor(.white)
+                                    }
+                                }
+                                .buttonStyle(.bordered)
+                                .matchedGeometryEffect(id: "settingsBtn", in: namespace)
+                                .sheet(isPresented: $showSettings) {
+                                    SettingsView(data: $settings)
+                                }
+                                .hoverEffect(.automatic)
+                                
+                                Button {
+                                    showStatistics = true
+                                } label: {
+                                    HStack {
+                                        Image(systemName: "mountain.2")
+                                            .foregroundColor(.white)
+                                    }
+                                }
+                                .buttonStyle(.bordered)
+                                .matchedGeometryEffect(id: "statistics", in: namespace)
+                                .sheet(isPresented: $showStatistics) {
+                                    StatisticsView(settingsData: $settings, statisticsData: $statisticsData)
+                                }
+                                .hoverEffect(.automatic)
                             }
-                            .buttonStyle(.bordered)
-                            .matchedGeometryEffect(id: "settingsBtn", in: namespace)
-                            .sheet(isPresented: $showSettings) {
-                                SettingsView(data: $settings)
-                            }
-                            .hoverEffect(.automatic)
+                            .padding(.top, 8)
                         }
-                        .padding(.top, 8)
                     }
                     
                     Spacer()
@@ -292,37 +343,52 @@ struct TimerView: View {
                             .scaleEffect(1.5)
                     }
                     
-                    HStack {
-                        if showButton {
-                            Button {
-                                withAnimation { clock.toggle() }
-                            } label: {
-                                HStack {
-                                    Image(systemName: clock ? "clock.fill" : "clock")
-                                        .foregroundColor(.white)
+                        HStack {
+                            if showButton {
+                                Button {
+                                    withAnimation { clock.toggle() }
+                                } label: {
+                                    HStack {
+                                        Image(systemName: clock ? "clock.fill" : "clock")
+                                            .foregroundColor(.white)
+                                    }
                                 }
-                            }
-                            .buttonStyle(.bordered)
-                            .matchedGeometryEffect(id: "clock", in: namespace)
-                            .hoverEffect(.automatic)
-                            
-                            // ⚙︎ Open Settings
-                            Button {
-                                showSettings = true
-                            } label: {
-                                HStack {
-                                    Image(systemName: "gearshape.2")
-                                        .foregroundColor(.white)
+                                .buttonStyle(.bordered)
+                                .matchedGeometryEffect(id: "clock", in: namespace)
+                                .hoverEffect(.automatic)
+                                
+                                // ⚙︎ Open Settings
+                                Button {
+                                    showSettings = true
+                                } label: {
+                                    HStack {
+                                        Image(systemName: "gearshape.2")
+                                            .foregroundColor(.white)
+                                    }
                                 }
+                                .buttonStyle(.bordered)
+                                .matchedGeometryEffect(id: "settingsBtn", in: namespace)
+                                .sheet(isPresented: $showSettings) {
+                                    SettingsView(data: $settings)
+                                }
+                                .hoverEffect(.automatic)
+                                
+                                Button {
+                                    showStatistics = true
+                                } label: {
+                                    HStack {
+                                        Image(systemName: "mountain.2")
+                                            .foregroundColor(.white)
+                                    }
+                                }
+                                .buttonStyle(.bordered)
+                                .matchedGeometryEffect(id: "statistics", in: namespace)
+                                .sheet(isPresented: $showStatistics) {
+                                    StatisticsView(settingsData: $settings, statisticsData: $statisticsData)
+                                }
+                                .hoverEffect(.automatic)
                             }
-                            .buttonStyle(.bordered)
-                            .matchedGeometryEffect(id: "settingsBtn", in: namespace)
-                            .sheet(isPresented: $showSettings) {
-                                SettingsView(data: $settings)
-                            }
-                            .hoverEffect(.automatic)
                         }
-                    }
                 }
                 .padding()
                 .frame(minWidth: 300, maxWidth: 400, minHeight: 200, maxHeight: 300)
@@ -338,15 +404,5 @@ struct TimerView: View {
                 .transition(.opacity)
             }
         }
-    }
-}
-
-struct TimerView_Previews: PreviewProvider {
-    static var previews: some View {
-        TimerView(
-            todos: .constant([Todo(task: "Something", priority: 1)]),
-            name: .constant("Advait"),
-            settings: .constant(SettingData())
-        )
     }
 }

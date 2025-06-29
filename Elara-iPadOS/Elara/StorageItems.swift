@@ -1,5 +1,13 @@
 import Foundation
 
+struct Cycle: Identifiable, Codable {
+    var id: UUID = UUID()
+    var timeSpentOnWorkCycle: Int // in seconds
+    var timeSpentOnBreakCycle: Int // in seconds
+    var date: Date = Date()
+    var workingOnTask: Todo
+}
+
 struct Todo: Identifiable, Codable, Equatable {
     var id = UUID()
     var task: String
@@ -22,6 +30,29 @@ struct SettingData: Codable {
     var longBreakDuration: [Int] = [10, 0]
     var cyclesBeforeLongBreak: Int = 4
     var font: ClockFont = ClockFont()
+    var notificationsPermissionsGiven: Bool = false
+}
+
+struct SortedDataByTasks: Identifiable {
+    var id: UUID = UUID()
+    var task: String
+    var timeSpentOnTask: Int
+}
+
+
+struct SortedDataByDate: Identifiable {
+    var id: UUID = UUID()
+    var date: Date
+    var timeSpentOnTask: Int
+    
+    var displayFriendlyDate: String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .none
+        formatter.locale = Locale.current
+        formatter.timeZone = TimeZone.current
+        return formatter.string(from: self.date)
+    }
 }
 
 enum TimerMode: Codable {
@@ -35,6 +66,18 @@ enum TimerMode: Codable {
             return "Short Break"
         case .longBreak:
             return "Long Break"
+        }
+    }
+    
+    
+    var displaySymbol: String {
+        switch self {
+        case .normal:
+            return "book"
+        case .shortBreak:
+            return "cup.and.saucer"
+        case .longBreak:
+            return "zzz"
         }
     }
 }

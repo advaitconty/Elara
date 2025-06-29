@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F10FDDC42E0048A20029060A /* Elara.icon in Resources */ = {isa = PBXBuildFile; fileRef = F10FDDC32E0048A10029060A /* Elara.icon */; };
+		F1488E112E06F06E006D5A92 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1488E102E06F061006D5A92 /* StatisticsView.swift */; };
 		F15DFE2E2DC64F9900D88BBB /* Forever in Frameworks */ = {isa = PBXBuildFile; productRef = F15DFE2D2DC64F9900D88BBB /* Forever */; };
 		F15DFE522DC6576300D88BBB /* FontLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DFE4B2DC6576300D88BBB /* FontLoader.swift */; };
 		F15DFE532DC6576300D88BBB /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DFE4F2DC6576300D88BBB /* TasksView.swift */; };
@@ -43,6 +44,11 @@
 		F1678A7D2DEAF71600DD9591 /* ScreenTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1678A7C2DEAF70F00DD9591 /* ScreenTimeManager.swift */; };
 		F1786D502DED973000E331E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1786D4E2DED973000E331E8 /* LaunchScreen.storyboard */; };
 		F17CD7DD2DEEF01100111B75 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = F17CD7DB2DEEF01100111B75 /* Property List.plist */; };
+		F1ACF1972E1131D600D518D7 /* Fantasy.wav in Resources */ = {isa = PBXBuildFile; fileRef = F1ACF1932E1131D600D518D7 /* Fantasy.wav */; };
+		F1ACF1982E1131D600D518D7 /* Relaxing.wav in Resources */ = {isa = PBXBuildFile; fileRef = F1ACF1942E1131D600D518D7 /* Relaxing.wav */; };
+		F1ACF1992E1131D600D518D7 /* Ringer.wav in Resources */ = {isa = PBXBuildFile; fileRef = F1ACF1952E1131D600D518D7 /* Ringer.wav */; };
+		F1ACF19A2E1131D600D518D7 /* Elara Classic.wav in Resources */ = {isa = PBXBuildFile; fileRef = F1ACF1922E1131D600D518D7 /* Elara Classic.wav */; };
+		F1ACF19B2E1131D600D518D7 /* Sci-Fi.wav in Resources */ = {isa = PBXBuildFile; fileRef = F1ACF1962E1131D600D518D7 /* Sci-Fi.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		F10FDDC32E0048A10029060A /* Elara.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = Elara.icon; sourceTree = "<group>"; };
+		F1488E102E06F061006D5A92 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		F15DFDDF2DC64F3300D88BBB /* Elara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elara.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F15DFE312DC6576300D88BBB /* ChakraPetch-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-Bold.ttf"; sourceTree = "<group>"; };
 		F15DFE322DC6576300D88BBB /* ChakraPetch-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -99,6 +106,11 @@
 		F1786D592DEDCF2600E331E8 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		F1786D5B2DEDCF2600E331E8 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		F17CD7DB2DEEF01100111B75 /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
+		F1ACF1922E1131D600D518D7 /* Elara Classic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Elara Classic.wav"; sourceTree = "<group>"; };
+		F1ACF1932E1131D600D518D7 /* Fantasy.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Fantasy.wav; sourceTree = "<group>"; };
+		F1ACF1942E1131D600D518D7 /* Relaxing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Relaxing.wav; sourceTree = "<group>"; };
+		F1ACF1952E1131D600D518D7 /* Ringer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Ringer.wav; sourceTree = "<group>"; };
+		F1ACF1962E1131D600D518D7 /* Sci-Fi.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Sci-Fi.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +173,7 @@
 		F15DFE512DC6576300D88BBB /* Elara */ = {
 			isa = PBXGroup;
 			children = (
+				F1ACF1912E1131C300D518D7 /* Chimes */,
 				F1678A7E2DEAF76F00DD9591 /* Info.plist */,
 				F1678A7C2DEAF70F00DD9591 /* ScreenTimeManager.swift */,
 				F1678A642DEAF5F400DD9591 /* Elara.entitlements */,
@@ -174,6 +187,7 @@
 				F15DFE4D2DC6576300D88BBB /* SetupView.swift */,
 				F15DFE4E2DC6576300D88BBB /* StorageItems.swift */,
 				F15DFE4F2DC6576300D88BBB /* TasksView.swift */,
+				F1488E102E06F061006D5A92 /* StatisticsView.swift */,
 				F15DFE502DC6576300D88BBB /* TimerView.swift */,
 				F10FDDC32E0048A10029060A /* Elara.icon */,
 			);
@@ -189,6 +203,18 @@
 				F1786D5B2DEDCF2600E331E8 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F1ACF1912E1131C300D518D7 /* Chimes */ = {
+			isa = PBXGroup;
+			children = (
+				F1ACF1922E1131D600D518D7 /* Elara Classic.wav */,
+				F1ACF1932E1131D600D518D7 /* Fantasy.wav */,
+				F1ACF1942E1131D600D518D7 /* Relaxing.wav */,
+				F1ACF1952E1131D600D518D7 /* Ringer.wav */,
+				F1ACF1962E1131D600D518D7 /* Sci-Fi.wav */,
+			);
+			path = Chimes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +297,11 @@
 				F15DFE662DC6576300D88BBB /* ChakraPetch-SemiBold.ttf in Resources */,
 				F15DFE672DC6576300D88BBB /* SpaceGrotesk-VariableFont_wght.ttf in Resources */,
 				F15DFE682DC6576300D88BBB /* ChakraPetch-Regular.ttf in Resources */,
+				F1ACF1972E1131D600D518D7 /* Fantasy.wav in Resources */,
+				F1ACF1982E1131D600D518D7 /* Relaxing.wav in Resources */,
+				F1ACF1992E1131D600D518D7 /* Ringer.wav in Resources */,
+				F1ACF19A2E1131D600D518D7 /* Elara Classic.wav in Resources */,
+				F1ACF19B2E1131D600D518D7 /* Sci-Fi.wav in Resources */,
 				F15DFE692DC6576300D88BBB /* Assets.xcassets in Resources */,
 				F15DFE6A2DC6576300D88BBB /* PublicSans-VariableFont_wght.ttf in Resources */,
 				F15DFE6B2DC6576300D88BBB /* CrimsonPro-VariableFont_wght.ttf in Resources */,
@@ -295,6 +326,7 @@
 				F15DFE572DC6576300D88BBB /* TimerView.swift in Sources */,
 				F1678A7D2DEAF71600DD9591 /* ScreenTimeManager.swift in Sources */,
 				F15DFE582DC6576300D88BBB /* SettingsView.swift in Sources */,
+				F1488E112E06F06E006D5A92 /* StatisticsView.swift in Sources */,
 				F15DFE592DC6576300D88BBB /* StorageItems.swift in Sources */,
 				F15DFE5A2DC6576300D88BBB /* AboutView.swift in Sources */,
 			);
@@ -445,7 +477,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -455,7 +487,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.advaitconty.elara;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -486,7 +518,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -496,7 +528,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.advaitconty.elara;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
