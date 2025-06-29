@@ -7,6 +7,7 @@ struct ElaraApp: App {
     @DontDie("todos") var todos: [Todo] = []
     @DontLeaveMe("setupPage") var setupPage = 1
     @BePersistent("settingsData") var settingsData: SettingData = SettingData()
+    @DontDie("statisticsData") var statisticsData: [Cycle] = []
     
     init() {
         _ = FontManager.shared
@@ -14,7 +15,7 @@ struct ElaraApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(name: $name, todos: $todos, setupPage: $setupPage, settingsData: $settingsData)
+            ContentView(name: $name, todos: $todos, setupPage: $setupPage, settingsData: $settingsData, statisticsData: $statisticsData)
                 .onAppear {
                     for family in UIFont.familyNames {
                         print("Font family: \(family)")
