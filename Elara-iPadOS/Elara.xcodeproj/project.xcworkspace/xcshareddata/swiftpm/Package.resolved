@@ -1,5 +1,5 @@
 {
-  "originHash" : "70bd0f4f702239698207a9e8ee017e42ef4cb49daaf574d348b72ac63e3ef3cd",
+  "originHash" : "441ad9dff04f742be88b2da0c706ae9ad266b3b6d2ec38a064a2f1b12e6eb553",
   "pins" : [
     {
       "identity" : "forever",
@@ -8,6 +8,24 @@
       "state" : {
         "revision" : "90274e87842722d9b79e61431cbbef1c418944b6",
         "version" : "1.1.0"
+      }
+    },
+    {
+      "identity" : "subsonic",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/twostraws/Subsonic",
+      "state" : {
+        "revision" : "156c5742279df5d2315e29534a2410f418c8a772",
+        "version" : "0.2.0"
+      }
+    },
+    {
+      "identity" : "swiftui-pipify",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/getsidetrack/swiftui-pipify.git",
+      "state" : {
+        "revision" : "64e24ee19e4caf18cde4e81fb24229999bb2f1d4",
+        "version" : "0.5.0"
       }
     }
   ],

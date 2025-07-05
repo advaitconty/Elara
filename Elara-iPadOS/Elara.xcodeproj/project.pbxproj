@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F109C2EA2E12C423007F04C2 /* Pipify in Frameworks */ = {isa = PBXBuildFile; productRef = F109C2E92E12C423007F04C2 /* Pipify */; };
 		F10FDDC42E0048A20029060A /* Elara.icon in Resources */ = {isa = PBXBuildFile; fileRef = F10FDDC32E0048A10029060A /* Elara.icon */; };
 		F1488E112E06F06E006D5A92 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1488E102E06F061006D5A92 /* StatisticsView.swift */; };
 		F15DFE2E2DC64F9900D88BBB /* Forever in Frameworks */ = {isa = PBXBuildFile; productRef = F15DFE2D2DC64F9900D88BBB /* Forever */; };
@@ -44,12 +45,25 @@
 		F1678A7D2DEAF71600DD9591 /* ScreenTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1678A7C2DEAF70F00DD9591 /* ScreenTimeManager.swift */; };
 		F1786D502DED973000E331E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1786D4E2DED973000E331E8 /* LaunchScreen.storyboard */; };
 		F17CD7DD2DEEF01100111B75 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = F17CD7DB2DEEF01100111B75 /* Property List.plist */; };
+		F19E46812E17FCA400233E2F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1786D592DEDCF2600E331E8 /* WidgetKit.framework */; };
+		F19E46822E17FCA400233E2F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1786D5B2DEDCF2600E331E8 /* SwiftUI.framework */; };
+		F19E468F2E17FCA900233E2F /* Inspirations&MomentumExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F19E46802E17FCA400233E2F /* Inspirations&MomentumExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F1ACF1972E1131D600D518D7 /* Fantasy.wav in Resources */ = {isa = PBXBuildFile; fileRef = F1ACF1932E1131D600D518D7 /* Fantasy.wav */; };
 		F1ACF1982E1131D600D518D7 /* Relaxing.wav in Resources */ = {isa = PBXBuildFile; fileRef = F1ACF1942E1131D600D518D7 /* Relaxing.wav */; };
 		F1ACF1992E1131D600D518D7 /* Ringer.wav in Resources */ = {isa = PBXBuildFile; fileRef = F1ACF1952E1131D600D518D7 /* Ringer.wav */; };
-		F1ACF19A2E1131D600D518D7 /* Elara Classic.wav in Resources */ = {isa = PBXBuildFile; fileRef = F1ACF1922E1131D600D518D7 /* Elara Classic.wav */; };
 		F1ACF19B2E1131D600D518D7 /* Sci-Fi.wav in Resources */ = {isa = PBXBuildFile; fileRef = F1ACF1962E1131D600D518D7 /* Sci-Fi.wav */; };
+		F1ACF19E2E115AE900D518D7 /* Subsonic in Frameworks */ = {isa = PBXBuildFile; productRef = F1ACF19D2E115AE900D518D7 /* Subsonic */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F19E468D2E17FCA900233E2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F15DFDD72DC64F3300D88BBB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F19E467F2E17FCA400233E2F;
+			remoteInfo = "Inspirations&MomentumExtension";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		F1678A7B2DEAF6E000DD9591 /* Embed Foundation Extensions */ = {
@@ -57,13 +71,23 @@
 			dstPath = "";
 			dstSubfolder = PlugIns;
 			files = (
+				F19E468F2E17FCA900233E2F /* Inspirations&MomentumExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
+		};
+		F199C96F2E14244A00E316EE /* Embed ExtensionKit Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
+			dstSubfolder = Product;
+			files = (
+			);
+			name = "Embed ExtensionKit Extensions";
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F10FDDC32E0048A10029060A /* Elara.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = Elara.icon; sourceTree = "<group>"; };
+		F11368022E12ACA60036EBB3 /* DeviceActivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceActivity.framework; path = System/Library/Frameworks/DeviceActivity.framework; sourceTree = SDKROOT; };
 		F1488E102E06F061006D5A92 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		F15DFDDF2DC64F3300D88BBB /* Elara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elara.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F15DFE312DC6576300D88BBB /* ChakraPetch-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-Bold.ttf"; sourceTree = "<group>"; };
@@ -106,18 +130,48 @@
 		F1786D592DEDCF2600E331E8 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		F1786D5B2DEDCF2600E331E8 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		F17CD7DB2DEEF01100111B75 /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
-		F1ACF1922E1131D600D518D7 /* Elara Classic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Elara Classic.wav"; sourceTree = "<group>"; };
+		F19E46802E17FCA400233E2F /* Inspirations&MomentumExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Inspirations&MomentumExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1ACF1932E1131D600D518D7 /* Fantasy.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Fantasy.wav; sourceTree = "<group>"; };
 		F1ACF1942E1131D600D518D7 /* Relaxing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Relaxing.wav; sourceTree = "<group>"; };
 		F1ACF1952E1131D600D518D7 /* Ringer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Ringer.wav; sourceTree = "<group>"; };
 		F1ACF1962E1131D600D518D7 /* Sci-Fi.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Sci-Fi.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F19E46922E17FCA900233E2F /* Exceptions for "Inspirations&Momentum" folder in "Inspirations&MomentumExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = F19E467F2E17FCA400233E2F /* Inspirations&MomentumExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		F19E46832E17FCA400233E2F /* Inspirations&Momentum */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F19E46922E17FCA900233E2F /* Exceptions for "Inspirations&Momentum" folder in "Inspirations&MomentumExtension" target */,
+			);
+			path = "Inspirations&Momentum";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		F15DFDDC2DC64F3300D88BBB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
+				F1ACF19E2E115AE900D518D7 /* Subsonic in Frameworks */,
 				F15DFE2E2DC64F9900D88BBB /* Forever in Frameworks */,
+				F109C2EA2E12C423007F04C2 /* Pipify in Frameworks */,
+			);
+		};
+		F19E467D2E17FCA400233E2F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+				F19E46822E17FCA400233E2F /* SwiftUI.framework in Frameworks */,
+				F19E46812E17FCA400233E2F /* WidgetKit.framework in Frameworks */,
 			);
 		};
 /* End PBXFrameworksBuildPhase section */
@@ -129,6 +183,7 @@
 				F17CD7DB2DEEF01100111B75 /* Property List.plist */,
 				F1786D4E2DED973000E331E8 /* LaunchScreen.storyboard */,
 				F15DFE512DC6576300D88BBB /* Elara */,
+				F19E46832E17FCA400233E2F /* Inspirations&Momentum */,
 				F1678A6A2DEAF6E000DD9591 /* Frameworks */,
 				F15DFDE02DC64F3300D88BBB /* Products */,
 			);
@@ -138,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				F15DFDDF2DC64F3300D88BBB /* Elara.app */,
+				F19E46802E17FCA400233E2F /* Inspirations&MomentumExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -201,6 +257,7 @@
 				F1678A6D2DEAF6E000DD9591 /* ManagedSettingsUI.framework */,
 				F1786D592DEDCF2600E331E8 /* WidgetKit.framework */,
 				F1786D5B2DEDCF2600E331E8 /* SwiftUI.framework */,
+				F11368022E12ACA60036EBB3 /* DeviceActivity.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -208,7 +265,6 @@
 		F1ACF1912E1131C300D518D7 /* Chimes */ = {
 			isa = PBXGroup;
 			children = (
-				F1ACF1922E1131D600D518D7 /* Elara Classic.wav */,
 				F1ACF1932E1131D600D518D7 /* Fantasy.wav */,
 				F1ACF1942E1131D600D518D7 /* Relaxing.wav */,
 				F1ACF1952E1131D600D518D7 /* Ringer.wav */,
@@ -228,16 +284,40 @@
 				F15DFDDC2DC64F3300D88BBB /* Frameworks */,
 				F15DFDDD2DC64F3300D88BBB /* Resources */,
 				F1678A7B2DEAF6E000DD9591 /* Embed Foundation Extensions */,
+				F199C96F2E14244A00E316EE /* Embed ExtensionKit Extensions */,
 			);
 			buildRules = (
+			);
+			dependencies = (
+				F19E468E2E17FCA900233E2F /* PBXTargetDependency */,
 			);
 			name = Elara;
 			packageProductDependencies = (
 				F15DFE2D2DC64F9900D88BBB /* Forever */,
+				F1ACF19D2E115AE900D518D7 /* Subsonic */,
+				F109C2E92E12C423007F04C2 /* Pipify */,
 			);
 			productName = "Elara for iPadOS";
 			productReference = F15DFDDF2DC64F3300D88BBB /* Elara.app */;
 			productType = "com.apple.product-type.application";
+		};
+		F19E467F2E17FCA400233E2F /* Inspirations&MomentumExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F19E46932E17FCA900233E2F /* Build configuration list for PBXNativeTarget "Inspirations&MomentumExtension" */;
+			buildPhases = (
+				F19E467C2E17FCA400233E2F /* Sources */,
+				F19E467D2E17FCA400233E2F /* Frameworks */,
+				F19E467E2E17FCA400233E2F /* Resources */,
+			);
+			buildRules = (
+			);
+			fileSystemSynchronizedGroups = (
+				F19E46832E17FCA400233E2F /* Inspirations&Momentum */,
+			);
+			name = "Inspirations&MomentumExtension";
+			productName = "Inspirations&MomentumExtension";
+			productReference = F19E46802E17FCA400233E2F /* Inspirations&MomentumExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -246,12 +326,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1640;
+				LastSwiftUpdateCheck = 2600;
 				LastUpgradeCheck = 1630;
 				TargetAttributes = {
 					F15DFDDE2DC64F3300D88BBB = {
 						CreatedOnToolsVersion = 16.3;
 						LastSwiftMigration = 1630;
+					};
+					F19E467F2E17FCA400233E2F = {
+						CreatedOnToolsVersion = 26.0;
 					};
 				};
 			};
@@ -265,6 +348,8 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				F15DFE2C2DC64F9900D88BBB /* XCRemoteSwiftPackageReference "Forever" */,
+				F1ACF19C2E115AE900D518D7 /* XCRemoteSwiftPackageReference "Subsonic" */,
+				F109C2E82E12C423007F04C2 /* XCRemoteSwiftPackageReference "swiftui-pipify" */,
 			);
 			preferredProjectObjectVersion = 90;
 			productRefGroup = F15DFDE02DC64F3300D88BBB /* Products */;
@@ -272,6 +357,7 @@
 			projectRoot = "";
 			targets = (
 				F15DFDDE2DC64F3300D88BBB /* Elara */,
+				F19E467F2E17FCA400233E2F /* Inspirations&MomentumExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -300,7 +386,6 @@
 				F1ACF1972E1131D600D518D7 /* Fantasy.wav in Resources */,
 				F1ACF1982E1131D600D518D7 /* Relaxing.wav in Resources */,
 				F1ACF1992E1131D600D518D7 /* Ringer.wav in Resources */,
-				F1ACF19A2E1131D600D518D7 /* Elara Classic.wav in Resources */,
 				F1ACF19B2E1131D600D518D7 /* Sci-Fi.wav in Resources */,
 				F15DFE692DC6576300D88BBB /* Assets.xcassets in Resources */,
 				F15DFE6A2DC6576300D88BBB /* PublicSans-VariableFont_wght.ttf in Resources */,
@@ -310,6 +395,11 @@
 				F15DFE6E2DC6576300D88BBB /* PlayfairDisplay-Italic-VariableFont_wght.ttf in Resources */,
 				F15DFE6F2DC6576300D88BBB /* PublicSans-Italic-VariableFont_wght.ttf in Resources */,
 				F15DFE702DC6576300D88BBB /* ChakraPetch-SemiBoldItalic.ttf in Resources */,
+			);
+		};
+		F19E467E2E17FCA400233E2F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
 			);
 		};
 /* End PBXResourcesBuildPhase section */
@@ -331,7 +421,20 @@
 				F15DFE5A2DC6576300D88BBB /* AboutView.swift in Sources */,
 			);
 		};
+		F19E467C2E17FCA400233E2F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F19E468E2E17FCA900233E2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F19E467F2E17FCA400233E2F /* Inspirations&MomentumExtension */;
+			targetProxy = F19E468D2E17FCA900233E2F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F15DFDE82DC64F3500D88BBB /* Debug configuration for PBXProject "Elara" */ = {
@@ -464,7 +567,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Elara/Elara.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 37;
 				DEVELOPMENT_TEAM = MK2VQ82S9T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -505,7 +608,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Elara/Elara.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 37;
 				DEVELOPMENT_TEAM = MK2VQ82S9T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -536,6 +639,66 @@
 			};
 			name = Release;
 		};
+		F19E46902E17FCA900233E2F /* Debug configuration for PBXNativeTarget "Inspirations&MomentumExtension" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MK2VQ82S9T;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Inspirations&Momentum/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Inspirations&Momentum";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.advaitconty.elara.Inspirations-Momentum";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F19E46912E17FCA900233E2F /* Release configuration for PBXNativeTarget "Inspirations&MomentumExtension" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MK2VQ82S9T;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Inspirations&Momentum/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Inspirations&Momentum";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.advaitconty.elara.Inspirations-Momentum";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -555,9 +718,25 @@
 			);
 			defaultConfigurationName = Release;
 		};
+		F19E46932E17FCA900233E2F /* Build configuration list for PBXNativeTarget "Inspirations&MomentumExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F19E46902E17FCA900233E2F /* Debug configuration for PBXNativeTarget "Inspirations&MomentumExtension" */,
+				F19E46912E17FCA900233E2F /* Release configuration for PBXNativeTarget "Inspirations&MomentumExtension" */,
+			);
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F109C2E82E12C423007F04C2 /* XCRemoteSwiftPackageReference "swiftui-pipify" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/getsidetrack/swiftui-pipify.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.0;
+			};
+		};
 		F15DFE2C2DC64F9900D88BBB /* XCRemoteSwiftPackageReference "Forever" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jiachenyee/Forever.git";
@@ -566,13 +745,31 @@
 				minimumVersion = 1.1.0;
 			};
 		};
+		F1ACF19C2E115AE900D518D7 /* XCRemoteSwiftPackageReference "Subsonic" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/Subsonic";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F109C2E92E12C423007F04C2 /* Pipify */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F109C2E82E12C423007F04C2 /* XCRemoteSwiftPackageReference "swiftui-pipify" */;
+			productName = Pipify;
+		};
 		F15DFE2D2DC64F9900D88BBB /* Forever */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F15DFE2C2DC64F9900D88BBB /* XCRemoteSwiftPackageReference "Forever" */;
 			productName = Forever;
+		};
+		F1ACF19D2E115AE900D518D7 /* Subsonic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F1ACF19C2E115AE900D518D7 /* XCRemoteSwiftPackageReference "Subsonic" */;
+			productName = Subsonic;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
