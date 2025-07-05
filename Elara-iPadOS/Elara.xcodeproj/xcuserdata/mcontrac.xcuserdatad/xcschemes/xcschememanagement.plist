@@ -14,15 +14,25 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>Everything.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 		<key>Hyperfocus.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>HyperfocusUI.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>Inspirations&amp;MomentumExtension.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<key>Intents.xcscheme_^#shared#^_</key>
 		<dict>
@@ -47,7 +57,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>F14DD0D72E18E76800851AF8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>F15DFDDE2DC64F3300D88BBB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F19E467F2E17FCA400233E2F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F1F6900C2E18DA6D00FC9E17</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -34,9 +34,11 @@ struct SettingData: Codable, Equatable {
     var cyclesBeforeLongBreak: Int = 4
     var font: ClockFont = ClockFont()
     var notificationsPermissionsGiven: Bool = false
-    var notificationSound: NotificationSound = sounds.first(where: { $0.friendlyName.contains("Default") }) ?? sounds[0]
+    var notificationSound: NotificationSound = sounds.first(where: { $0.friendlyName.contains("Serenity (Default)") }) ?? sounds[0]
     var allowedScreenTimeManagementAccess: Bool = false
     var appsBlocked: FamilyActivitySelection = FamilyActivitySelection()
+    var blockingInProgress: Bool = false
+    var turnAppBlockingOffOnPause: Bool = true
 }
 
 struct SortedDataByTasks: Identifiable {
@@ -106,13 +108,6 @@ class PomodoroTimer: ObservableObject {
     var formattedTime: String {
         return String(format: "%02d:%02d", remainingMinutes, remainingSeconds)
     }
-    
-//    mutating func recalculate() {
-//        let timeInterval = self.timerEndTime.timeIntervalSinceNow
-//        self.remainingMinutes = Int(timeInterval / 60)
-//        self.remainingSeconds = Int(timeInterval.truncatingRemainder(dividingBy: 60))
-//        self.formattedTime = String(format: "%02d:%02d", remainingMinutes, remainingSeconds)
-//    }
 }
 
 
@@ -139,7 +134,12 @@ let wallpapers = [
     Wallpaper(wallpaperName: "Horizon", description: "A digital painting of the horizon, done by Alena Aenami (from Artstaion)", tags: []),
     Wallpaper(wallpaperName: "Lodge", description: "A wonderful wooden lodge, with a mountainside view, at the golden hour", tags: []),
     Wallpaper(wallpaperName: "Summer Scene", description: "An AI-generated image of the sunset (from Freepik, generated using Midjourney 5.2)", tags: ["cpu"]),
-    Wallpaper(wallpaperName: "Moscow Metro", description: "A digital art piece of one of the Moscow metro stations", tags: [])
+    Wallpaper(wallpaperName: "Moscow Metro", description: "A digital art piece of one of the Moscow metro stations", tags: []),
+    Wallpaper(wallpaperName: "Cloud Nine", description: "A weightless escape into the bliss of work and achievement.", tags: []),
+    Wallpaper(wallpaperName: "Nocturne Sands", description: "Inviting focus through stillness, in the silence of the clear night.", tags: []),
+    Wallpaper(wallpaperName: "Roselight", description: "Gentle, rare and full of wonder, an inspiration to your productivity.", tags: []),
+    Wallpaper(wallpaperName: "Serene Ascent", description: "The calm strength, where focus is found in the climb to success.", tags: []),
+    Wallpaper(wallpaperName: "Silent Pines", description: "A gentle retreat into quiet - grounded, muted and possibly peaceful", tags: [])
 ]
 
 struct NotificationSound: Identifiable, Codable, Hashable {

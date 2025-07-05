@@ -6,6 +6,7 @@
 	<array>
 		<string>processing</string>
 		<string>audio</string>
+		<string>external-accessory</string>
 	</array>
 </dict>
 </plist>

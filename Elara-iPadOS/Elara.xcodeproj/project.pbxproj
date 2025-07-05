@@ -10,6 +10,9 @@
 		F109C2EA2E12C423007F04C2 /* Pipify in Frameworks */ = {isa = PBXBuildFile; productRef = F109C2E92E12C423007F04C2 /* Pipify */; };
 		F10FDDC42E0048A20029060A /* Elara.icon in Resources */ = {isa = PBXBuildFile; fileRef = F10FDDC32E0048A10029060A /* Elara.icon */; };
 		F1488E112E06F06E006D5A92 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1488E102E06F061006D5A92 /* StatisticsView.swift */; };
+		F14DD0D92E18E76900851AF8 /* ManagedSettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1678A6B2DEAF6E000DD9591 /* ManagedSettings.framework */; };
+		F14DD0DA2E18E76900851AF8 /* ManagedSettingsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1678A6D2DEAF6E000DD9591 /* ManagedSettingsUI.framework */; };
+		F14DD0E22E18E76900851AF8 /* HyperfocusUI.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F14DD0D82E18E76800851AF8 /* HyperfocusUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F15DFE2E2DC64F9900D88BBB /* Forever in Frameworks */ = {isa = PBXBuildFile; productRef = F15DFE2D2DC64F9900D88BBB /* Forever */; };
 		F15DFE522DC6576300D88BBB /* FontLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DFE4B2DC6576300D88BBB /* FontLoader.swift */; };
 		F15DFE532DC6576300D88BBB /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DFE4F2DC6576300D88BBB /* TasksView.swift */; };
@@ -53,15 +56,31 @@
 		F1ACF1992E1131D600D518D7 /* Ringer.wav in Resources */ = {isa = PBXBuildFile; fileRef = F1ACF1952E1131D600D518D7 /* Ringer.wav */; };
 		F1ACF19B2E1131D600D518D7 /* Sci-Fi.wav in Resources */ = {isa = PBXBuildFile; fileRef = F1ACF1962E1131D600D518D7 /* Sci-Fi.wav */; };
 		F1ACF19E2E115AE900D518D7 /* Subsonic in Frameworks */ = {isa = PBXBuildFile; productRef = F1ACF19D2E115AE900D518D7 /* Subsonic */; };
+		F1F6900E2E18DA6E00FC9E17 /* DeviceActivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F11368022E12ACA60036EBB3 /* DeviceActivity.framework */; };
+		F1F690162E18DA6E00FC9E17 /* Hyperfocus.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F1F6900D2E18DA6D00FC9E17 /* Hyperfocus.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F14DD0E02E18E76900851AF8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F15DFDD72DC64F3300D88BBB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F14DD0D72E18E76800851AF8;
+			remoteInfo = HyperfocusUI;
+		};
 		F19E468D2E17FCA900233E2F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F15DFDD72DC64F3300D88BBB /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = F19E467F2E17FCA400233E2F;
 			remoteInfo = "Inspirations&MomentumExtension";
+		};
+		F1F690142E18DA6E00FC9E17 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F15DFDD72DC64F3300D88BBB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F1F6900C2E18DA6D00FC9E17;
+			remoteInfo = Hyperfocus;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -71,6 +90,8 @@
 			dstPath = "";
 			dstSubfolder = PlugIns;
 			files = (
+				F1F690162E18DA6E00FC9E17 /* Hyperfocus.appex in Embed Foundation Extensions */,
+				F14DD0E22E18E76900851AF8 /* HyperfocusUI.appex in Embed Foundation Extensions */,
 				F19E468F2E17FCA900233E2F /* Inspirations&MomentumExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
@@ -89,6 +110,7 @@
 		F10FDDC32E0048A10029060A /* Elara.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = Elara.icon; sourceTree = "<group>"; };
 		F11368022E12ACA60036EBB3 /* DeviceActivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceActivity.framework; path = System/Library/Frameworks/DeviceActivity.framework; sourceTree = SDKROOT; };
 		F1488E102E06F061006D5A92 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		F14DD0D82E18E76800851AF8 /* HyperfocusUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = HyperfocusUI.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		F15DFDDF2DC64F3300D88BBB /* Elara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elara.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F15DFE312DC6576300D88BBB /* ChakraPetch-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-Bold.ttf"; sourceTree = "<group>"; };
 		F15DFE322DC6576300D88BBB /* ChakraPetch-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -135,9 +157,33 @@
 		F1ACF1942E1131D600D518D7 /* Relaxing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Relaxing.wav; sourceTree = "<group>"; };
 		F1ACF1952E1131D600D518D7 /* Ringer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Ringer.wav; sourceTree = "<group>"; };
 		F1ACF1962E1131D600D518D7 /* Sci-Fi.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Sci-Fi.wav"; sourceTree = "<group>"; };
+		F1F6900D2E18DA6D00FC9E17 /* Hyperfocus.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Hyperfocus.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F14DD0E62E18E76900851AF8 /* Exceptions for "HyperfocusUI" folder in "HyperfocusUI" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = F14DD0D72E18E76800851AF8 /* HyperfocusUI */;
+		};
+		F14DD0EB2E18F02D00851AF8 /* Exceptions for "HyperfocusUI" folder in "Elara" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				HyperfocusIcon.png,
+				ShieldConfigurationExtension.swift,
+			);
+			target = F15DFDDE2DC64F3300D88BBB /* Elara */;
+		};
+		F14DD0EC2E18F02D00851AF8 /* Exceptions for "HyperfocusUI" folder in "Hyperfocus" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				HyperfocusIcon.png,
+				ShieldConfigurationExtension.swift,
+			);
+			target = F1F6900C2E18DA6D00FC9E17 /* Hyperfocus */;
+		};
 		F19E46922E17FCA900233E2F /* Exceptions for "Inspirations&Momentum" folder in "Inspirations&MomentumExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -145,9 +191,41 @@
 			);
 			target = F19E467F2E17FCA400233E2F /* Inspirations&MomentumExtension */;
 		};
+		F1E6B3012E18FE4C001F6656 /* Exceptions for "HyperfocusUI" folder in "Inspirations&MomentumExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				HyperfocusIcon.png,
+			);
+			target = F19E467F2E17FCA400233E2F /* Inspirations&MomentumExtension */;
+		};
+		F1F690192E18DA6E00FC9E17 /* Exceptions for "Hyperfocus" folder in "Hyperfocus" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = F1F6900C2E18DA6D00FC9E17 /* Hyperfocus */;
+		};
+		F1F6901E2E18DE2A00FC9E17 /* Exceptions for "Hyperfocus" folder in "Elara" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				BlockerManager.swift,
+			);
+			target = F15DFDDE2DC64F3300D88BBB /* Elara */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		F14DD0DB2E18E76900851AF8 /* HyperfocusUI */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F14DD0EB2E18F02D00851AF8 /* Exceptions for "HyperfocusUI" folder in "Elara" target */,
+				F1E6B3012E18FE4C001F6656 /* Exceptions for "HyperfocusUI" folder in "Inspirations&MomentumExtension" target */,
+				F14DD0EC2E18F02D00851AF8 /* Exceptions for "HyperfocusUI" folder in "Hyperfocus" target */,
+				F14DD0E62E18E76900851AF8 /* Exceptions for "HyperfocusUI" folder in "HyperfocusUI" target */,
+			);
+			path = HyperfocusUI;
+			sourceTree = "<group>";
+		};
 		F19E46832E17FCA400233E2F /* Inspirations&Momentum */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -156,9 +234,25 @@
 			path = "Inspirations&Momentum";
 			sourceTree = "<group>";
 		};
+		F1F6900F2E18DA6E00FC9E17 /* Hyperfocus */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F1F6901E2E18DE2A00FC9E17 /* Exceptions for "Hyperfocus" folder in "Elara" target */,
+				F1F690192E18DA6E00FC9E17 /* Exceptions for "Hyperfocus" folder in "Hyperfocus" target */,
+			);
+			path = Hyperfocus;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F14DD0D52E18E76800851AF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+				F14DD0D92E18E76900851AF8 /* ManagedSettings.framework in Frameworks */,
+				F14DD0DA2E18E76900851AF8 /* ManagedSettingsUI.framework in Frameworks */,
+			);
+		};
 		F15DFDDC2DC64F3300D88BBB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
@@ -174,6 +268,12 @@
 				F19E46812E17FCA400233E2F /* WidgetKit.framework in Frameworks */,
 			);
 		};
+		F1F6900A2E18DA6D00FC9E17 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+				F1F6900E2E18DA6E00FC9E17 /* DeviceActivity.framework in Frameworks */,
+			);
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -184,6 +284,8 @@
 				F1786D4E2DED973000E331E8 /* LaunchScreen.storyboard */,
 				F15DFE512DC6576300D88BBB /* Elara */,
 				F19E46832E17FCA400233E2F /* Inspirations&Momentum */,
+				F1F6900F2E18DA6E00FC9E17 /* Hyperfocus */,
+				F14DD0DB2E18E76900851AF8 /* HyperfocusUI */,
 				F1678A6A2DEAF6E000DD9591 /* Frameworks */,
 				F15DFDE02DC64F3300D88BBB /* Products */,
 			);
@@ -194,6 +296,8 @@
 			children = (
 				F15DFDDF2DC64F3300D88BBB /* Elara.app */,
 				F19E46802E17FCA400233E2F /* Inspirations&MomentumExtension.appex */,
+				F1F6900D2E18DA6D00FC9E17 /* Hyperfocus.appex */,
+				F14DD0D82E18E76800851AF8 /* HyperfocusUI.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -276,6 +380,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F14DD0D72E18E76800851AF8 /* HyperfocusUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F14DD0E52E18E76900851AF8 /* Build configuration list for PBXNativeTarget "HyperfocusUI" */;
+			buildPhases = (
+				F14DD0D42E18E76800851AF8 /* Sources */,
+				F14DD0D52E18E76800851AF8 /* Frameworks */,
+				F14DD0D62E18E76800851AF8 /* Resources */,
+			);
+			buildRules = (
+			);
+			fileSystemSynchronizedGroups = (
+				F14DD0DB2E18E76900851AF8 /* HyperfocusUI */,
+			);
+			name = HyperfocusUI;
+			productName = HyperfocusUI;
+			productReference = F14DD0D82E18E76800851AF8 /* HyperfocusUI.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		F15DFDDE2DC64F3300D88BBB /* Elara */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F15DFDEA2DC64F3500D88BBB /* Build configuration list for PBXNativeTarget "Elara" */;
@@ -290,6 +412,8 @@
 			);
 			dependencies = (
 				F19E468E2E17FCA900233E2F /* PBXTargetDependency */,
+				F1F690152E18DA6E00FC9E17 /* PBXTargetDependency */,
+				F14DD0E12E18E76900851AF8 /* PBXTargetDependency */,
 			);
 			name = Elara;
 			packageProductDependencies = (
@@ -319,6 +443,24 @@
 			productReference = F19E46802E17FCA400233E2F /* Inspirations&MomentumExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		F1F6900C2E18DA6D00FC9E17 /* Hyperfocus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1F6901A2E18DA6E00FC9E17 /* Build configuration list for PBXNativeTarget "Hyperfocus" */;
+			buildPhases = (
+				F1F690092E18DA6D00FC9E17 /* Sources */,
+				F1F6900A2E18DA6D00FC9E17 /* Frameworks */,
+				F1F6900B2E18DA6D00FC9E17 /* Resources */,
+			);
+			buildRules = (
+			);
+			fileSystemSynchronizedGroups = (
+				F1F6900F2E18DA6E00FC9E17 /* Hyperfocus */,
+			);
+			name = Hyperfocus;
+			productName = Hyperfocus;
+			productReference = F1F6900D2E18DA6D00FC9E17 /* Hyperfocus.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -327,13 +469,19 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2600;
-				LastUpgradeCheck = 1630;
+				LastUpgradeCheck = 2600;
 				TargetAttributes = {
+					F14DD0D72E18E76800851AF8 = {
+						CreatedOnToolsVersion = 26.0;
+					};
 					F15DFDDE2DC64F3300D88BBB = {
 						CreatedOnToolsVersion = 16.3;
 						LastSwiftMigration = 1630;
 					};
 					F19E467F2E17FCA400233E2F = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					F1F6900C2E18DA6D00FC9E17 = {
 						CreatedOnToolsVersion = 26.0;
 					};
 				};
@@ -358,11 +506,18 @@
 			targets = (
 				F15DFDDE2DC64F3300D88BBB /* Elara */,
 				F19E467F2E17FCA400233E2F /* Inspirations&MomentumExtension */,
+				F1F6900C2E18DA6D00FC9E17 /* Hyperfocus */,
+				F14DD0D72E18E76800851AF8 /* HyperfocusUI */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F14DD0D62E18E76800851AF8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
 		F15DFDDD2DC64F3300D88BBB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
@@ -402,9 +557,19 @@
 			files = (
 			);
 		};
+		F1F6900B2E18DA6D00FC9E17 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F14DD0D42E18E76800851AF8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
 		F15DFDDB2DC64F3300D88BBB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			files = (
@@ -426,17 +591,90 @@
 			files = (
 			);
 		};
+		F1F690092E18DA6D00FC9E17 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F14DD0E12E18E76900851AF8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F14DD0D72E18E76800851AF8 /* HyperfocusUI */;
+			targetProxy = F14DD0E02E18E76900851AF8 /* PBXContainerItemProxy */;
+		};
 		F19E468E2E17FCA900233E2F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F19E467F2E17FCA400233E2F /* Inspirations&MomentumExtension */;
 			targetProxy = F19E468D2E17FCA900233E2F /* PBXContainerItemProxy */;
 		};
+		F1F690152E18DA6E00FC9E17 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F1F6900C2E18DA6D00FC9E17 /* Hyperfocus */;
+			targetProxy = F1F690142E18DA6E00FC9E17 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		F14DD0E32E18E76900851AF8 /* Debug configuration for PBXNativeTarget "HyperfocusUI" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = HyperfocusUI/HyperfocusUI.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MK2VQ82S9T;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HyperfocusUI/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HyperfocusUI;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.advaitconty.elara.HyperfocusUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F14DD0E42E18E76900851AF8 /* Release configuration for PBXNativeTarget "HyperfocusUI" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = HyperfocusUI/HyperfocusUI.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MK2VQ82S9T;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HyperfocusUI/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HyperfocusUI;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.advaitconty.elara.HyperfocusUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		F15DFDE82DC64F3500D88BBB /* Debug configuration for PBXProject "Elara" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -496,6 +734,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -553,6 +792,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -567,7 +807,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Elara/Elara.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 47;
 				DEVELOPMENT_TEAM = MK2VQ82S9T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -608,7 +848,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Elara/Elara.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 47;
 				DEVELOPMENT_TEAM = MK2VQ82S9T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -699,9 +939,75 @@
 			};
 			name = Release;
 		};
+		F1F690172E18DA6E00FC9E17 /* Debug configuration for PBXNativeTarget "Hyperfocus" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Hyperfocus/Hyperfocus.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MK2VQ82S9T;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Hyperfocus/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Hyperfocus;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.advaitconty.elara.Hyperfocus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F1F690182E18DA6E00FC9E17 /* Release configuration for PBXNativeTarget "Hyperfocus" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Hyperfocus/Hyperfocus.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MK2VQ82S9T;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Hyperfocus/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Hyperfocus;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.advaitconty.elara.Hyperfocus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F14DD0E52E18E76900851AF8 /* Build configuration list for PBXNativeTarget "HyperfocusUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F14DD0E32E18E76900851AF8 /* Debug configuration for PBXNativeTarget "HyperfocusUI" */,
+				F14DD0E42E18E76900851AF8 /* Release configuration for PBXNativeTarget "HyperfocusUI" */,
+			);
+			defaultConfigurationName = Release;
+		};
 		F15DFDDA2DC64F3300D88BBB /* Build configuration list for PBXProject "Elara" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -723,6 +1029,14 @@
 			buildConfigurations = (
 				F19E46902E17FCA900233E2F /* Debug configuration for PBXNativeTarget "Inspirations&MomentumExtension" */,
 				F19E46912E17FCA900233E2F /* Release configuration for PBXNativeTarget "Inspirations&MomentumExtension" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		F1F6901A2E18DA6E00FC9E17 /* Build configuration list for PBXNativeTarget "Hyperfocus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1F690172E18DA6E00FC9E17 /* Debug configuration for PBXNativeTarget "Hyperfocus" */,
+				F1F690182E18DA6E00FC9E17 /* Release configuration for PBXNativeTarget "Hyperfocus" */,
 			);
 			defaultConfigurationName = Release;
 		};
