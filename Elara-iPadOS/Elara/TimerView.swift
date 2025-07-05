@@ -23,6 +23,8 @@ struct TimerView: View {
     @State var showStatistics = false
     @State var shownTime: String = "25:00"
     @Binding var statisticsData: [Cycle]
+    @ObservedObject var hyperfocusManager = HyperfocusModel()
+    @State var reset: Bool = false
     
     func scheduleNotification(at endDate: Date, title: String, body: String) {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
@@ -50,12 +52,17 @@ struct TimerView: View {
     }
     
     func pause() {
+        hyperfocusManager.removeImmediateShield()
         pomodoroTimer.isRunning = false
         pomodoroTimer.timePassedInSeconds = pomodoroTimer.remainingMinutes * 60 + pomodoroTimer.remainingSeconds + 1
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
     
     func resume() {
+        if !hyperfocusManager.isRunning && settings.allowedScreenTimeManagementAccess {
+            hyperfocusManager.applyImmediateShield(blocking: settings.appsBlocked)
+            hyperfocusManager.isRunning = true
+        }
         pomodoroTimer.isRunning = true
         pomodoroTimer.timePassedInSeconds = nil
         if pomodoroTimer.timerMode == .normal {
@@ -177,6 +184,8 @@ struct TimerView: View {
                                         shownTime = String(format: "%02d:%02d", settings.pomodoroDuration[0], settings.pomodoroDuration[1])
                                         pomodoroTimer.timerEndTime = Date()
                                         pomodoroTimer.timePassedInSeconds = nil
+                                        hyperfocusManager.removeImmediateShield()
+                                        reset = true
                                     } label: {
                                         HStack {
                                             Image(systemName: "arrow.clockwise")
@@ -300,8 +309,8 @@ struct TimerView: View {
                             .scaleEffect(1.5)
                     }
                     
-                    HStack {
-                        if showButton {
+                    if showButton {
+                        HStack {
                             Button {
                                 withAnimation { clock.toggle() }
                             } label: {
@@ -348,7 +357,7 @@ struct TimerView: View {
                     }
                 }
                 .padding()
-                .frame(minWidth: 300, maxWidth: 400, minHeight: 200, maxHeight: 300)
+                .frame(minWidth: 300, maxWidth: 400, minHeight: 150, maxHeight: 250)
                 .background(
                     RoundedRectangle(cornerRadius: 10)
                         .fill(Color.black.opacity(0.7))
@@ -361,11 +370,18 @@ struct TimerView: View {
                 .transition(.opacity)
             }
         }
+        .onChange(of: hyperfocusManager.isRunning) {
+            settings.blockingInProgress = hyperfocusManager.isRunning
+        }
         .onChange(of: pomodoroTimer.formattedTime) {
             if (pomodoroTimer.remainingMinutes * 60 + pomodoroTimer.remainingSeconds) <= 0 {
                 pomodoroTimer.invokeRefresh.toggle()
                 pomodoroTimer.isRunning = false
-                play(sound: settings.notificationSound.fileName)
+                if !reset {
+                    play(sound: settings.notificationSound.fileName)
+                } else {
+                    reset = false
+                }
                 if pomodoroTimer.timerMode == .normal {
                     pomodoroTimer.cycles += 1
                 }

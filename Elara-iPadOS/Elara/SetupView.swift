@@ -67,6 +67,7 @@ struct SetupView: View {
                                     Spacer()
                                 }
                             }
+                            .hoverEffect(.automatic)
                             .padding()
                             .buttonStyle(.bordered)
                         }
@@ -94,7 +95,7 @@ struct SetupView: View {
                                 Button {
                                     withAnimation {
                                         page = 1
-                                        height = 200
+                                        height = 250
                                     }
                                 } label: {
                                     HStack {

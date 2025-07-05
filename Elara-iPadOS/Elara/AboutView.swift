@@ -70,7 +70,7 @@ struct AboutView: View {
                         Spacer()
                     }
                     HStack {
-                        Text("_Nebula_ v1.1 (Update Sundial)")
+                        Text("_Supernova_ v2.0")
                             .font(.custom("Playfair Display", size: 20))
                         Spacer()
                     }
@@ -97,6 +97,7 @@ struct AboutView: View {
                         }
                         Divider()
                         VStack(spacing: 10) {
+                            updateNotesGenerator(updateName: "Elara Supernova v2.0", updateCodename: "Update Supernova", features: ["IMPROVED: Better timer tracking", "IMPROVED: Better notifications tracking", "NEW: Elara Vista: a new way to track your statistics", "NEW: Elara Hyperfocus: Block apps while working to focus better", "NEW: Custom timer chimes, customisable in settings", "EXPANDED: A new set of scenic nature-inspired wallpapers"], bugFix: false)
                             updateNotesGenerator(updateName: "Elara Nebula v1.1 (Update Sundial)", updateCodename: "Update Sundial", features: ["NEW: Customisable wallpapers", "IMPROVED: General optimizations to the code"], bugFix: false)
                         }
                     }

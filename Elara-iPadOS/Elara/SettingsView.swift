@@ -2,6 +2,7 @@ import SwiftUI
 import PhotosUI
 import Subsonic
 import SwiftData
+import FamilyControls
 
 // MARK: Font Lists
 let availableClockFonts = ["Playfair Display",
@@ -324,39 +325,50 @@ struct SettingsView: View {
                     notificationNotifier
                     Divider()
                 }
-//                if data.allowedScreenTimeManagementAccess {
-//                    HStack {
-//                        Text("Elara Hyperfocus' allowed apps")
-//                            .font(.custom(data.font.bodyFont, size: 18))
-//                        Spacer()
-//                        Button {
-//                            openElaraHyperfocusChanger = true
-//                        } label: {
-//                            Text("View and Modify apps")
-//                                .font(.custom(data.font.bodyFont, size: 14))
-//                                .italic()
-//                        }
-//                        .buttonStyle(.bordered)
-//                    }
-//                    .familyActivityPicker(isPresented: $openElaraHyperfocusChanger, selection: $data.appsBlocked)
-//                } else {
-//                    HStack {
-//                        Text("Elara Hyperfocus is not enabled due to Screen Time permissions not being given.")
-//                            .font(.custom(data.font.bodyFont, size: 18))
-//                            .multilineTextAlignment(.leading)
-//                        Spacer()
-//                        Button {
-//                            if let url = URL(string: UIApplication.openSettingsURLString) {
-//                                openURL(url)
-//                            }
-//                        } label: {
-//                            Text("Give permissions in Settings")
-//                                .font(.custom(data.font.bodyFont, size: 14))
-//                                .italic()
-//                        }
-//                        .buttonStyle(.bordered)
-//                    }
-//                }
+                if data.allowedScreenTimeManagementAccess {
+                    if !data.blockingInProgress {
+                        HStack {
+                            Text("Elara Hyperfocus' allowed apps")
+                                .font(.custom(data.font.bodyFont, size: 18))
+                            Spacer()
+                            Button {
+                                openElaraHyperfocusChanger = true
+                            } label: {
+                                Text("View and Modify apps")
+                                    .font(.custom(data.font.bodyFont, size: 14))
+                                    .italic()
+                            }
+                            .buttonStyle(.bordered)
+                        }
+                        .familyActivityPicker(isPresented: $openElaraHyperfocusChanger, selection: $data.appsBlocked)
+                    } else {
+                        HStack {
+                            Text("Elara Hyperfocus is blocking apps")
+                                .font(.custom(data.font.bodyFont, size: 18))
+                            Spacer()
+                            Text("Please end your session if you want to change your blocked apps")
+                                .font(.custom(data.font.bodyFont, size: 14))
+                        }
+                    }
+                    Divider()
+                } else {
+                    HStack {
+                        Text("Elara Hyperfocus is not enabled due to Screen Time permissions not being given.")
+                            .font(.custom(data.font.bodyFont, size: 18))
+                            .multilineTextAlignment(.leading)
+                        Spacer()
+                        Button {
+                            if let url = URL(string: UIApplication.openSettingsURLString) {
+                                openURL(url)
+                            }
+                        } label: {
+                            Text("Give permissions in Settings")
+                                .font(.custom(data.font.bodyFont, size: 14))
+                                .italic()
+                        }
+                        .buttonStyle(.bordered)
+                    }
+                }
                 
                 
                 VStack {

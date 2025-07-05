@@ -1,6 +1,7 @@
 import SwiftUI
 import Forever
 import SwiftData
+import FamilyControls
 
 struct ContentView: View {
     @State var name: String = ""
@@ -10,6 +11,8 @@ struct ContentView: View {
     @State var statisticsData: [Cycle] = []
     @Query var userData: [UserData]
     @Environment(\.modelContext) var modelContext
+    @State var presentPicker: Bool = false
+    @AppStorage("firstApprovalForScreenTime") var firstApprovalForScreenTime: Bool = true
     
     func saveData() {
         print("called saveData()")
@@ -60,18 +63,24 @@ struct ContentView: View {
                                 settingsData.notificationsPermissionsGiven = false
                             }
                         }
-                        
-//                        Task {
-//                            do {
-//                                try await AuthorizationCenter.shared.requestAuthorization(for: .individual)
-//                                settingsData.allowedScreenTimeManagementAccess = true
-//                            } catch {
-//                                settingsData.allowedScreenTimeManagementAccess = false
-//                            }
-//                        }
+                        Task {
+                            do {
+                                try await AuthorizationCenter.shared.requestAuthorization(for: .individual)
+                                settingsData.allowedScreenTimeManagementAccess = true
+                                if firstApprovalForScreenTime {
+                                    presentPicker = true
+                                    firstApprovalForScreenTime = false
+                                }
+                            } catch {
+                                settingsData.allowedScreenTimeManagementAccess = false
+                                firstApprovalForScreenTime = false
+                            }
+                        }
+                        settingsData.notificationSound = sounds.first(where: { $0.friendlyName.contains(settingsData.notificationSound.friendlyName) }) ?? sounds[0]
                     }
             }
         }
+        .familyActivityPicker(isPresented: $presentPicker, selection: $settingsData.appsBlocked)
         .onChange(of: name) {
             print("name changed!")
             saveData()
