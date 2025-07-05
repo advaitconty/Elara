@@ -1,5 +1,7 @@
 import SwiftUI
 import PhotosUI
+import Subsonic
+import SwiftData
 
 // MARK: Font Lists
 let availableClockFonts = ["Playfair Display",
@@ -34,6 +36,8 @@ struct SettingsView: View {
     @State private var customImageData: Data? = nil
     @State var about: Bool = false
     @Environment(\.openURL) var openURL
+    @State var openElaraHyperfocusChanger: Bool = false
+    
     
     func wallpaperImage(_ wallpaper: Wallpaper) -> some View {
         Image(wallpaper.wallpaperName)
@@ -128,13 +132,14 @@ struct SettingsView: View {
     var timerDurations: some View {
         VStack {
             HStack {
-                Text("_Timer Durations_")
+                Text("_Timer Settings_")
                     .font(.custom(data.font.titleFont, size: 20))
                 Spacer()
             }
             HStack {
                 Text("Pomodoro Timer Duration")
                     .font(.custom(data.font.bodyFont, size: 18))
+                Spacer()
                 TextField("25", value: $data.pomodoroDuration[0], format: .number)
                     .textFieldStyle(.roundedBorder)
                     .font(.custom(data.font.bodyFont, size: 18))
@@ -145,11 +150,11 @@ struct SettingsView: View {
                     .textFieldStyle(.roundedBorder)
                     .font(.custom(data.font.bodyFont, size: 18))
                     .frame(width: 40)
-                Spacer()
             }
             HStack {
                 Text("Short Break Duration")
                     .font(.custom(data.font.bodyFont, size: 18))
+                Spacer()
                 TextField("5", value: $data.shortBreakDuration[0], format: .number)
                     .textFieldStyle(.roundedBorder)
                     .font(.custom(data.font.bodyFont, size: 18))
@@ -160,11 +165,11 @@ struct SettingsView: View {
                     .textFieldStyle(.roundedBorder)
                     .font(.custom(data.font.bodyFont, size: 18))
                     .frame(width: 40)
-                Spacer()
             }
             HStack {
                 Text("Long Break Duration")
                     .font(.custom(data.font.bodyFont, size: 18))
+                Spacer()
                 TextField("10", value: $data.longBreakDuration[0], format: .number)
                     .textFieldStyle(.roundedBorder)
                     .font(.custom(data.font.bodyFont, size: 18))
@@ -175,16 +180,32 @@ struct SettingsView: View {
                     .textFieldStyle(.roundedBorder)
                     .font(.custom(data.font.bodyFont, size: 18))
                     .frame(width: 40)
-                Spacer()
             }
             HStack {
                 Text("Cycles before Long Break")
                     .font(.custom(data.font.bodyFont, size: 18))
+                Spacer()
                 TextField("4", value: $data.cyclesBeforeLongBreak, format: .number)
                     .textFieldStyle(.roundedBorder)
                     .font(.custom(data.font.bodyFont, size: 18))
                     .frame(width: 100)
+            }
+            HStack {
+                Text("Timer chime")
+                    .font(.custom(data.font.bodyFont, size: 18))
                 Spacer()
+                Button {
+                    play(sound: data.notificationSound.fileName)
+                } label: {
+                    Image(systemName: "play.circle")
+                }
+                Picker("", selection: $data.notificationSound) {
+                    ForEach(sounds, id: \.id) { sound in
+                        Text(sound.friendlyName)
+                            .font(.custom(data.font.bodyFont, size: 18))
+                            .tag(sound)
+                    }
+                }
             }
         }
         
@@ -303,6 +324,39 @@ struct SettingsView: View {
                     notificationNotifier
                     Divider()
                 }
+//                if data.allowedScreenTimeManagementAccess {
+//                    HStack {
+//                        Text("Elara Hyperfocus' allowed apps")
+//                            .font(.custom(data.font.bodyFont, size: 18))
+//                        Spacer()
+//                        Button {
+//                            openElaraHyperfocusChanger = true
+//                        } label: {
+//                            Text("View and Modify apps")
+//                                .font(.custom(data.font.bodyFont, size: 14))
+//                                .italic()
+//                        }
+//                        .buttonStyle(.bordered)
+//                    }
+//                    .familyActivityPicker(isPresented: $openElaraHyperfocusChanger, selection: $data.appsBlocked)
+//                } else {
+//                    HStack {
+//                        Text("Elara Hyperfocus is not enabled due to Screen Time permissions not being given.")
+//                            .font(.custom(data.font.bodyFont, size: 18))
+//                            .multilineTextAlignment(.leading)
+//                        Spacer()
+//                        Button {
+//                            if let url = URL(string: UIApplication.openSettingsURLString) {
+//                                openURL(url)
+//                            }
+//                        } label: {
+//                            Text("Give permissions in Settings")
+//                                .font(.custom(data.font.bodyFont, size: 14))
+//                                .italic()
+//                        }
+//                        .buttonStyle(.bordered)
+//                    }
+//                }
                 
                 
                 VStack {

@@ -1,6 +1,9 @@
 import Foundation
+import UserNotifications
+import FamilyControls
+import SwiftData
 
-struct Cycle: Identifiable, Codable {
+struct Cycle: Identifiable, Codable, Equatable {
     var id: UUID = UUID()
     var timeSpentOnWorkCycle: Int // in seconds
     var timeSpentOnBreakCycle: Int // in seconds
@@ -16,13 +19,13 @@ struct Todo: Identifiable, Codable, Equatable {
     var showDeletePopup: Bool = false
 }
 
-struct ClockFont: Codable {
+struct ClockFont: Codable, Equatable {
     var titleFont: String = "Playfair Display"
     var bodyFont: String = "Crimson Pro"
     var clockFont: String = "Crimson Pro"
 }
 
-struct SettingData: Codable {
+struct SettingData: Codable, Equatable {
     var background: String = "Default"
     var backgroundImageData: Data? = nil
     var pomodoroDuration: [Int] = [25, 0]
@@ -31,6 +34,9 @@ struct SettingData: Codable {
     var cyclesBeforeLongBreak: Int = 4
     var font: ClockFont = ClockFont()
     var notificationsPermissionsGiven: Bool = false
+    var notificationSound: NotificationSound = sounds.first(where: { $0.friendlyName.contains("Default") }) ?? sounds[0]
+    var allowedScreenTimeManagementAccess: Bool = false
+    var appsBlocked: FamilyActivitySelection = FamilyActivitySelection()
 }
 
 struct SortedDataByTasks: Identifiable {
@@ -101,8 +107,6 @@ class PomodoroTimer: ObservableObject {
         return String(format: "%02d:%02d", remainingMinutes, remainingSeconds)
     }
     
-    
-    
 //    mutating func recalculate() {
 //        let timeInterval = self.timerEndTime.timeIntervalSinceNow
 //        self.remainingMinutes = Int(timeInterval / 60)
@@ -137,3 +141,37 @@ let wallpapers = [
     Wallpaper(wallpaperName: "Summer Scene", description: "An AI-generated image of the sunset (from Freepik, generated using Midjourney 5.2)", tags: ["cpu"]),
     Wallpaper(wallpaperName: "Moscow Metro", description: "A digital art piece of one of the Moscow metro stations", tags: [])
 ]
+
+struct NotificationSound: Identifiable, Codable, Hashable {
+    var id = UUID()
+    var fileName: String
+    var friendlyName: String
+    
+    func getUNNotificationSoundName() -> UNNotificationSound {
+        return UNNotificationSound(named: UNNotificationSoundName(fileName))
+    }
+}
+
+let sounds = [
+    NotificationSound(fileName: "Sci-Fi.wav", friendlyName: "Nebula"),
+    NotificationSound(fileName: "Ringer.wav", friendlyName: "Dialback"),
+    NotificationSound(fileName: "Fantasy.wav", friendlyName: "Lumos"),
+    NotificationSound(fileName: "Relaxing.wav", friendlyName: "Serenity (Default)")
+]
+
+@Model
+class UserData {
+    var settingsData: SettingData = SettingData()
+    var todos: [Todo] = []
+    var cycles: [Cycle] = []
+    var name: String = ""
+    var setupPage: Int = 1
+    
+    init(settingsData: SettingData, todos: [Todo], cycles: [Cycle], name: String, setupPage: Int) {
+        self.settingsData = settingsData
+        self.todos = todos
+        self.cycles = cycles
+        self.name = name
+        self.setupPage = setupPage
+    }
+}

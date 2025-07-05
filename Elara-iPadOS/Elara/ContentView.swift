@@ -1,31 +1,124 @@
 import SwiftUI
 import Forever
+import SwiftData
 
 struct ContentView: View {
-    @Binding var name: String
-    @Binding var todos: [Todo]
-    @Binding var setupPage: Int
-    @Binding var settingsData: SettingData
-    @Binding var statisticsData: [Cycle]
+    @State var name: String = ""
+    @State var todos: [Todo] = []
+    @State var setupPage = 1
+    @State var settingsData: SettingData = SettingData()
+    @State var statisticsData: [Cycle] = []
+    @Query var userData: [UserData]
+    @Environment(\.modelContext) var modelContext
+    
+    func saveData() {
+        print("called saveData()")
+        print(userData)
+        if !userData.isEmpty {
+            print("starting data save process")
+            userData[0].name = name
+            userData[0].todos = todos
+            userData[0].setupPage = setupPage
+            userData[0].settingsData = settingsData
+            userData[0].cycles = statisticsData
+            
+            do {
+                try modelContext.save()
+                print("saved!")
+            } catch {
+                print("error saving updated data")
+                print("error: \(error)")
+            }
+        } else {
+            print("User data is empty")
+            modelContext.insert(UserData(settingsData: settingsData, todos: todos, cycles: statisticsData, name: name, setupPage: setupPage))
+            do {
+                try modelContext.save()
+                print("saved!")
+            } catch {
+                print("error saving new data")
+                print("error: \(error)")
+            }
+        }
+    }
     
     var body: some View {
-        if setupPage != 3 {
-            SetupView(name: $name, todos: $todos, page: $setupPage)
-                .transition(.slide)
-                .preferredColorScheme(.dark)
-        } else {
-            TimerView(todos: $todos, name: $name, settings: $settingsData, statisticsData: $statisticsData)
-                .transition(.slide)
-                .preferredColorScheme(.dark)
-                .onAppear {
-                    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { granted, error in
-                        if granted {
-                            settingsData.notificationsPermissionsGiven = true
-                        } else {
-                            settingsData.notificationsPermissionsGiven = false
+        VStack {
+            if setupPage != 3 {
+                SetupView(name: $name, todos: $todos, page: $setupPage)
+                    .transition(.move(edge: .leading))
+                    .preferredColorScheme(.dark)
+            } else {
+                TimerView(todos: $todos, name: $name, settings: $settingsData, statisticsData: $statisticsData)
+                    .transition(.move(edge: .leading))
+                    .preferredColorScheme(.dark)
+                    .onAppear {
+                        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { granted, error in
+                            if granted {
+                                settingsData.notificationsPermissionsGiven = true
+                            } else {
+                                settingsData.notificationsPermissionsGiven = false
+                            }
                         }
+                        
+//                        Task {
+//                            do {
+//                                try await AuthorizationCenter.shared.requestAuthorization(for: .individual)
+//                                settingsData.allowedScreenTimeManagementAccess = true
+//                            } catch {
+//                                settingsData.allowedScreenTimeManagementAccess = false
+//                            }
+//                        }
                     }
+            }
+        }
+        .onChange(of: name) {
+            print("name changed!")
+            saveData()
+        }
+        .onChange(of: todos) {
+            print("todos changed!")
+            saveData()
+        }
+        .onChange(of: setupPage) {
+            print("setup page changed!")
+            saveData()
+        }
+        .onChange(of: settingsData) {
+            print("settings data changed!")
+            saveData()
+        }
+        .onChange(of: statisticsData) {
+            print("statistics data changed!")
+            saveData()
+        }
+        .onAppear {
+            for family in UIFont.familyNames {
+                print("Font family: \(family)")
+                for fontName in UIFont.fontNames(forFamilyName: family) {
+                    print("↳ Font name: \(fontName)")
                 }
+            }
+            
+            if let data = userData.first {
+                name = data.name
+                todos = data.todos
+                setupPage = data.setupPage
+                settingsData = data.settingsData
+                statisticsData = data.cycles
+            }
+            
+            if userData.isEmpty {
+                print("adding default data")
+                modelContext.insert(UserData(settingsData: SettingData(), todos: [], cycles: [], name: "", setupPage: 1))
+                do {
+                    try modelContext.save()
+                    print("saved!")
+                } catch {
+                    print("error initalizing default data")
+                    print("error: \(error)")
+                }
+            }
         }
     }
 }

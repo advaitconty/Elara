@@ -1,4 +1,5 @@
 import SwiftUI
+import Subsonic
 
 struct TimerView: View {
     @AppStorage("clock") var clock: Bool = false
@@ -22,32 +23,32 @@ struct TimerView: View {
     @State var showStatistics = false
     @State var shownTime: String = "25:00"
     @Binding var statisticsData: [Cycle]
-
+    
     func scheduleNotification(at endDate: Date, title: String, body: String) {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = body
-        content.sound = .default
-
+        content.sound = settings.notificationSound.getUNNotificationSoundName()
+        
         let triggerDate = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: endDate)
-
+        
         let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
-
+        
         let request = UNNotificationRequest(
             identifier: UUID().uuidString,
             content: content,
             trigger: trigger
         )
-
+        
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
                 print(error)
             }
         }
     }
-
+    
     func pause() {
         pomodoroTimer.isRunning = false
         pomodoroTimer.timePassedInSeconds = pomodoroTimer.remainingMinutes * 60 + pomodoroTimer.remainingSeconds + 1
@@ -96,50 +97,6 @@ struct TimerView: View {
                 // ───────────────────────────────────────────────────────────
                 VStack {
                     Spacer()
-                        .onChange(of: pomodoroTimer.formattedTime) {
-                            if pomodoroTimer.timerEndTime <= Date() {
-                                pomodoroTimer.isRunning = false
-                                if pomodoroTimer.timerMode == .normal {
-                                    pomodoroTimer.cycles += 1
-                                }
-                                if pomodoroTimer.cycles == settings.cyclesBeforeLongBreak {
-                                    pomodoroTimer.timerMode = .longBreak
-                                    pomodoroTimer.cycles = 0
-                                } else if pomodoroTimer.timerMode == .normal {
-                                    pomodoroTimer.timerMode = .shortBreak
-                                } else if pomodoroTimer.timerMode == .shortBreak {
-                                    pomodoroTimer.timerMode = .normal
-                                }
-                            }
-                        }
-                        .onReceive(timer) { _ in
-                            if !pomodoroTimer.isRunning {
-                                if let timePassedInSeconds = pomodoroTimer.timePassedInSeconds {
-                                    pomodoroTimer.timerEndTime = Date().addingTimeInterval(TimeInterval(timePassedInSeconds))
-                                } else {
-                                    switch pomodoroTimer.timerMode {
-                                    case .normal:
-                                        pomodoroTimer.timerEndTime = Date().addingTimeInterval(TimeInterval(settings.pomodoroDuration[0] * 60 + settings.pomodoroDuration[1] + 1))
-                                    case .shortBreak:
-                                        pomodoroTimer.timerEndTime = Date().addingTimeInterval(TimeInterval(settings.shortBreakDuration[0] * 60 + settings.shortBreakDuration[1] + 1))
-                                    case .longBreak:
-                                        pomodoroTimer.timerEndTime = Date().addingTimeInterval(TimeInterval(settings.longBreakDuration[0] * 60 + settings.longBreakDuration[1] + 1))
-                                    }
-                                }
-                            } else if pomodoroTimer.isRunning {
-                                pomodoroTimer.invokeRefresh.toggle()
-                            }
-                            shownTime = pomodoroTimer.formattedTime
-                        }
-                        .onAppear {
-                            pomodoroTimer.cycles = settings.cyclesBeforeLongBreak
-                            pomodoroTimer.timerEndTime = Date().addingTimeInterval(TimeInterval(settings.pomodoroDuration[0] * 60 + settings.pomodoroDuration[1] + 1))
-                            refreshDisplayedTodo()
-                            shownTime = String(format: "%02d:%02d", settings.pomodoroDuration[0], settings.pomodoroDuration[1])
-                        }
-                        .onChange(of: editTasks) {
-                            refreshDisplayedTodo()
-                        }
                     
                     // greetings my good sir
                     if showWelcomeBack {
@@ -212,7 +169,7 @@ struct TimerView: View {
                                 
                                 
                                 // reset
-                                if pomodoroTimer.formattedTime != "\(settings.pomodoroDuration[0]):\(settings.pomodoroDuration[1])" {
+                                if pomodoroTimer.formattedTime != String(format: "%02d", settings.pomodoroDuration[0]) + String(format: "%02d", settings.pomodoroDuration[1]) {
                                     Button {
                                         pomodoroTimer.isRunning = false
                                         pomodoroTimer.timerMode = .shortBreak
@@ -343,52 +300,52 @@ struct TimerView: View {
                             .scaleEffect(1.5)
                     }
                     
-                        HStack {
-                            if showButton {
-                                Button {
-                                    withAnimation { clock.toggle() }
-                                } label: {
-                                    HStack {
-                                        Image(systemName: clock ? "clock.fill" : "clock")
-                                            .foregroundColor(.white)
-                                    }
+                    HStack {
+                        if showButton {
+                            Button {
+                                withAnimation { clock.toggle() }
+                            } label: {
+                                HStack {
+                                    Image(systemName: clock ? "clock.fill" : "clock")
+                                        .foregroundColor(.white)
                                 }
-                                .buttonStyle(.bordered)
-                                .matchedGeometryEffect(id: "clock", in: namespace)
-                                .hoverEffect(.automatic)
-                                
-                                // ⚙︎ Open Settings
-                                Button {
-                                    showSettings = true
-                                } label: {
-                                    HStack {
-                                        Image(systemName: "gearshape.2")
-                                            .foregroundColor(.white)
-                                    }
-                                }
-                                .buttonStyle(.bordered)
-                                .matchedGeometryEffect(id: "settingsBtn", in: namespace)
-                                .sheet(isPresented: $showSettings) {
-                                    SettingsView(data: $settings)
-                                }
-                                .hoverEffect(.automatic)
-                                
-                                Button {
-                                    showStatistics = true
-                                } label: {
-                                    HStack {
-                                        Image(systemName: "mountain.2")
-                                            .foregroundColor(.white)
-                                    }
-                                }
-                                .buttonStyle(.bordered)
-                                .matchedGeometryEffect(id: "statistics", in: namespace)
-                                .sheet(isPresented: $showStatistics) {
-                                    StatisticsView(settingsData: $settings, statisticsData: $statisticsData)
-                                }
-                                .hoverEffect(.automatic)
                             }
+                            .buttonStyle(.bordered)
+                            .matchedGeometryEffect(id: "clock", in: namespace)
+                            .hoverEffect(.automatic)
+                            
+                            // ⚙︎ Open Settings
+                            Button {
+                                showSettings = true
+                            } label: {
+                                HStack {
+                                    Image(systemName: "gearshape.2")
+                                        .foregroundColor(.white)
+                                }
+                            }
+                            .buttonStyle(.bordered)
+                            .matchedGeometryEffect(id: "settingsBtn", in: namespace)
+                            .sheet(isPresented: $showSettings) {
+                                SettingsView(data: $settings)
+                            }
+                            .hoverEffect(.automatic)
+                            
+                            Button {
+                                showStatistics = true
+                            } label: {
+                                HStack {
+                                    Image(systemName: "mountain.2")
+                                        .foregroundColor(.white)
+                                }
+                            }
+                            .buttonStyle(.bordered)
+                            .matchedGeometryEffect(id: "statistics", in: namespace)
+                            .sheet(isPresented: $showStatistics) {
+                                StatisticsView(settingsData: $settings, statisticsData: $statisticsData)
+                            }
+                            .hoverEffect(.automatic)
                         }
+                    }
                 }
                 .padding()
                 .frame(minWidth: 300, maxWidth: 400, minHeight: 200, maxHeight: 300)
@@ -403,6 +360,52 @@ struct TimerView: View {
                 )
                 .transition(.opacity)
             }
+        }
+        .onChange(of: pomodoroTimer.formattedTime) {
+            if (pomodoroTimer.remainingMinutes * 60 + pomodoroTimer.remainingSeconds) <= 0 {
+                pomodoroTimer.invokeRefresh.toggle()
+                pomodoroTimer.isRunning = false
+                play(sound: settings.notificationSound.fileName)
+                if pomodoroTimer.timerMode == .normal {
+                    pomodoroTimer.cycles += 1
+                }
+                if pomodoroTimer.cycles == settings.cyclesBeforeLongBreak {
+                    pomodoroTimer.timerMode = .longBreak
+                    pomodoroTimer.cycles = 0
+                } else if pomodoroTimer.timerMode == .normal {
+                    pomodoroTimer.timerMode = .shortBreak
+                } else if pomodoroTimer.timerMode == .shortBreak {
+                    pomodoroTimer.timerMode = .normal
+                }
+            }
+        }
+        .onReceive(timer) { _ in
+            if !pomodoroTimer.isRunning {
+                if let timePassedInSeconds = pomodoroTimer.timePassedInSeconds {
+                    pomodoroTimer.timerEndTime = Date().addingTimeInterval(TimeInterval(timePassedInSeconds))
+                } else {
+                    switch pomodoroTimer.timerMode {
+                    case .normal:
+                        pomodoroTimer.timerEndTime = Date().addingTimeInterval(TimeInterval(settings.pomodoroDuration[0] * 60 + settings.pomodoroDuration[1] + 1))
+                    case .shortBreak:
+                        pomodoroTimer.timerEndTime = Date().addingTimeInterval(TimeInterval(settings.shortBreakDuration[0] * 60 + settings.shortBreakDuration[1] + 1))
+                    case .longBreak:
+                        pomodoroTimer.timerEndTime = Date().addingTimeInterval(TimeInterval(settings.longBreakDuration[0] * 60 + settings.longBreakDuration[1] + 1))
+                    }
+                }
+            } else if pomodoroTimer.isRunning {
+                pomodoroTimer.invokeRefresh.toggle()
+            }
+            shownTime = pomodoroTimer.formattedTime
+        }
+        .onAppear {
+            pomodoroTimer.cycles = settings.cyclesBeforeLongBreak
+            pomodoroTimer.timerEndTime = Date().addingTimeInterval(TimeInterval(settings.pomodoroDuration[0] * 60 + settings.pomodoroDuration[1] + 1))
+            refreshDisplayedTodo()
+            shownTime = String(format: "%02d:%02d", settings.pomodoroDuration[0], settings.pomodoroDuration[1])
+        }
+        .onChange(of: editTasks) {
+            refreshDisplayedTodo()
         }
     }
 }
