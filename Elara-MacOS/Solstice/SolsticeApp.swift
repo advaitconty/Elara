@@ -9,19 +9,19 @@ import SwiftUI
 import Forever
 import Cocoa
 import UserNotifications
+import SwiftData
 
 @main
 struct ElaraApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
-    @Forever("name") var name: String = ""
-    @DontDie("todos") var todos: [Todo] = []
-    @DontLeaveMe("setupPage") var setupPage = 1
-    @BePersistent("settingsData") var settingsData: SettingData = SettingData()
     @State var aboutWindowController: AboutWindowController?
+    @Environment(\.openWindow) private var openWindow
+    @State var settingsData: SettingData  = SettingData()
     
     var body: some Scene {
         WindowGroup {
-            ContentView(name: $name, todos: $todos, setupPage: $setupPage, settingsData: $settingsData)
+            ContentView(settingsData: $settingsData)
+                .modelContainer(for: UserData.self)
         }
         .commands {
             CommandGroup(replacing: .appInfo) {
@@ -29,10 +29,24 @@ struct ElaraApp: App {
                     showAbout()
                 }
             }
+            
+            CommandGroup(after: .windowArrangement) {
+                Button("Statistics") {
+                    openStatistics()
+                }
+                .keyboardShortcut("s", modifiers: [.command, .shift])
+            }
+        }
+        
+        
+        WindowGroup(id: "stats") {
+            StatisticsView()
+                .modelContainer(for: UserData.self)
         }
         
         Settings {
             SettingsView(data: $settingsData)
+                .modelContainer(for: UserData.self)
         }
     }
     
@@ -42,5 +56,9 @@ struct ElaraApp: App {
         }
         aboutWindowController?.showWindow(nil)
         NSApp.activate(ignoringOtherApps: true)
+    }
+    
+    private func openStatistics() {
+        openWindow(id: "stats")
     }
 }

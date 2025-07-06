@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct AboutView: View {
+    @Environment(\.dismiss) var dismiss
+    
     func updateNotesGenerator(updateName: String, updateCodename: String, features: [String], bugFix: Bool) -> some View {
         VStack {
             HStack {
@@ -43,6 +45,10 @@ struct AboutView: View {
     var body: some View {
         VStack {
             HStack {
+                Spacer()
+            }
+            
+            HStack {
                 Image("solstice")
                     .resizable()
                     .scaledToFit()
@@ -57,7 +63,7 @@ struct AboutView: View {
                         Spacer()
                     }
                     HStack {
-                        Text("_Nebula_ v1.1 (Update Orion)")
+                        Text("_Quasar_ v2.0")
                             .font(.custom("Playfair Display", size: 20))
                         Spacer()
                     }
@@ -78,22 +84,20 @@ struct AboutView: View {
                             Spacer()
                         }
                         HStack {
-                            Text("This contains all the changes done in the last few updates")
+                            Text("This contains all the changes done in the last update")
                                 .font(.custom("Crimson Pro", size: 17))
                             Spacer()
                         }
                         Divider()
                         VStack(spacing: 10) {
-                            updateNotesGenerator(updateName: "Elara Nebula v1.2 (Update Eclipse)", updateCodename: "Update Eclipse", features: ["NEW: Notifications for when your work is done"], bugFix: false)
-                            Divider()
-                            updateNotesGenerator(updateName: "Elara Nebula v1.1 (Update Sundial)", updateCodename: "Update Sundial", features: ["NEW: Customisable wallpapers", "IMPROVED: General optimizations to the code", "IMPROVED: Better window resizing"], bugFix: false)
+                            updateNotesGenerator(updateName: "Elara Quasar v2.0", updateCodename: "Update Quasar", features: ["IMPROVED: Better timer tracking", "IMPROVED: Better notifications", "NEW: Elara Vista: a new way to track your statistics", "EXPANDED: A new set of scenic nature-inspired wallpapers"], bugFix: false)
+                            updateNotesGenerator(updateName: "Elara Nebula v1.1 (Update Sundial)", updateCodename: "Update Sundial", features: ["NEW: Customisable wallpapers", "IMPROVED: General optimizations to the code"], bugFix: false)
                         }
                     }
                     .padding()
                 }
                 .background(Color.gray.opacity(0.2))
                 .frame(minHeight: 100)
-                .clipShape(RoundedRectangle(cornerRadius: 10.0))
 
             }
             

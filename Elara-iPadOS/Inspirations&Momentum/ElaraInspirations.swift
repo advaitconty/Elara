@@ -60,7 +60,7 @@ struct InspirationsWidget: Widget {
             if #available(iOS 17.0, *) {
                 InspirationsWidgetView(entry: entry)
                     .containerBackground(for: .widget) {
-                        Color.accentColor
+                        Color(red: 0.118, green: 0.295, blue: 0.487)
                     }
             } else {
                 InspirationsWidgetView(entry: entry)
