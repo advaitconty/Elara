@@ -1,88 +1,100 @@
-h1, h2, h3 {
-    font-family: "Playfair Display", serif;
+.title-font {
+    font-family: 'Playfair Display', Georgia, serif !important;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    color: white !important;
-    text-align: left !important;
-}
-  
-.app-icon {
-    width: 150px;
-    height: 150px;
 }
 
-body, html {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url("Images/alena-aenami-horizon-1k.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
+.download-button {
+    width: 127%;
 }
 
-.intro {
-    font-family: "Crimson Pro", serif;
+.body-font {
+    font-family: 'Crimson Pro', Georgia, serif !important;
     font-optical-sizing: auto;
-    font-size: large;
     font-weight: 400;
     font-style: normal;
-    color: white !important;
 }
 
-.container {
-    padding: 50px !important;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    overflow: auto; /* Ensures content is scrollable */
-}
-
-.features {
-    color: white !important;
-    text-align: left !important;
-}
-
-p {
-    font-family: "Crimson Pro", sans-serif;
-    font-size: large;
-    color: white !important;
-}
-
-.card {
-    max-width: 75%;
-    margin: auto;
-    background-color: rgba(0, 0, 0, 0.7) !important; 
-    border-color: white;
-    border-width: 3px;
-    border-style: solid;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
-    border-radius: 15px !important;
+.white-text {
     color: white;
 }
 
-.screenshot {
-    width: 500px;
+.hero-section {
+  height: 100vh;
+  background-image: url('Images/Cloud Nine.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
-.span {
-    width: 100%;
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* darken for contrast */
+  z-index: 1;
 }
 
-@media (max-width: 768px) {
-    .container {
-        margin-top: 10px; /* Smaller margin for smaller screens */
-    }
+.hero-section .container {
+  z-index: 2;
+  position: relative;
 }
 
-@media (min-width: 769px) {
-    .container {
-        margin-top: 20px;
-    }
+.app-icon {
+  width: 120px;
+  height: 120px;
+  border-radius: 24px; /* gives it a rounded square app icon look */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.social-links {
+  margin-top: 2rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.social-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: white;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+.social-link-footer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.social-link-footer:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+  color: white;
+  transform: translateY(-1px);
 }
