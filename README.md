@@ -1,32 +1,16 @@
+![banner][]
 
-![banner](https://hc-cdn.hel1.your-objectstorage.com/s/v3/deb2916cbbc08047aa87c3cfa277be50e8586bf8_solstice_figma.png)
+# Product Screenshots
 
-Introducing Elara, the ultimate pomodoro tracker for iPadOS and MacOS.
+![](https://hc-cdn.hel1.your-objectstorage.com/s/v3/b05a763d04c2c152e9cf7f8f50390b344b423082_github_elara_assets.jpeg)
+_iPadOS and macOS versions are close enough_
 
-> _This app may still have references to Solstice, due to the previous name being Solstice before being published on the App Store as Elara_
+# App Store Status
+- Currently, the app store version for both iPadOS and macOS are on Nebula v1.2
+    - the iPadOS version is pending approval from Apple for the usage of the FamilyControls API
+    - the macOS version is pending review on the App Store
+- Since they are still pending approval, please download the macOS version from the Releases page, and build and run the iPadOS version yourself
+    - the iPadOS version's FamilyControls API may not work on a simulator, you may need a physical iPad to run it
 
-## Download
-[Download it on the app store!](https://apps.apple.com/us/app/elara/id6745421296)
-
-## Features
-Customisable backgrounds, pomodoro lengths and breaks
-
-_Upgraded with v1.1 (Sundial for iPadOS, Orion for MacOS) to let you add your own custom backgrounds!_
-
-![Settings](https://cloud-1ic9hmr97-hack-club-bot.vercel.app/3screenshot_2025-01-17_at_4.49.53_pm.png)
-
-An aesthetic pomodoro theme (from the start of the app)
-
-![Pomodoro](https://cloud-1ic9hmr97-hack-club-bot.vercel.app/0screenshot_2025-01-17_at_4.49.00_pm.png)
-
-Clock mode for when you just wanna relax
-
-![Clock](https://cloud-1ic9hmr97-hack-club-bot.vercel.app/2screenshot_2025-01-17_at_4.49.32_pm.png)
-
-Task tracking to remind the task to focus on
-
-![Tasks](https://cloud-1ic9hmr97-hack-club-bot.vercel.app/1screenshot_2025-01-17_at_4.49.12_pm.png)
-
-## Credits:
-Reddit's [r/Wallpaper](https://reddit.com/r/Wallpaper) for all the wallpapers
-Yee Jia Chen's Forever for data storage (may change to SwiftData)
+# Running iPadOS Version
+For running the iPadOS version, please change it to your account in the Signing and Capabilities tab of the .xcodeproj file. After that, you will be able to run the xcode project.
