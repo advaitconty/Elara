@@ -1,5 +1,4 @@
-![banner][]
-
+# Elara: The ultimate time tracker, where time meets tranquility
 # Product Screenshots
 
 ![](https://hc-cdn.hel1.your-objectstorage.com/s/v3/b05a763d04c2c152e9cf7f8f50390b344b423082_github_elara_assets.jpeg)
